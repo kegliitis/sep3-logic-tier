@@ -22,12 +22,8 @@ public class ReportsController
     @GetMapping("/reports")
     public String getReports()
     {
-        List<Report> reports = new ArrayList<>();
-        reports.add(new Report(LocalDate.now(), LocalTime.now(), null, "it is a report", "Under Review", new Location(1.1, 2.2, (byte) 1)));
-        reports.add(new Report(LocalDate.now(), LocalTime.now(), null, "it is a report", "Under Review", new Location(1.1, 2.2, (byte) 1)));
-
-        //GrpcClient grpcClient = new GrpcClientImpl();
-        //reports = grpcClient.getReports();
+        GrpcClient grpcClient = new GrpcClientImpl();
+        List<Report> reports = grpcClient.getReports();
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
