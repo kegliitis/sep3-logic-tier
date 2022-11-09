@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sep3.protobuf.report";
+
+service Report {
+  rpc GetReports(ReportFilter) returns (ReportList);
+}
+
+message ReportFilter {
+  //TODO implement filters
+}
+
+message ReportList {
+  repeated ReportObject reports = 1;
+}
+
+message ReportObject {
+  //if we agree on the format, this should be okay
+  string date = 1;
+  string time = 2;
+  bytes proof = 3;
+  string description = 4;
+  string status = 5;
+  LocationObject location = 6;
+}
+
+message LocationObject {
+  double latitude = 1;
+  double longitude = 2;
+  //there is no byte type, so it is a bit inefficient
+  int32 size = 3;
+}
