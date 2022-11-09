@@ -1,1 +1,1 @@
-# SEP3 Logic Tier
+# SEP 3 - Logic Tier project
