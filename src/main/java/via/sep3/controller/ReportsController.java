@@ -44,7 +44,6 @@ public class ReportsController
             throw new RuntimeException(e);
         }
 
-        System.out.println(reportsAsJson);
         return reportsAsJson;
     }
 }
