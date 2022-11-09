@@ -24,6 +24,7 @@ public class ReportsController
     {
         List<Report> reports = new ArrayList<>();
         reports.add(new Report(LocalDate.now(), LocalTime.now(), null, "it is a report", "Under Review", new Location(1.1, 2.2, (byte) 1)));
+        reports.add(new Report(LocalDate.now(), LocalTime.now(), null, "it is a report", "Under Review", new Location(1.1, 2.2, (byte) 1)));
 
         //GrpcClient grpcClient = new GrpcClientImpl();
         //reports = grpcClient.getReports();
