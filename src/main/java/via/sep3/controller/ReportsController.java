@@ -14,7 +14,7 @@ import java.util.List;
 public class ReportsController
 {
     @GetMapping("/reports")
-    public String getReports() throws JsonProcessingException {
+    public String getReports() throws Exception {
         try
         {
             GrpcClient grpcClient = new GrpcClientImpl();
@@ -22,9 +22,9 @@ public class ReportsController
 
             return JsonUtils.convertToJson(reports);
 
-        } catch (JsonProcessingException e)
+        } catch (Exception e)
         {
-            throw new RuntimeException(e);
+            throw new Exception(e);
         }
     }
 }

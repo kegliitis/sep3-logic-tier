@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 public class JsonUtils {
-    public static String convertToJson(Object input) throws JsonProcessingException{
+    public static String convertToJson(Object input) throws Exception{
         try
         {
             ObjectMapper mapper = new ObjectMapper();
@@ -18,8 +18,7 @@ public class JsonUtils {
 
             return reportsAsJson;
         } catch (JsonProcessingException e) {
-            //We should talk about this
-            throw new RuntimeException(e);
+            throw new Exception(e);
         }
     }
 }
