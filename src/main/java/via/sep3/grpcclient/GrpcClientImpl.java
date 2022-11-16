@@ -17,7 +17,7 @@ import java.util.List;
 public class GrpcClientImpl implements GrpcClient
 {
     private ManagedChannel managedChannel = ManagedChannelBuilder
-            .forAddress("localhost", 8909)
+            .forAddress("localhost", 5266)
             .usePlaintext()
             .build();
 
@@ -26,8 +26,10 @@ public class GrpcClientImpl implements GrpcClient
     @Override
     public List<Report> getReports()
     {
-        ReportList reportList = reportBlockingStub.getReports(ReportFilter.newBuilder().build());
+        ReportFilter filter = ReportFilter.newBuilder().build();
+        ReportList reportList = reportBlockingStub.getReports(filter);
         List<Report> reports = new ArrayList<>();
+
         for (ReportObject grpcReport : reportList.getReportsList())
         {
             Report report = new Report(LocalDate.parse(grpcReport.getDate()), LocalTime.parse(grpcReport.getTime()),
