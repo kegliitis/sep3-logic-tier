@@ -1,7 +1,8 @@
-package via.sep3.grpcclient;
+package via.sep3.grpcclient.implementation;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import via.sep3.grpcclient.client.ReportsClient;
 import via.sep3.model.Location;
 import via.sep3.model.Report;
 import via.sep3.protobuf.report.ReportFilter;
@@ -14,7 +15,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrpcClientImpl implements GrpcClient
+public class ReportsClientImpl implements ReportsClient
 {
     private ManagedChannel managedChannel = ManagedChannelBuilder
             .forAddress("localhost", 5266)
