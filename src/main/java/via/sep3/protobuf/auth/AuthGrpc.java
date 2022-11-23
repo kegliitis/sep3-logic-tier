@@ -45,6 +45,37 @@ public final class AuthGrpc {
     return getRegisterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.auth.RegisterUserInput,
+      via.sep3.protobuf.auth.RegisterUserOutput> getLoginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Login",
+      requestType = via.sep3.protobuf.auth.RegisterUserInput.class,
+      responseType = via.sep3.protobuf.auth.RegisterUserOutput.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.auth.RegisterUserInput,
+      via.sep3.protobuf.auth.RegisterUserOutput> getLoginMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.auth.RegisterUserInput, via.sep3.protobuf.auth.RegisterUserOutput> getLoginMethod;
+    if ((getLoginMethod = AuthGrpc.getLoginMethod) == null) {
+      synchronized (AuthGrpc.class) {
+        if ((getLoginMethod = AuthGrpc.getLoginMethod) == null) {
+          AuthGrpc.getLoginMethod = getLoginMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.auth.RegisterUserInput, via.sep3.protobuf.auth.RegisterUserOutput>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Login"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.auth.RegisterUserInput.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.auth.RegisterUserOutput.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("Login"))
+              .build();
+        }
+      }
+    }
+    return getLoginMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +131,13 @@ public final class AuthGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void login(via.sep3.protobuf.auth.RegisterUserInput request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.RegisterUserOutput> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -109,6 +147,13 @@ public final class AuthGrpc {
                 via.sep3.protobuf.auth.RegisterUserInput,
                 via.sep3.protobuf.auth.RegisterUserOutput>(
                   this, METHODID_REGISTER)))
+          .addMethod(
+            getLoginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.auth.RegisterUserInput,
+                via.sep3.protobuf.auth.RegisterUserOutput>(
+                  this, METHODID_LOGIN)))
           .build();
     }
   }
@@ -134,6 +179,14 @@ public final class AuthGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void login(via.sep3.protobuf.auth.RegisterUserInput request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.RegisterUserOutput> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -155,6 +208,13 @@ public final class AuthGrpc {
     public via.sep3.protobuf.auth.RegisterUserOutput register(via.sep3.protobuf.auth.RegisterUserInput request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.auth.RegisterUserOutput login(via.sep3.protobuf.auth.RegisterUserInput request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoginMethod(), getCallOptions(), request);
     }
   }
 
@@ -179,9 +239,18 @@ public final class AuthGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.auth.RegisterUserOutput> login(
+        via.sep3.protobuf.auth.RegisterUserInput request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_REGISTER = 0;
+  private static final int METHODID_LOGIN = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -202,6 +271,10 @@ public final class AuthGrpc {
       switch (methodId) {
         case METHODID_REGISTER:
           serviceImpl.register((via.sep3.protobuf.auth.RegisterUserInput) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.RegisterUserOutput>) responseObserver);
+          break;
+        case METHODID_LOGIN:
+          serviceImpl.login((via.sep3.protobuf.auth.RegisterUserInput) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.RegisterUserOutput>) responseObserver);
           break;
         default:
@@ -266,6 +339,7 @@ public final class AuthGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new AuthFileDescriptorSupplier())
               .addMethod(getRegisterMethod())
+              .addMethod(getLoginMethod())
               .build();
         }
       }

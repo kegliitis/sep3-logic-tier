@@ -4,7 +4,7 @@ import via.sep3.model.Report;
 
 import java.util.List;
 
-public interface ReportsClient
+public interface IReportsClient
 {
     List<Report> getReports();
 }

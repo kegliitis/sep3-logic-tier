@@ -20,6 +20,11 @@ public final class AuthOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_RegisterUserInput_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LoginUserInput_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_LoginUserInput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RegisterUserOutput_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -33,12 +38,16 @@ public final class AuthOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nAuth.proto\"B\n\021RegisterUserInput\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\020\n\010password\030\003 \001(\t" +
-      "\"*\n\022RegisterUserOutput\022\024\n\014isRegistered\030\001" +
-      " \001(\0102;\n\004Auth\0223\n\010Register\022\022.RegisterUserI" +
-      "nput\032\023.RegisterUserOutputB\032\n\026via.sep3.pr" +
-      "otobuf.authP\001b\006proto3"
+      "\n\nAuth.proto\"F\n\021RegisterUserInput\022\020\n\010use" +
+      "rname\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\020\n\010password\030\003" +
+      " \001(\t\"1\n\016LoginUserInput\022\r\n\005email\030\001 \001(\t\022\020\n" +
+      "\010password\030\002 \001(\t\"S\n\022RegisterUserOutput\022\n\n" +
+      "\002id\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022\r\n\005email\030\003 \001" +
+      "(\t\022\020\n\010password\030\004 \001(\t2m\n\004Auth\0223\n\010Register" +
+      "\022\022.RegisterUserInput\032\023.RegisterUserOutpu" +
+      "t\0220\n\005Login\022\022.RegisterUserInput\032\023.Registe" +
+      "rUserOutputB\032\n\026via.sep3.protobuf.authP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49,13 +58,19 @@ public final class AuthOuterClass {
     internal_static_RegisterUserInput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegisterUserInput_descriptor,
-        new java.lang.String[] { "Name", "Email", "Password", });
-    internal_static_RegisterUserOutput_descriptor =
+        new java.lang.String[] { "Username", "Email", "Password", });
+    internal_static_LoginUserInput_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_LoginUserInput_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LoginUserInput_descriptor,
+        new java.lang.String[] { "Email", "Password", });
+    internal_static_RegisterUserOutput_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_RegisterUserOutput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegisterUserOutput_descriptor,
-        new java.lang.String[] { "IsRegistered", });
+        new java.lang.String[] { "Id", "Username", "Email", "Password", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

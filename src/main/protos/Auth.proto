@@ -5,14 +5,25 @@ option java_package = "via.sep3.protobuf.auth";
 
 service Auth {
   rpc Register(RegisterUserInput) returns (RegisterUserOutput);
+  rpc Login(RegisterUserInput) returns (RegisterUserOutput);
 }
 
-message RegisterUserInput {
-  string name = 1;
+message RegisterUserInput
+{
+  string username = 1;
   string email = 2;
   string password = 3;
 }
 
-message RegisterUserOutput {
-  bool isRegistered = 1;
+message LoginUserInput{
+  string email = 1;
+  string password = 2;
+}
+
+message RegisterUserOutput
+{
+  int32 id = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
 }

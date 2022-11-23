@@ -8,16 +8,16 @@ public interface RegisterUserInputOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string username = 1;</code>
+   * @return The username.
    */
-  java.lang.String getName();
+  java.lang.String getUsername();
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string username = 1;</code>
+   * @return The bytes for username.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getUsernameBytes();
 
   /**
    * <code>string email = 2;</code>
