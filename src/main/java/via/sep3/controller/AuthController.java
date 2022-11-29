@@ -42,7 +42,7 @@ public class AuthController {
 
             return ResponseEntity.ok(token);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
@@ -55,8 +55,7 @@ public class AuthController {
 
             return ResponseEntity.ok(token);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-
+            System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }

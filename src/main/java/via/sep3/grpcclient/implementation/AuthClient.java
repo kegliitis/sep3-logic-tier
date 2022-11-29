@@ -3,6 +3,7 @@ package via.sep3.grpcclient.implementation;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import via.sep3.model.LoginUser;
@@ -11,7 +12,6 @@ import via.sep3.model.User;
 import via.sep3.protobuf.auth.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,17 +26,17 @@ public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
 
     @Override
     public User register(RegisterUser user) {
-        RegisterUserInput input = RegisterUserInput.newBuilder()
+            RegisterUserInput input = RegisterUserInput.newBuilder()
                 .setEmail(user.getEmail())
                 .setUsername(user.getUserName())
                 .setPassword(user.getPassword())
                 .build();
         UserOutput response = authBlockingStub.register(input);
 
-        List authorities = new ArrayList();
-        authorities.add(response.getRole());
+        Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority(response.getRole()));
 
-        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), authorities);
+        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), grantedAuthorities);
     }
 
     @Override
@@ -47,14 +47,24 @@ public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
                 .build();
         UserOutput response = authBlockingStub.loginUser(input);
 
-        List authorities = new ArrayList();
-        authorities.add(response.getRole());
 
-        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), authorities);
+        Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority(response.getRole()));
+
+        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), grantedAuthorities);
     }
 
     @Override
     public User getUserByEmail(String email) throws UsernameNotFoundException {
-        return new User("123", "Edy", "myPassword", "edy@via.dk",new ArrayList());
+        GetUserByEmailInput input = GetUserByEmailInput.newBuilder()
+                .setEmail(email)
+                .build();
+
+        UserOutput response = authBlockingStub.getUserByEmail(input);
+
+        Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority(response.getRole()));
+
+        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), grantedAuthorities);
     }
 }

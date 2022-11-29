@@ -76,6 +76,37 @@ public final class AuthGrpc {
     return getLoginUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.auth.GetUserByEmailInput,
+      via.sep3.protobuf.auth.UserOutput> getGetUserByEmailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserByEmail",
+      requestType = via.sep3.protobuf.auth.GetUserByEmailInput.class,
+      responseType = via.sep3.protobuf.auth.UserOutput.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.auth.GetUserByEmailInput,
+      via.sep3.protobuf.auth.UserOutput> getGetUserByEmailMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.auth.GetUserByEmailInput, via.sep3.protobuf.auth.UserOutput> getGetUserByEmailMethod;
+    if ((getGetUserByEmailMethod = AuthGrpc.getGetUserByEmailMethod) == null) {
+      synchronized (AuthGrpc.class) {
+        if ((getGetUserByEmailMethod = AuthGrpc.getGetUserByEmailMethod) == null) {
+          AuthGrpc.getGetUserByEmailMethod = getGetUserByEmailMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.auth.GetUserByEmailInput, via.sep3.protobuf.auth.UserOutput>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserByEmail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.auth.GetUserByEmailInput.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.auth.UserOutput.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("GetUserByEmail"))
+              .build();
+        }
+      }
+    }
+    return getGetUserByEmailMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class AuthGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginUserMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getUserByEmail(via.sep3.protobuf.auth.GetUserByEmailInput request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.UserOutput> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserByEmailMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -154,6 +192,13 @@ public final class AuthGrpc {
                 via.sep3.protobuf.auth.LoginUserInput,
                 via.sep3.protobuf.auth.UserOutput>(
                   this, METHODID_LOGIN_USER)))
+          .addMethod(
+            getGetUserByEmailMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.auth.GetUserByEmailInput,
+                via.sep3.protobuf.auth.UserOutput>(
+                  this, METHODID_GET_USER_BY_EMAIL)))
           .build();
     }
   }
@@ -187,6 +232,14 @@ public final class AuthGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginUserMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getUserByEmail(via.sep3.protobuf.auth.GetUserByEmailInput request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.UserOutput> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserByEmailMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -215,6 +268,13 @@ public final class AuthGrpc {
     public via.sep3.protobuf.auth.UserOutput loginUser(via.sep3.protobuf.auth.LoginUserInput request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.auth.UserOutput getUserByEmail(via.sep3.protobuf.auth.GetUserByEmailInput request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserByEmailMethod(), getCallOptions(), request);
     }
   }
 
@@ -247,10 +307,19 @@ public final class AuthGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoginUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.auth.UserOutput> getUserByEmail(
+        via.sep3.protobuf.auth.GetUserByEmailInput request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserByEmailMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_REGISTER = 0;
   private static final int METHODID_LOGIN_USER = 1;
+  private static final int METHODID_GET_USER_BY_EMAIL = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +344,10 @@ public final class AuthGrpc {
           break;
         case METHODID_LOGIN_USER:
           serviceImpl.loginUser((via.sep3.protobuf.auth.LoginUserInput) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.UserOutput>) responseObserver);
+          break;
+        case METHODID_GET_USER_BY_EMAIL:
+          serviceImpl.getUserByEmail((via.sep3.protobuf.auth.GetUserByEmailInput) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.auth.UserOutput>) responseObserver);
           break;
         default:
@@ -340,6 +413,7 @@ public final class AuthGrpc {
               .setSchemaDescriptor(new AuthFileDescriptorSupplier())
               .addMethod(getRegisterMethod())
               .addMethod(getLoginUserMethod())
+              .addMethod(getGetUserByEmailMethod())
               .build();
         }
       }

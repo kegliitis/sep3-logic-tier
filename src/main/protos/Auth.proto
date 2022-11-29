@@ -7,6 +7,7 @@ service Auth
 {
   rpc Register(RegisterUserInput) returns (UserOutput);
   rpc LoginUser(LoginUserInput) returns (UserOutput);
+  rpc GetUserByEmail(GetUserByEmailInput) returns (UserOutput);
 }
 
 message RegisterUserInput
@@ -16,6 +17,17 @@ message RegisterUserInput
   string password = 3;
 }
 
+message LoginUserInput
+{
+  string email = 1;
+  string password = 2;
+}
+
+message GetUserByEmailInput
+{
+  string email = 1;
+}
+
 message UserOutput
 {
   string id = 1;
@@ -23,10 +35,4 @@ message UserOutput
   string email = 3;
   string password = 4;
   string role = 5;
-}
-
-message LoginUserInput
-{
-  string email=1;
-  string password=2;
 }
