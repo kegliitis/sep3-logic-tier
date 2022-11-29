@@ -20,16 +20,16 @@ public interface UserOutputOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string userName = 2;</code>
-   * @return The userName.
+   * <code>string username = 2;</code>
+   * @return The username.
    */
-  java.lang.String getUserName();
+  java.lang.String getUsername();
   /**
-   * <code>string userName = 2;</code>
-   * @return The bytes for userName.
+   * <code>string username = 2;</code>
+   * @return The bytes for username.
    */
   com.google.protobuf.ByteString
-      getUserNameBytes();
+      getUsernameBytes();
 
   /**
    * <code>string email = 3;</code>
@@ -42,4 +42,28 @@ public interface UserOutputOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEmailBytes();
+
+  /**
+   * <code>string password = 4;</code>
+   * @return The password.
+   */
+  java.lang.String getPassword();
+  /**
+   * <code>string password = 4;</code>
+   * @return The bytes for password.
+   */
+  com.google.protobuf.ByteString
+      getPasswordBytes();
+
+  /**
+   * <code>string role = 5;</code>
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   * <code>string role = 5;</code>
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString
+      getRoleBytes();
 }

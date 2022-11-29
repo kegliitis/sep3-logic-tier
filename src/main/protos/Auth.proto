@@ -3,9 +3,10 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "via.sep3.protobuf.auth";
 
-service Auth {
-  rpc Register(RegisterUserInput) returns (RegisterUserOutput);
-  rpc Login(RegisterUserInput) returns (RegisterUserOutput);
+service Auth
+{
+  rpc Register(RegisterUserInput) returns (UserOutput);
+  rpc LoginUser(LoginUserInput) returns (UserOutput);
 }
 
 message RegisterUserInput
@@ -15,15 +16,17 @@ message RegisterUserInput
   string password = 3;
 }
 
-message LoginUserInput{
-  string email = 1;
-  string password = 2;
-}
-
-message RegisterUserOutput
+message UserOutput
 {
-  int32 id = 1;
+  string id = 1;
   string username = 2;
   string email = 3;
   string password = 4;
+  string role = 5;
+}
+
+message LoginUserInput
+{
+  string email=1;
+  string password=2;
 }

@@ -2,16 +2,18 @@ package via.sep3.grpcclient.implementation;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;
 import via.sep3.model.User;
-import via.sep3.protobuf.auth.AuthGrpc;
-import via.sep3.protobuf.auth.RegisterUserInput;
-import via.sep3.protobuf.auth.RegisterUserOutput;
+import via.sep3.protobuf.auth.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
@@ -29,14 +31,26 @@ public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
                 .setUsername(user.getUserName())
                 .setPassword(user.getPassword())
                 .build();
-        RegisterUserOutput response = authBlockingStub.register(input);
+        UserOutput response = authBlockingStub.register(input);
 
-        return new User("123", "Edy", "myPassword", "edy@via.dk",new ArrayList());
+        List authorities = new ArrayList();
+        authorities.add(response.getRole());
+
+        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), authorities);
     }
 
     @Override
     public User login(LoginUser user) {
-        return new User("123", "Edy", "myPassword", "edy@via.dk",new ArrayList());
+        LoginUserInput input = LoginUserInput.newBuilder()
+                .setEmail(user.getEmail())
+                .setPassword(user.getPassword())
+                .build();
+        UserOutput response = authBlockingStub.loginUser(input);
+
+        List authorities = new ArrayList();
+        authorities.add(response.getRole());
+
+        return new User(response.getId(),  response.getUsername(), response.getPassword(), response.getEmail(), authorities);
     }
 
     @Override
