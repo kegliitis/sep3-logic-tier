@@ -1,10 +1,10 @@
-package via.sep3.grpcclient;
+package via.sep3.grpcclient.client;
 
 import via.sep3.model.Report;
 
 import java.util.List;
 
-public interface GrpcClient
+public interface IReportsClient
 {
     List<Report> getReports();
 }
