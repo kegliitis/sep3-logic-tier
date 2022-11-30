@@ -1,5 +1,6 @@
 package via.sep3.grpcclient.implementation;
 
+import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
@@ -7,10 +8,7 @@ import via.sep3.grpcclient.client.IReportsClient;
 import via.sep3.model.CreateReport;
 import via.sep3.model.Location;
 import via.sep3.model.Report;
-import via.sep3.protobuf.report.ReportFilter;
-import via.sep3.protobuf.report.ReportGrpc;
-import via.sep3.protobuf.report.ReportList;
-import via.sep3.protobuf.report.ReportObject;
+import via.sep3.protobuf.report.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -29,19 +27,22 @@ public class ReportsClient implements IReportsClient
 
 
     @Override
-    public Report createReport(CreateReport newReport) {
-        CreateReportInput input = CreateReportInput.newBuilder()
-                .setDate(newReport.getDate())
-                .setTime(newReport.getTime())
-                .setProof(newReport.getProof())
+    public Report createReport(CreateReport newReport){
+        CreateReportObject input = CreateReportObject.newBuilder()
+                .setDate(newReport.getDate().toString())
+                .setTime(newReport.getTime().toString())
+                .setProof(ByteString.copyFrom(newReport.getProof()))
                 .setDescription(newReport.getDescription())
-                .setStatus(newReport.getStatus());
+                .setStatus(newReport.getStatus())
+                .setCreatorId(newReport.getUserId())
+                .build();
 
         ReportObject response = reportBlockingStub.createReport(input);
 
-        return new Report(/*response.getId(),*/(LocalDate.parse(response.getDate()), (LocalTime.parse(response.getTime())),response.getProof(),
-                response.getDescription(), response.getStatus(),
-                new Location(response.getLocation().getLatitude(),response.getLocation().getLongitude(),(byte)response.getLocation().getSize()));
+        return new Report((LocalDate.parse(response.getDate())), (LocalTime.parse(response.getTime())),
+                newReport.getProof(), response.getDescription(), response.getStatus(),
+                new Location(response.getLocation().getLatitude(),response.getLocation().getLongitude(),(byte)response.getLocation().getSize()),
+                response.getId(), response.getUser().getUsername(), response.getUser().getUsername());
     }
 
     @Override
@@ -55,7 +56,8 @@ public class ReportsClient implements IReportsClient
         {
             Report report = new Report(LocalDate.parse(grpcReport.getDate()), LocalTime.parse(grpcReport.getTime()),
                     grpcReport.getProof().toByteArray(), grpcReport.getDescription(), grpcReport.getStatus(),
-                    new Location(grpcReport.getLocation().getLatitude(), grpcReport.getLocation().getLongitude(), (byte) grpcReport.getLocation().getSize()));
+                    new Location(grpcReport.getLocation().getLatitude(), grpcReport.getLocation().getLongitude(), (byte) grpcReport.getLocation().getSize())
+                    , grpcReport.getUser().getUserId(),grpcReport.getUser().getUsername(),grpcReport.getId());
             reports.add(report);
         }
         return reports;

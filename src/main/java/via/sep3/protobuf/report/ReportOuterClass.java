@@ -34,6 +34,16 @@ public final class ReportOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_LocationObject_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UserObject_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UserObject_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreateReportObject_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreateReportObject_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -44,15 +54,22 @@ public final class ReportOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\014Report.proto\"\016\n\014ReportFilter\",\n\nReport" +
-      "List\022\036\n\007reports\030\001 \003(\0132\r.ReportObject\"\201\001\n" +
-      "\014ReportObject\022\014\n\004date\030\001 \001(\t\022\014\n\004time\030\002 \001(" +
-      "\t\022\r\n\005proof\030\003 \001(\014\022\023\n\013description\030\004 \001(\t\022\016\n" +
-      "\006status\030\005 \001(\t\022!\n\010location\030\006 \001(\0132\017.Locati" +
-      "onObject\"C\n\016LocationObject\022\020\n\010latitude\030\001" +
-      " \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\014\n\004size\030\003 \001(\00522\n" +
-      "\006Report\022(\n\nGetReports\022\r.ReportFilter\032\013.R" +
-      "eportListB\034\n\030via.sep3.protobuf.reportP\001b" +
-      "\006proto3"
+      "List\022\036\n\007reports\030\001 \003(\0132\r.ReportObject\"\250\001\n" +
+      "\014ReportObject\022\014\n\004date\030\002 \001(\t\022\014\n\004time\030\003 \001(" +
+      "\t\022\r\n\005proof\030\004 \001(\014\022\023\n\013description\030\005 \001(\t\022\016\n" +
+      "\006status\030\006 \001(\t\022!\n\010location\030\007 \001(\0132\017.Locati" +
+      "onObject\022\031\n\004user\030\010 \001(\0132\013.UserObject\022\n\n\002i" +
+      "d\030\001 \001(\t\"C\n\016LocationObject\022\020\n\010latitude\030\001 " +
+      "\001(\001\022\021\n\tlongitude\030\002 \001(\001\022\014\n\004size\030\003 \001(\005\".\n\n" +
+      "UserObject\022\016\n\006userId\030\001 \001(\t\022\020\n\010username\030\002" +
+      " \001(\t\"\232\001\n\022CreateReportObject\022\014\n\004date\030\001 \001(" +
+      "\t\022\014\n\004time\030\002 \001(\t\022\r\n\005proof\030\003 \001(\014\022\023\n\013descri" +
+      "ption\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022!\n\010location\030" +
+      "\006 \001(\0132\017.LocationObject\022\021\n\tcreatorId\030\007 \001(" +
+      "\t2f\n\006Report\022(\n\nGetReports\022\r.ReportFilter" +
+      "\032\013.ReportList\0222\n\014CreateReport\022\023.CreateRe" +
+      "portObject\032\r.ReportObjectB\034\n\030via.sep3.pr" +
+      "otobuf.reportP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -75,13 +92,25 @@ public final class ReportOuterClass {
     internal_static_ReportObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReportObject_descriptor,
-        new java.lang.String[] { "Date", "Time", "Proof", "Description", "Status", "Location", });
+        new java.lang.String[] { "Date", "Time", "Proof", "Description", "Status", "Location", "User", "Id", });
     internal_static_LocationObject_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_LocationObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LocationObject_descriptor,
         new java.lang.String[] { "Latitude", "Longitude", "Size", });
+    internal_static_UserObject_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_UserObject_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UserObject_descriptor,
+        new java.lang.String[] { "UserId", "Username", });
+    internal_static_CreateReportObject_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_CreateReportObject_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreateReportObject_descriptor,
+        new java.lang.String[] { "Date", "Time", "Proof", "Description", "Status", "Location", "CreatorId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

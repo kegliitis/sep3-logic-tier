@@ -18,12 +18,14 @@ message ReportList {
 
 message ReportObject {
   //if we agree on the format, this should be okay TODO:Add id?
-  string date = 1;
-  string time = 2;
-  bytes proof = 3;
-  string description = 4;
-  string status = 5;
-  LocationObject location = 6;
+  string date = 2;
+  string time = 3;
+  bytes proof = 4;
+  string description = 5;
+  string status = 6;
+  LocationObject location = 7;
+  UserObject user = 8;
+  string id =1;
 }
 
 message LocationObject {
@@ -33,6 +35,11 @@ message LocationObject {
   int32 size = 3;
 }
 
+message UserObject{
+  string userId =1;
+  string username = 2;
+}
+
 message CreateReportObject{
   string date = 1;
   string time = 2;
@@ -40,4 +47,5 @@ message CreateReportObject{
   string description = 4;
   string status = 5;
   LocationObject location = 6;
+  string creatorId = 7;
 }

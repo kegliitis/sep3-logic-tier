@@ -21,7 +21,6 @@ public class ReportsController {
     {
         try
         {
-
         Report createdReport = reportRepo.createReport(newReport);
 
          return ResponseEntity.ok(createdReport);

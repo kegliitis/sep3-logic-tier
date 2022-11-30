@@ -12,13 +12,16 @@ public class CreateReport {
     private String status;
     private Location location;
 
-    public CreateReport(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location) {
+    private String userId;
+
+    public CreateReport(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location, String userId) {
         this.date = date;
         this.time = time;
         this.proof = proof;
         this.description = description;
         this.status = status;
         this.location = location;
+        this.userId = userId;
     }
 
     public LocalDate getDate() {
@@ -67,5 +70,15 @@ public class CreateReport {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public void setUserId(String userId)
+    {
+        this.userId = userId;
+    }
+
+    public String getUserId()
+    {
+        return  userId;
     }
 }

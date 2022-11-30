@@ -12,17 +12,36 @@ public class Report
     private String status;
     private Location location;
 
-    private String id; //TODO: Fix in database also
+    private String userId;
 
-    public Report(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location)
+    private String userName;
+
+    private String reportId; //TODO: Fix in database also
+
+    public Report(LocalDate date, LocalTime time, byte[] proof, String description,
+                  String status, Location location, String userId, String userName, String reportId)
     {
-        this.id = "";
         this.date = date;
         this.time = time;
         this.proof = proof;
         this.description = description;
         this.status = status;
         this.location = location;
+        this.userId = userId;
+        this.userName = userName;
+        this.reportId = "";
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getReportId() {
+        return reportId;
     }
 
     public LocalDate getDate()
