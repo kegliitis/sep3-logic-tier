@@ -15,6 +15,10 @@ public class ReportsController {
     private IReportsRepository reportRepo;
 
 
+    public ReportsController(IReportsRepository reportRepo)
+    {
+        this.reportRepo = reportRepo;
+    }
     @RequestMapping(value = "/reports", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createReport(@RequestBody CreateReport newReport)
@@ -27,8 +31,7 @@ public class ReportsController {
         }
         catch (Exception e)
         {
-            System.out.println(e.getStackTrace());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Oh Shit!: " + e);
         }
     }
 

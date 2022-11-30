@@ -1,6 +1,5 @@
 package via.sep3.grpcclient.implementation;
 
-import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
@@ -25,10 +24,9 @@ public class ReportsClient implements IReportsClient
 
     private ReportGrpc.ReportBlockingStub reportBlockingStub = ReportGrpc.newBlockingStub(managedChannel);
 
-
     @Override
     public Report createReport(CreateReport newReport){
-        CreateReportObject input = CreateReportObject.newBuilder()
+        /*CreateReportObject input = CreateReportObject.newBuilder()
                 .setDate(newReport.getDate().toString())
                 .setTime(newReport.getTime().toString())
                 .setProof(ByteString.copyFrom(newReport.getProof()))
@@ -42,7 +40,12 @@ public class ReportsClient implements IReportsClient
         return new Report((LocalDate.parse(response.getDate())), (LocalTime.parse(response.getTime())),
                 newReport.getProof(), response.getDescription(), response.getStatus(),
                 new Location(response.getLocation().getLatitude(),response.getLocation().getLongitude(),(byte)response.getLocation().getSize()),
-                response.getId(), response.getUser().getUsername(), response.getUser().getUsername());
+                response.getId(), response.getUser().getUsername(), response.getUser().getUsername());*/
+        byte x = 10;
+        Report report = new Report(LocalDate.now(),LocalTime.now(),new byte[12342],"A new report","Cool",new Location(40.0,20.0,x),"1","James","1");
+        System.out.println(report);
+        return report;
+
     }
 
     @Override
