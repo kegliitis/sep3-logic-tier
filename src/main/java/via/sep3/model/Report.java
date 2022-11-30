@@ -12,8 +12,11 @@ public class Report
     private String status;
     private Location location;
 
+    private String id; //TODO: Fix in database also
+
     public Report(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location)
     {
+        this.id = "";
         this.date = date;
         this.time = time;
         this.proof = proof;
@@ -56,4 +59,5 @@ public class Report
     {
         this.status = status;
     }
+
 }
