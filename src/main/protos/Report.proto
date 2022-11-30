@@ -5,6 +5,7 @@ option java_package = "via.sep3.protobuf.report";
 
 service Report {
   rpc GetReports(ReportFilter) returns (ReportList);
+  rpc CreateReport(CreateReportObject) returns (ReportObject);
 }
 
 message ReportFilter {
@@ -16,7 +17,7 @@ message ReportList {
 }
 
 message ReportObject {
-  //if we agree on the format, this should be okay
+  //if we agree on the format, this should be okay TODO:Add id?
   string date = 1;
   string time = 2;
   bytes proof = 3;
@@ -30,4 +31,13 @@ message LocationObject {
   double longitude = 2;
   //there is no byte type, so it is a bit inefficient
   int32 size = 3;
+}
+
+message CreateReportObject{
+  string date = 1;
+  string time = 2;
+  bytes proof = 3;
+  string description = 4;
+  string status = 5;
+  LocationObject location = 6;
 }

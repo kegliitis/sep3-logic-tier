@@ -1,9 +1,10 @@
-package via.sep3.repository;
+package via.sep3.repository.implementation;
 
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IReportsClient;
 import via.sep3.grpcclient.implementation.ReportsClient;
-import via.sep3.intf.IReportsRepository;
+import via.sep3.repository.intf.IReportsRepository;
+import via.sep3.model.CreateReport;
 import via.sep3.model.Report;
 
 import java.util.List;
@@ -17,11 +18,23 @@ public class ReportsRepository implements IReportsRepository {
     }
 
     @Override
-    public List<Report> getReport() {
+    public List<Report> getReports() {
         try {
             return reportsClient.getReports();
         } catch (Exception ex){
             throw ex;
+        }
+    }
+
+    @Override
+    public Report createReport(CreateReport report) {
+        try
+        {
+            return reportsClient.createReport(report);
+        }
+        catch (Exception e)
+        {
+            throw e;
         }
     }
 }

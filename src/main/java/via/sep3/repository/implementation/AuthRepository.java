@@ -1,9 +1,9 @@
-package via.sep3.repository;
+package via.sep3.repository.implementation;
 
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IAuthClient;
 import via.sep3.grpcclient.implementation.AuthClient;
-import via.sep3.intf.IAuthRepository;
+import via.sep3.repository.intf.IAuthRepository;
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;
 import via.sep3.model.User;
