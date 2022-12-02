@@ -3,9 +3,8 @@ package via.sep3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import via.sep3.controller.utils.JsonUtils;
-import via.sep3.grpcclient.client.IReportsClient;
-import via.sep3.grpcclient.implementation.ReportsClient;
+import via.sep3.repository.intf.IReportsRepository;
+import via.sep3.model.CreateReport;
 import via.sep3.model.Report;
 
 import java.util.List;
@@ -13,13 +12,35 @@ import java.util.List;
 @RestController
 @CrossOrigin()
 public class ReportsController {
-    IReportsClient grpcClient = new ReportsClient();
+    private IReportsRepository reportRepo;
+
+
+    public ReportsController(IReportsRepository reportRepo)
+    {
+        this.reportRepo = reportRepo;
+    }
+    @RequestMapping(value = "/reports", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity createReport(@RequestBody CreateReport newReport)
+    {
+        try
+        {
+        Report createdReport = reportRepo.createReport(newReport);
+
+         return ResponseEntity.ok(createdReport);
+        }
+        catch (Exception e)
+        {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Oh Shit!: " + e);
+        }
+    }
+
 
     @RequestMapping(value = "/reports", method = RequestMethod.GET)
     public ResponseEntity getReports(){
         try
         {
-            List<Report> reports = grpcClient.getReports();
+            List<Report> reports = reportRepo.getReports();
 
             return ResponseEntity.ok(reports);
         } catch (Exception e) {
