@@ -1,30 +1,30 @@
 package via.sep3.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.JsonUtils;
-import via.sep3.grpcclient.GrpcClient;
-import via.sep3.grpcclient.GrpcClientImpl;
+import via.sep3.grpcclient.client.IReportsClient;
+import via.sep3.grpcclient.implementation.ReportsClient;
 import via.sep3.model.Report;
 
 import java.util.List;
 
 @RestController
-public class ReportsController
-{
-    @GetMapping("/reports")
-    public String getReports() throws Exception {
+@CrossOrigin()
+public class ReportsController {
+    IReportsClient grpcClient = new ReportsClient();
+
+    @RequestMapping(value = "/reports", method = RequestMethod.GET)
+    public ResponseEntity getReports(){
         try
         {
-            GrpcClient grpcClient = new GrpcClientImpl();
             List<Report> reports = grpcClient.getReports();
 
-            return JsonUtils.convertToJson(reports);
-
-        } catch (Exception e)
-        {
-            throw new Exception(e);
+            return ResponseEntity.ok(reports);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 }
