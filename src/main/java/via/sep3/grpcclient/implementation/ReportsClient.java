@@ -68,4 +68,12 @@ public class ReportsClient implements IReportsClient
         }
         return reports;
     }
+
+    @Override
+    public String reviewReport(ToReviewReport reviewReport, String id) {
+        Report updatedReport=getReports().get(Integer.parseInt(reviewReport.getReportId()));
+        updatedReport.setStatus(reviewReport.getUpdatedStatus());
+        return "ok";
+
+    }
 }

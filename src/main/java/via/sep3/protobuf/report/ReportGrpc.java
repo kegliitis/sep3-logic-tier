@@ -76,6 +76,37 @@ public final class ReportGrpc {
     return getCreateReportMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.report.ToReviewReport,
+      via.sep3.protobuf.report.ReviewedReport> getReviewReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReviewReport",
+      requestType = via.sep3.protobuf.report.ToReviewReport.class,
+      responseType = via.sep3.protobuf.report.ReviewedReport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.report.ToReviewReport,
+      via.sep3.protobuf.report.ReviewedReport> getReviewReportMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.report.ToReviewReport, via.sep3.protobuf.report.ReviewedReport> getReviewReportMethod;
+    if ((getReviewReportMethod = ReportGrpc.getReviewReportMethod) == null) {
+      synchronized (ReportGrpc.class) {
+        if ((getReviewReportMethod = ReportGrpc.getReviewReportMethod) == null) {
+          ReportGrpc.getReviewReportMethod = getReviewReportMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.report.ToReviewReport, via.sep3.protobuf.report.ReviewedReport>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReviewReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.ToReviewReport.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.ReviewedReport.getDefaultInstance()))
+              .setSchemaDescriptor(new ReportMethodDescriptorSupplier("ReviewReport"))
+              .build();
+        }
+      }
+    }
+    return getReviewReportMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class ReportGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateReportMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void reviewReport(via.sep3.protobuf.report.ToReviewReport request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReviewedReport> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReviewReportMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -154,6 +192,13 @@ public final class ReportGrpc {
                 via.sep3.protobuf.report.CreateReportObject,
                 via.sep3.protobuf.report.ReportObject>(
                   this, METHODID_CREATE_REPORT)))
+          .addMethod(
+            getReviewReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.report.ToReviewReport,
+                via.sep3.protobuf.report.ReviewedReport>(
+                  this, METHODID_REVIEW_REPORT)))
           .build();
     }
   }
@@ -187,6 +232,14 @@ public final class ReportGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateReportMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void reviewReport(via.sep3.protobuf.report.ToReviewReport request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReviewedReport> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReviewReportMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -215,6 +268,13 @@ public final class ReportGrpc {
     public via.sep3.protobuf.report.ReportObject createReport(via.sep3.protobuf.report.CreateReportObject request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.report.ReviewedReport reviewReport(via.sep3.protobuf.report.ToReviewReport request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReviewReportMethod(), getCallOptions(), request);
     }
   }
 
@@ -247,10 +307,19 @@ public final class ReportGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateReportMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.report.ReviewedReport> reviewReport(
+        via.sep3.protobuf.report.ToReviewReport request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReviewReportMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_REPORTS = 0;
   private static final int METHODID_CREATE_REPORT = 1;
+  private static final int METHODID_REVIEW_REPORT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -276,6 +345,10 @@ public final class ReportGrpc {
         case METHODID_CREATE_REPORT:
           serviceImpl.createReport((via.sep3.protobuf.report.CreateReportObject) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject>) responseObserver);
+          break;
+        case METHODID_REVIEW_REPORT:
+          serviceImpl.reviewReport((via.sep3.protobuf.report.ToReviewReport) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReviewedReport>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -340,6 +413,7 @@ public final class ReportGrpc {
               .setSchemaDescriptor(new ReportFileDescriptorSupplier())
               .addMethod(getGetReportsMethod())
               .addMethod(getCreateReportMethod())
+              .addMethod(getReviewReportMethod())
               .build();
         }
       }
