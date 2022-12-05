@@ -6,12 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.jwt.JwtTokenUtil;
-import via.sep3.model.GetReportDto;
 import via.sep3.repository.intf.IReportsRepository;
 import via.sep3.model.CreateReport;
 import via.sep3.model.Report;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -68,4 +66,12 @@ public class ReportsController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+
+    @PatchMapping("/reports/{id}")
+    public ResponseEntity<String> reviewReport(
+            @RequestBody ToReviewReport reportUpdate, @PathVariable ("id") String id){
+                reportRepo.reviewReport(reportUpdate,id);
+                return ResponseEntity.ok("Report reviewed");
+    }
+
 }

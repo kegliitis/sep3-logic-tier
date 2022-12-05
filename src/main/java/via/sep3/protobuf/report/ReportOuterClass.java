@@ -44,6 +44,16 @@ public final class ReportOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CreateReportObject_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ToReviewReport_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ToReviewReport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ReviewedReport_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ReviewedReport_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -66,10 +76,14 @@ public final class ReportOuterClass {
       "\t\022\014\n\004time\030\002 \001(\t\022\r\n\005proof\030\003 \001(\014\022\023\n\013descri" +
       "ption\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022!\n\010location\030" +
       "\006 \001(\0132\017.LocationObject\022\024\n\014creatorEmail\030\007" +
-      " \001(\t2f\n\006Report\022(\n\nGetReports\022\r.ReportFil" +
-      "ter\032\013.ReportList\0222\n\014CreateReport\022\023.Creat" +
-      "eReportObject\032\r.ReportObjectB\034\n\030via.sep3" +
-      ".protobuf.reportP\001b\006proto3"
+      " \001(\t\"9\n\016ToReviewReport\022\020\n\010reportId\030\001 \001(\t" +
+      "\022\025\n\rupdatedStatus\030\002 \001(\t\"&\n\016ReviewedRepor" +
+      "t\022\024\n\014confirmation\030\001 \001(\t2\230\001\n\006Report\022(\n\nGe" +
+      "tReports\022\r.ReportFilter\032\013.ReportList\0222\n\014" +
+      "CreateReport\022\023.CreateReportObject\032\r.Repo" +
+      "rtObject\0220\n\014ReviewReport\022\017.ToReviewRepor" +
+      "t\032\017.ReviewedReportB\034\n\030via.sep3.protobuf." +
+      "reportP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -111,6 +125,18 @@ public final class ReportOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateReportObject_descriptor,
         new java.lang.String[] { "Date", "Time", "Proof", "Description", "Status", "Location", "CreatorEmail", });
+    internal_static_ToReviewReport_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_ToReviewReport_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ToReviewReport_descriptor,
+        new java.lang.String[] { "ReportId", "UpdatedStatus", });
+    internal_static_ReviewedReport_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_ReviewedReport_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ReviewedReport_descriptor,
+        new java.lang.String[] { "Confirmation", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

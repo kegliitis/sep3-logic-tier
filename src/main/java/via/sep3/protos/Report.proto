@@ -6,6 +6,7 @@ option java_package = "via.sep3.protobuf.report";
 service Report {
   rpc GetReports(ReportFilter) returns (ReportList);
   rpc CreateReport(CreateReportObject) returns (ReportObject);
+  rpc ReviewReport(ToReviewReport) returns (ReviewedReport);
 }
 
 message ReportFilter {
@@ -48,4 +49,14 @@ message CreateReportObject{
   string status = 5;
   LocationObject location = 6;
   string creatorEmail = 7;
+}
+
+
+message ToReviewReport{
+  string reportId=1;
+  string updatedStatus=2;
+}
+
+message ReviewedReport{
+  string confirmation=1;
 }
