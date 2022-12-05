@@ -9,78 +9,105 @@ public interface ReportObjectOrBuilder extends
 
   /**
    * <pre>
-   *if we agree on the format, this should be okay
+   *if we agree on the format, this should be okay TODO:Add id?
    * </pre>
    *
-   * <code>string date = 1;</code>
+   * <code>string date = 2;</code>
    * @return The date.
    */
   java.lang.String getDate();
   /**
    * <pre>
-   *if we agree on the format, this should be okay
+   *if we agree on the format, this should be okay TODO:Add id?
    * </pre>
    *
-   * <code>string date = 1;</code>
+   * <code>string date = 2;</code>
    * @return The bytes for date.
    */
   com.google.protobuf.ByteString
       getDateBytes();
 
   /**
-   * <code>string time = 2;</code>
+   * <code>string time = 3;</code>
    * @return The time.
    */
   java.lang.String getTime();
   /**
-   * <code>string time = 2;</code>
+   * <code>string time = 3;</code>
    * @return The bytes for time.
    */
   com.google.protobuf.ByteString
       getTimeBytes();
 
   /**
-   * <code>bytes proof = 3;</code>
+   * <code>bytes proof = 4;</code>
    * @return The proof.
    */
   com.google.protobuf.ByteString getProof();
 
   /**
-   * <code>string description = 4;</code>
+   * <code>string description = 5;</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 4;</code>
+   * <code>string description = 5;</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>string status = 5;</code>
+   * <code>string status = 6;</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 5;</code>
+   * <code>string status = 6;</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
 
   /**
-   * <code>.LocationObject location = 6;</code>
+   * <code>.LocationObject location = 7;</code>
    * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
-   * <code>.LocationObject location = 6;</code>
+   * <code>.LocationObject location = 7;</code>
    * @return The location.
    */
   via.sep3.protobuf.report.LocationObject getLocation();
   /**
-   * <code>.LocationObject location = 6;</code>
+   * <code>.LocationObject location = 7;</code>
    */
   via.sep3.protobuf.report.LocationObjectOrBuilder getLocationOrBuilder();
+
+  /**
+   * <code>.UserObject user = 8;</code>
+   * @return Whether the user field is set.
+   */
+  boolean hasUser();
+  /**
+   * <code>.UserObject user = 8;</code>
+   * @return The user.
+   */
+  via.sep3.protobuf.report.UserObject getUser();
+  /**
+   * <code>.UserObject user = 8;</code>
+   */
+  via.sep3.protobuf.report.UserObjectOrBuilder getUserOrBuilder();
+
+  /**
+   * <code>string id = 1;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 1;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 }

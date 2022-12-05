@@ -4,31 +4,31 @@
 package via.sep3.protobuf.report;
 
 /**
- * Protobuf type {@code ReportObject}
+ * Protobuf type {@code CreateReportObject}
  */
-public final class ReportObject extends
+public final class CreateReportObject extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ReportObject)
-    ReportObjectOrBuilder {
+    // @@protoc_insertion_point(message_implements:CreateReportObject)
+    CreateReportObjectOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ReportObject.newBuilder() to construct.
-  private ReportObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateReportObject.newBuilder() to construct.
+  private CreateReportObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReportObject() {
+  private CreateReportObject() {
     date_ = "";
     time_ = "";
     proof_ = com.google.protobuf.ByteString.EMPTY;
     description_ = "";
     status_ = "";
-    id_ = "";
+    creatorEmail_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ReportObject();
+    return new CreateReportObject();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReportObject(
+  private CreateReportObject(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,39 +57,33 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            date_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            date_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             time_ = s;
             break;
           }
-          case 34: {
+          case 26: {
 
             proof_ = input.readBytes();
             break;
           }
-          case 42: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             status_ = s;
             break;
           }
-          case 58: {
+          case 50: {
             via.sep3.protobuf.report.LocationObject.Builder subBuilder = null;
             if (location_ != null) {
               subBuilder = location_.toBuilder();
@@ -102,17 +96,10 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 66: {
-            via.sep3.protobuf.report.UserObject.Builder subBuilder = null;
-            if (user_ != null) {
-              subBuilder = user_.toBuilder();
-            }
-            user_ = input.readMessage(via.sep3.protobuf.report.UserObject.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(user_);
-              user_ = subBuilder.buildPartial();
-            }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
 
+            creatorEmail_ = s;
             break;
           }
           default: {
@@ -138,25 +125,21 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sep3.protobuf.report.ReportOuterClass.internal_static_ReportObject_descriptor;
+    return via.sep3.protobuf.report.ReportOuterClass.internal_static_CreateReportObject_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sep3.protobuf.report.ReportOuterClass.internal_static_ReportObject_fieldAccessorTable
+    return via.sep3.protobuf.report.ReportOuterClass.internal_static_CreateReportObject_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sep3.protobuf.report.ReportObject.class, via.sep3.protobuf.report.ReportObject.Builder.class);
+            via.sep3.protobuf.report.CreateReportObject.class, via.sep3.protobuf.report.CreateReportObject.Builder.class);
   }
 
-  public static final int DATE_FIELD_NUMBER = 2;
+  public static final int DATE_FIELD_NUMBER = 1;
   private volatile java.lang.Object date_;
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
-   * <code>string date = 2;</code>
+   * <code>string date = 1;</code>
    * @return The date.
    */
   @java.lang.Override
@@ -173,11 +156,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
-   * <code>string date = 2;</code>
+   * <code>string date = 1;</code>
    * @return The bytes for date.
    */
   @java.lang.Override
@@ -195,10 +174,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TIME_FIELD_NUMBER = 3;
+  public static final int TIME_FIELD_NUMBER = 2;
   private volatile java.lang.Object time_;
   /**
-   * <code>string time = 3;</code>
+   * <code>string time = 2;</code>
    * @return The time.
    */
   @java.lang.Override
@@ -215,7 +194,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string time = 3;</code>
+   * <code>string time = 2;</code>
    * @return The bytes for time.
    */
   @java.lang.Override
@@ -233,10 +212,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PROOF_FIELD_NUMBER = 4;
+  public static final int PROOF_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString proof_;
   /**
-   * <code>bytes proof = 4;</code>
+   * <code>bytes proof = 3;</code>
    * @return The proof.
    */
   @java.lang.Override
@@ -244,10 +223,10 @@ private static final long serialVersionUID = 0L;
     return proof_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 5;
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object description_;
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    * @return The description.
    */
   @java.lang.Override
@@ -264,7 +243,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -282,10 +261,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 6;
+  public static final int STATUS_FIELD_NUMBER = 5;
   private volatile java.lang.Object status_;
   /**
-   * <code>string status = 6;</code>
+   * <code>string status = 5;</code>
    * @return The status.
    */
   @java.lang.Override
@@ -302,7 +281,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status = 6;</code>
+   * <code>string status = 5;</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -320,10 +299,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LOCATION_FIELD_NUMBER = 7;
+  public static final int LOCATION_FIELD_NUMBER = 6;
   private via.sep3.protobuf.report.LocationObject location_;
   /**
-   * <code>.LocationObject location = 7;</code>
+   * <code>.LocationObject location = 6;</code>
    * @return Whether the location field is set.
    */
   @java.lang.Override
@@ -331,7 +310,7 @@ private static final long serialVersionUID = 0L;
     return location_ != null;
   }
   /**
-   * <code>.LocationObject location = 7;</code>
+   * <code>.LocationObject location = 6;</code>
    * @return The location.
    */
   @java.lang.Override
@@ -339,71 +318,45 @@ private static final long serialVersionUID = 0L;
     return location_ == null ? via.sep3.protobuf.report.LocationObject.getDefaultInstance() : location_;
   }
   /**
-   * <code>.LocationObject location = 7;</code>
+   * <code>.LocationObject location = 6;</code>
    */
   @java.lang.Override
   public via.sep3.protobuf.report.LocationObjectOrBuilder getLocationOrBuilder() {
     return getLocation();
   }
 
-  public static final int USER_FIELD_NUMBER = 8;
-  private via.sep3.protobuf.report.UserObject user_;
+  public static final int CREATOREMAIL_FIELD_NUMBER = 7;
+  private volatile java.lang.Object creatorEmail_;
   /**
-   * <code>.UserObject user = 8;</code>
-   * @return Whether the user field is set.
+   * <code>string creatorEmail = 7;</code>
+   * @return The creatorEmail.
    */
   @java.lang.Override
-  public boolean hasUser() {
-    return user_ != null;
-  }
-  /**
-   * <code>.UserObject user = 8;</code>
-   * @return The user.
-   */
-  @java.lang.Override
-  public via.sep3.protobuf.report.UserObject getUser() {
-    return user_ == null ? via.sep3.protobuf.report.UserObject.getDefaultInstance() : user_;
-  }
-  /**
-   * <code>.UserObject user = 8;</code>
-   */
-  @java.lang.Override
-  public via.sep3.protobuf.report.UserObjectOrBuilder getUserOrBuilder() {
-    return getUser();
-  }
-
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
-  /**
-   * <code>string id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getCreatorEmail() {
+    java.lang.Object ref = creatorEmail_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      creatorEmail_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
+   * <code>string creatorEmail = 7;</code>
+   * @return The bytes for creatorEmail.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getCreatorEmailBytes() {
+    java.lang.Object ref = creatorEmail_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      creatorEmail_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -424,29 +377,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, date_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, date_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(time_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, time_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, time_);
     }
     if (!proof_.isEmpty()) {
-      output.writeBytes(4, proof_);
+      output.writeBytes(3, proof_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
     }
     if (location_ != null) {
-      output.writeMessage(7, getLocation());
+      output.writeMessage(6, getLocation());
     }
-    if (user_ != null) {
-      output.writeMessage(8, getUser());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creatorEmail_);
     }
     unknownFields.writeTo(output);
   }
@@ -457,32 +407,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, date_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, date_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(time_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, time_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, time_);
     }
     if (!proof_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, proof_);
+        .computeBytesSize(3, proof_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
     }
     if (location_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getLocation());
+        .computeMessageSize(6, getLocation());
     }
-    if (user_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getUser());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creatorEmail_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -494,10 +440,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sep3.protobuf.report.ReportObject)) {
+    if (!(obj instanceof via.sep3.protobuf.report.CreateReportObject)) {
       return super.equals(obj);
     }
-    via.sep3.protobuf.report.ReportObject other = (via.sep3.protobuf.report.ReportObject) obj;
+    via.sep3.protobuf.report.CreateReportObject other = (via.sep3.protobuf.report.CreateReportObject) obj;
 
     if (!getDate()
         .equals(other.getDate())) return false;
@@ -514,13 +460,8 @@ private static final long serialVersionUID = 0L;
       if (!getLocation()
           .equals(other.getLocation())) return false;
     }
-    if (hasUser() != other.hasUser()) return false;
-    if (hasUser()) {
-      if (!getUser()
-          .equals(other.getUser())) return false;
-    }
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getCreatorEmail()
+        .equals(other.getCreatorEmail())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -546,80 +487,76 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
     }
-    if (hasUser()) {
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-    }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + CREATOREMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatorEmail().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(byte[] data)
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.report.ReportObject parseDelimitedFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.report.CreateReportObject parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.report.ReportObject parseDelimitedFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.report.ReportObject parseFrom(
+  public static via.sep3.protobuf.report.CreateReportObject parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -632,7 +569,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sep3.protobuf.report.ReportObject prototype) {
+  public static Builder newBuilder(via.sep3.protobuf.report.CreateReportObject prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -648,26 +585,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ReportObject}
+   * Protobuf type {@code CreateReportObject}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ReportObject)
-      via.sep3.protobuf.report.ReportObjectOrBuilder {
+      // @@protoc_insertion_point(builder_implements:CreateReportObject)
+      via.sep3.protobuf.report.CreateReportObjectOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.protobuf.report.ReportOuterClass.internal_static_ReportObject_descriptor;
+      return via.sep3.protobuf.report.ReportOuterClass.internal_static_CreateReportObject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.protobuf.report.ReportOuterClass.internal_static_ReportObject_fieldAccessorTable
+      return via.sep3.protobuf.report.ReportOuterClass.internal_static_CreateReportObject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.protobuf.report.ReportObject.class, via.sep3.protobuf.report.ReportObject.Builder.class);
+              via.sep3.protobuf.report.CreateReportObject.class, via.sep3.protobuf.report.CreateReportObject.Builder.class);
     }
 
-    // Construct using via.sep3.protobuf.report.ReportObject.newBuilder()
+    // Construct using via.sep3.protobuf.report.CreateReportObject.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -701,13 +638,7 @@ private static final long serialVersionUID = 0L;
         location_ = null;
         locationBuilder_ = null;
       }
-      if (userBuilder_ == null) {
-        user_ = null;
-      } else {
-        user_ = null;
-        userBuilder_ = null;
-      }
-      id_ = "";
+      creatorEmail_ = "";
 
       return this;
     }
@@ -715,17 +646,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sep3.protobuf.report.ReportOuterClass.internal_static_ReportObject_descriptor;
+      return via.sep3.protobuf.report.ReportOuterClass.internal_static_CreateReportObject_descriptor;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.report.ReportObject getDefaultInstanceForType() {
-      return via.sep3.protobuf.report.ReportObject.getDefaultInstance();
+    public via.sep3.protobuf.report.CreateReportObject getDefaultInstanceForType() {
+      return via.sep3.protobuf.report.CreateReportObject.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.report.ReportObject build() {
-      via.sep3.protobuf.report.ReportObject result = buildPartial();
+    public via.sep3.protobuf.report.CreateReportObject build() {
+      via.sep3.protobuf.report.CreateReportObject result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -733,8 +664,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.report.ReportObject buildPartial() {
-      via.sep3.protobuf.report.ReportObject result = new via.sep3.protobuf.report.ReportObject(this);
+    public via.sep3.protobuf.report.CreateReportObject buildPartial() {
+      via.sep3.protobuf.report.CreateReportObject result = new via.sep3.protobuf.report.CreateReportObject(this);
       result.date_ = date_;
       result.time_ = time_;
       result.proof_ = proof_;
@@ -745,12 +676,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.location_ = locationBuilder_.build();
       }
-      if (userBuilder_ == null) {
-        result.user_ = user_;
-      } else {
-        result.user_ = userBuilder_.build();
-      }
-      result.id_ = id_;
+      result.creatorEmail_ = creatorEmail_;
       onBuilt();
       return result;
     }
@@ -789,16 +715,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sep3.protobuf.report.ReportObject) {
-        return mergeFrom((via.sep3.protobuf.report.ReportObject)other);
+      if (other instanceof via.sep3.protobuf.report.CreateReportObject) {
+        return mergeFrom((via.sep3.protobuf.report.CreateReportObject)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sep3.protobuf.report.ReportObject other) {
-      if (other == via.sep3.protobuf.report.ReportObject.getDefaultInstance()) return this;
+    public Builder mergeFrom(via.sep3.protobuf.report.CreateReportObject other) {
+      if (other == via.sep3.protobuf.report.CreateReportObject.getDefaultInstance()) return this;
       if (!other.getDate().isEmpty()) {
         date_ = other.date_;
         onChanged();
@@ -821,11 +747,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
-      if (other.hasUser()) {
-        mergeUser(other.getUser());
-      }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+      if (!other.getCreatorEmail().isEmpty()) {
+        creatorEmail_ = other.creatorEmail_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -843,11 +766,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sep3.protobuf.report.ReportObject parsedMessage = null;
+      via.sep3.protobuf.report.CreateReportObject parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sep3.protobuf.report.ReportObject) e.getUnfinishedMessage();
+        parsedMessage = (via.sep3.protobuf.report.CreateReportObject) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -859,11 +782,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object date_ = "";
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
-     * <code>string date = 2;</code>
+     * <code>string date = 1;</code>
      * @return The date.
      */
     public java.lang.String getDate() {
@@ -879,11 +798,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
-     * <code>string date = 2;</code>
+     * <code>string date = 1;</code>
      * @return The bytes for date.
      */
     public com.google.protobuf.ByteString
@@ -900,11 +815,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
-     * <code>string date = 2;</code>
+     * <code>string date = 1;</code>
      * @param value The date to set.
      * @return This builder for chaining.
      */
@@ -919,11 +830,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
-     * <code>string date = 2;</code>
+     * <code>string date = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearDate() {
@@ -933,11 +840,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
-     * <code>string date = 2;</code>
+     * <code>string date = 1;</code>
      * @param value The bytes for date to set.
      * @return This builder for chaining.
      */
@@ -955,7 +858,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object time_ = "";
     /**
-     * <code>string time = 3;</code>
+     * <code>string time = 2;</code>
      * @return The time.
      */
     public java.lang.String getTime() {
@@ -971,7 +874,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string time = 3;</code>
+     * <code>string time = 2;</code>
      * @return The bytes for time.
      */
     public com.google.protobuf.ByteString
@@ -988,7 +891,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string time = 3;</code>
+     * <code>string time = 2;</code>
      * @param value The time to set.
      * @return This builder for chaining.
      */
@@ -1003,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string time = 3;</code>
+     * <code>string time = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearTime() {
@@ -1013,7 +916,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string time = 3;</code>
+     * <code>string time = 2;</code>
      * @param value The bytes for time to set.
      * @return This builder for chaining.
      */
@@ -1031,7 +934,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString proof_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>bytes proof = 3;</code>
      * @return The proof.
      */
     @java.lang.Override
@@ -1039,7 +942,7 @@ private static final long serialVersionUID = 0L;
       return proof_;
     }
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>bytes proof = 3;</code>
      * @param value The proof to set.
      * @return This builder for chaining.
      */
@@ -1053,7 +956,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>bytes proof = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearProof() {
@@ -1065,7 +968,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1081,7 +984,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1098,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1113,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1123,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1141,7 +1044,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status_ = "";
     /**
-     * <code>string status = 6;</code>
+     * <code>string status = 5;</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -1157,7 +1060,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 6;</code>
+     * <code>string status = 5;</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -1174,7 +1077,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 6;</code>
+     * <code>string status = 5;</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -1189,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 6;</code>
+     * <code>string status = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -1199,7 +1102,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 6;</code>
+     * <code>string status = 5;</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -1219,14 +1122,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.report.LocationObject, via.sep3.protobuf.report.LocationObject.Builder, via.sep3.protobuf.report.LocationObjectOrBuilder> locationBuilder_;
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      * @return The location.
      */
     public via.sep3.protobuf.report.LocationObject getLocation() {
@@ -1237,7 +1140,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public Builder setLocation(via.sep3.protobuf.report.LocationObject value) {
       if (locationBuilder_ == null) {
@@ -1253,7 +1156,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public Builder setLocation(
         via.sep3.protobuf.report.LocationObject.Builder builderForValue) {
@@ -1267,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public Builder mergeLocation(via.sep3.protobuf.report.LocationObject value) {
       if (locationBuilder_ == null) {
@@ -1285,7 +1188,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public Builder clearLocation() {
       if (locationBuilder_ == null) {
@@ -1299,7 +1202,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public via.sep3.protobuf.report.LocationObject.Builder getLocationBuilder() {
       
@@ -1307,7 +1210,7 @@ private static final long serialVersionUID = 0L;
       return getLocationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     public via.sep3.protobuf.report.LocationObjectOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
@@ -1318,7 +1221,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.LocationObject location = 7;</code>
+     * <code>.LocationObject location = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.report.LocationObject, via.sep3.protobuf.report.LocationObject.Builder, via.sep3.protobuf.report.LocationObjectOrBuilder> 
@@ -1334,197 +1237,78 @@ private static final long serialVersionUID = 0L;
       return locationBuilder_;
     }
 
-    private via.sep3.protobuf.report.UserObject user_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.report.UserObject, via.sep3.protobuf.report.UserObject.Builder, via.sep3.protobuf.report.UserObjectOrBuilder> userBuilder_;
+    private java.lang.Object creatorEmail_ = "";
     /**
-     * <code>.UserObject user = 8;</code>
-     * @return Whether the user field is set.
+     * <code>string creatorEmail = 7;</code>
+     * @return The creatorEmail.
      */
-    public boolean hasUser() {
-      return userBuilder_ != null || user_ != null;
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     * @return The user.
-     */
-    public via.sep3.protobuf.report.UserObject getUser() {
-      if (userBuilder_ == null) {
-        return user_ == null ? via.sep3.protobuf.report.UserObject.getDefaultInstance() : user_;
-      } else {
-        return userBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public Builder setUser(via.sep3.protobuf.report.UserObject value) {
-      if (userBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        user_ = value;
-        onChanged();
-      } else {
-        userBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public Builder setUser(
-        via.sep3.protobuf.report.UserObject.Builder builderForValue) {
-      if (userBuilder_ == null) {
-        user_ = builderForValue.build();
-        onChanged();
-      } else {
-        userBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public Builder mergeUser(via.sep3.protobuf.report.UserObject value) {
-      if (userBuilder_ == null) {
-        if (user_ != null) {
-          user_ =
-            via.sep3.protobuf.report.UserObject.newBuilder(user_).mergeFrom(value).buildPartial();
-        } else {
-          user_ = value;
-        }
-        onChanged();
-      } else {
-        userBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public Builder clearUser() {
-      if (userBuilder_ == null) {
-        user_ = null;
-        onChanged();
-      } else {
-        user_ = null;
-        userBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public via.sep3.protobuf.report.UserObject.Builder getUserBuilder() {
-      
-      onChanged();
-      return getUserFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    public via.sep3.protobuf.report.UserObjectOrBuilder getUserOrBuilder() {
-      if (userBuilder_ != null) {
-        return userBuilder_.getMessageOrBuilder();
-      } else {
-        return user_ == null ?
-            via.sep3.protobuf.report.UserObject.getDefaultInstance() : user_;
-      }
-    }
-    /**
-     * <code>.UserObject user = 8;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.report.UserObject, via.sep3.protobuf.report.UserObject.Builder, via.sep3.protobuf.report.UserObjectOrBuilder> 
-        getUserFieldBuilder() {
-      if (userBuilder_ == null) {
-        userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            via.sep3.protobuf.report.UserObject, via.sep3.protobuf.report.UserObject.Builder, via.sep3.protobuf.report.UserObjectOrBuilder>(
-                getUser(),
-                getParentForChildren(),
-                isClean());
-        user_ = null;
-      }
-      return userBuilder_;
-    }
-
-    private java.lang.Object id_ = "";
-    /**
-     * <code>string id = 1;</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getCreatorEmail() {
+      java.lang.Object ref = creatorEmail_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        creatorEmail_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>string creatorEmail = 7;</code>
+     * @return The bytes for creatorEmail.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getCreatorEmailBytes() {
+      java.lang.Object ref = creatorEmail_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        creatorEmail_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The id to set.
+     * <code>string creatorEmail = 7;</code>
+     * @param value The creatorEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setCreatorEmail(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      creatorEmail_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string creatorEmail = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearCreatorEmail() {
       
-      id_ = getDefaultInstance().getId();
+      creatorEmail_ = getDefaultInstance().getCreatorEmail();
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
+     * <code>string creatorEmail = 7;</code>
+     * @param value The bytes for creatorEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setCreatorEmailBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      creatorEmail_ = value;
       onChanged();
       return this;
     }
@@ -1541,41 +1325,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ReportObject)
+    // @@protoc_insertion_point(builder_scope:CreateReportObject)
   }
 
-  // @@protoc_insertion_point(class_scope:ReportObject)
-  private static final via.sep3.protobuf.report.ReportObject DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:CreateReportObject)
+  private static final via.sep3.protobuf.report.CreateReportObject DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sep3.protobuf.report.ReportObject();
+    DEFAULT_INSTANCE = new via.sep3.protobuf.report.CreateReportObject();
   }
 
-  public static via.sep3.protobuf.report.ReportObject getDefaultInstance() {
+  public static via.sep3.protobuf.report.CreateReportObject getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReportObject>
-      PARSER = new com.google.protobuf.AbstractParser<ReportObject>() {
+  private static final com.google.protobuf.Parser<CreateReportObject>
+      PARSER = new com.google.protobuf.AbstractParser<CreateReportObject>() {
     @java.lang.Override
-    public ReportObject parsePartialFrom(
+    public CreateReportObject parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReportObject(input, extensionRegistry);
+      return new CreateReportObject(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ReportObject> parser() {
+  public static com.google.protobuf.Parser<CreateReportObject> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReportObject> getParserForType() {
+  public com.google.protobuf.Parser<CreateReportObject> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sep3.protobuf.report.ReportObject getDefaultInstanceForType() {
+  public via.sep3.protobuf.report.CreateReportObject getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

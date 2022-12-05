@@ -12,7 +12,14 @@ public class Report
     private String status;
     private Location location;
 
-    public Report(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location)
+    private String userId;
+
+    private String userName;
+
+    private String reportId; //TODO: Fix in database also
+
+    public Report(LocalDate date, LocalTime time, byte[] proof, String description,
+                  String status, Location location, String userId, String userName, String reportId)
     {
         this.date = date;
         this.time = time;
@@ -20,6 +27,21 @@ public class Report
         this.description = description;
         this.status = status;
         this.location = location;
+        this.userId = userId;
+        this.userName = userName;
+        this.reportId = "";
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getReportId() {
+        return reportId;
     }
 
     public LocalDate getDate()
@@ -56,4 +78,5 @@ public class Report
     {
         this.status = status;
     }
+
 }

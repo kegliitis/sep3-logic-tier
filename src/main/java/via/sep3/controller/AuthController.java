@@ -3,11 +3,11 @@ package via.sep3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.jwt.JwtTokenUtil;
-import via.sep3.intf.IAuthRepository;
+import via.sep3.repository.intf.IAuthRepository;
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;
 import via.sep3.model.User;
-import via.sep3.repository.AuthRepository;
+import via.sep3.repository.implementation.AuthRepository;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

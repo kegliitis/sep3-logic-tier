@@ -1,4 +1,4 @@
-package via.sep3.intf;
+package via.sep3.repository.intf;
 
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;

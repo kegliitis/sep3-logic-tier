@@ -45,6 +45,37 @@ public final class ReportGrpc {
     return getGetReportsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.report.CreateReportObject,
+      via.sep3.protobuf.report.ReportObject> getCreateReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReport",
+      requestType = via.sep3.protobuf.report.CreateReportObject.class,
+      responseType = via.sep3.protobuf.report.ReportObject.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.report.CreateReportObject,
+      via.sep3.protobuf.report.ReportObject> getCreateReportMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.report.CreateReportObject, via.sep3.protobuf.report.ReportObject> getCreateReportMethod;
+    if ((getCreateReportMethod = ReportGrpc.getCreateReportMethod) == null) {
+      synchronized (ReportGrpc.class) {
+        if ((getCreateReportMethod = ReportGrpc.getCreateReportMethod) == null) {
+          ReportGrpc.getCreateReportMethod = getCreateReportMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.report.CreateReportObject, via.sep3.protobuf.report.ReportObject>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.CreateReportObject.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.ReportObject.getDefaultInstance()))
+              .setSchemaDescriptor(new ReportMethodDescriptorSupplier("CreateReport"))
+              .build();
+        }
+      }
+    }
+    return getCreateReportMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +131,13 @@ public final class ReportGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetReportsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void createReport(via.sep3.protobuf.report.CreateReportObject request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateReportMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -109,6 +147,13 @@ public final class ReportGrpc {
                 via.sep3.protobuf.report.ReportFilter,
                 via.sep3.protobuf.report.ReportList>(
                   this, METHODID_GET_REPORTS)))
+          .addMethod(
+            getCreateReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.report.CreateReportObject,
+                via.sep3.protobuf.report.ReportObject>(
+                  this, METHODID_CREATE_REPORT)))
           .build();
     }
   }
@@ -134,6 +179,14 @@ public final class ReportGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetReportsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createReport(via.sep3.protobuf.report.CreateReportObject request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReportMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -155,6 +208,13 @@ public final class ReportGrpc {
     public via.sep3.protobuf.report.ReportList getReports(via.sep3.protobuf.report.ReportFilter request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.report.ReportObject createReport(via.sep3.protobuf.report.CreateReportObject request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportMethod(), getCallOptions(), request);
     }
   }
 
@@ -179,9 +239,18 @@ public final class ReportGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReportsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.report.ReportObject> createReport(
+        via.sep3.protobuf.report.CreateReportObject request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReportMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_REPORTS = 0;
+  private static final int METHODID_CREATE_REPORT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -203,6 +272,10 @@ public final class ReportGrpc {
         case METHODID_GET_REPORTS:
           serviceImpl.getReports((via.sep3.protobuf.report.ReportFilter) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportList>) responseObserver);
+          break;
+        case METHODID_CREATE_REPORT:
+          serviceImpl.createReport((via.sep3.protobuf.report.CreateReportObject) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -266,6 +339,7 @@ public final class ReportGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new ReportFileDescriptorSupplier())
               .addMethod(getGetReportsMethod())
+              .addMethod(getCreateReportMethod())
               .build();
         }
       }
