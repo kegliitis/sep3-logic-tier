@@ -70,10 +70,15 @@ public class ReportsClient implements IReportsClient
     }
 
     @Override
-    public String reviewReport(ToReviewReport reviewReport, String id) {
-        Report updatedReport=getReports().get(Integer.parseInt(reviewReport.getReportId()));
-        updatedReport.setStatus(reviewReport.getUpdatedStatus());
-        return "ok";
+    public String reviewReport(String id, String status) {
+        ToReviewReport toReviewReport = ToReviewReport.newBuilder()
+                .setReportId(id)
+                .setUpdatedStatus(status)
+                .build();
+
+        ReviewedReport reviewedReport = reportBlockingStub.reviewReport(toReviewReport);
+
+        return reviewedReport.getConfirmation();
 
     }
 }

@@ -10,5 +10,5 @@ public interface IReportsRepository {
     List<Report> getReports();
     Report createReport(CreateReport report, String creatorEmail);
 
-    String reviewReport(ToReviewReport report,String id);
+    String reviewReport(String id, String status);
 }

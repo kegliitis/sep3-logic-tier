@@ -12,5 +12,5 @@ public interface IReportsClient
     Report createReport(CreateReport newReport, String creatorEmail);
     List<Report> getReports();
 
-    String reviewReport(ToReviewReport reviewReport, String id);
+    String reviewReport(String id, String status);
 }

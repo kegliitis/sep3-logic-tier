@@ -37,9 +37,10 @@ public class ReportsRepository implements IReportsRepository {
     }
 
     @Override
-    public String reviewReport(ToReviewReport report, String id) {
+    public String reviewReport(String id, String status)
+    {
         try {
-            return reportsClient.reviewReport(report, id);
+            return reportsClient.reviewReport(id, status);
         }
         catch (Exception e) {
             throw e;
