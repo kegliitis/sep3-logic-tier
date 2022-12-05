@@ -47,5 +47,5 @@ message CreateReportObject{
   string description = 4;
   string status = 5;
   LocationObject location = 6;
-  string creatorId = 7;
+  string creatorEmail = 7;
 }

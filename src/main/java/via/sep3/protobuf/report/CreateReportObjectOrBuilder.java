@@ -77,14 +77,14 @@ public interface CreateReportObjectOrBuilder extends
   via.sep3.protobuf.report.LocationObjectOrBuilder getLocationOrBuilder();
 
   /**
-   * <code>string creatorId = 7;</code>
-   * @return The creatorId.
+   * <code>string creatorEmail = 7;</code>
+   * @return The creatorEmail.
    */
-  java.lang.String getCreatorId();
+  java.lang.String getCreatorEmail();
   /**
-   * <code>string creatorId = 7;</code>
-   * @return The bytes for creatorId.
+   * <code>string creatorEmail = 7;</code>
+   * @return The bytes for creatorEmail.
    */
   com.google.protobuf.ByteString
-      getCreatorIdBytes();
+      getCreatorEmailBytes();
 }

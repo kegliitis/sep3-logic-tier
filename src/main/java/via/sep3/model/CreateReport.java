@@ -5,38 +5,35 @@ import java.time.LocalTime;
 
 public class CreateReport {
 
-    private LocalDate date;
-    private LocalTime time;
+    private int[] date;
+    private int[] time;
     private byte[] proof;
     private String description;
     private String status;
     private Location location;
 
-    private String userId;
-
-    public CreateReport(LocalDate date, LocalTime time, byte[] proof, String description, String status, Location location, String userId) {
+    public CreateReport(int[] date, int[] time, byte[] proof, String description, String status, Location location) {
         this.date = date;
         this.time = time;
         this.proof = proof;
         this.description = description;
         this.status = status;
         this.location = location;
-        this.userId = userId;
     }
 
-    public LocalDate getDate() {
+    public int[] getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(int[] date) {
         this.date = date;
     }
 
-    public LocalTime getTime() {
+    public int[] getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(int[] time) {
         this.time = time;
     }
 
@@ -70,15 +67,5 @@ public class CreateReport {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public void setUserId(String userId)
-    {
-        this.userId = userId;
-    }
-
-    public String getUserId()
-    {
-        return  userId;
     }
 }

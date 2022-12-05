@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IReportsRepository {
     List<Report> getReports();
-    Report createReport(CreateReport report);
+    Report createReport(CreateReport report, String creatorEmail);
 }

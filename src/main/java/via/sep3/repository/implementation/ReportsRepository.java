@@ -27,10 +27,10 @@ public class ReportsRepository implements IReportsRepository {
     }
 
     @Override
-    public Report createReport(CreateReport report) {
+    public Report createReport(CreateReport report, String creatorEmail) {
         try
         {
-            return reportsClient.createReport(report);
+            return reportsClient.createReport(report, creatorEmail);
         }
         catch (Exception e)
         {

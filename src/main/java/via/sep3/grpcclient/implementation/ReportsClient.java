@@ -1,5 +1,6 @@
 package via.sep3.grpcclient.implementation;
 
+import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
@@ -25,27 +26,29 @@ public class ReportsClient implements IReportsClient
     private ReportGrpc.ReportBlockingStub reportBlockingStub = ReportGrpc.newBlockingStub(managedChannel);
 
     @Override
-    public Report createReport(CreateReport newReport){
-        /*CreateReportObject input = CreateReportObject.newBuilder()
-                .setDate(newReport.getDate().toString())
-                .setTime(newReport.getTime().toString())
+    public Report createReport(CreateReport newReport, String creatorEmail){
+        LocationObject location = LocationObject.newBuilder()
+                .setLatitude(newReport.getLocation().getLatitude())
+                .setLongitude(newReport.getLocation().getLongitude())
+                .setSize(newReport.getLocation().getSize())
+                .build();
+
+        CreateReportObject input = CreateReportObject.newBuilder()
+                .setDate(String.format("%04d/%02d/%02d", newReport.getDate()[0], newReport.getDate()[1], newReport.getDate()[2]))
+                .setTime(String.format("%02d:%02d:%02d", newReport.getTime()[0], newReport.getTime()[1], newReport.getTime()[2]))
+                .setLocation(location)
                 .setProof(ByteString.copyFrom(newReport.getProof()))
                 .setDescription(newReport.getDescription())
                 .setStatus(newReport.getStatus())
-                .setCreatorId(newReport.getUserId())
+                .setCreatorEmail(creatorEmail)
                 .build();
 
         ReportObject response = reportBlockingStub.createReport(input);
 
         return new Report((LocalDate.parse(response.getDate())), (LocalTime.parse(response.getTime())),
-                newReport.getProof(), response.getDescription(), response.getStatus(),
+                response.getProof().toByteArray(), response.getDescription(), response.getStatus(),
                 new Location(response.getLocation().getLatitude(),response.getLocation().getLongitude(),(byte)response.getLocation().getSize()),
-                response.getId(), response.getUser().getUsername(), response.getUser().getUsername());*/
-        byte x = 10;
-        Report report = new Report(LocalDate.now(),LocalTime.now(),new byte[12342],"A new report","Cool",new Location(40.0,20.0,x),"1","James","1");
-        System.out.println(report);
-        return report;
-
+                response.getId(), response.getUser().getUsername(), response.getUser().getUsername());
     }
 
     @Override

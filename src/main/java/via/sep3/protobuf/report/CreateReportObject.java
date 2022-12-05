@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
     proof_ = com.google.protobuf.ByteString.EMPTY;
     description_ = "";
     status_ = "";
-    creatorId_ = "";
+    creatorEmail_ = "";
   }
 
   @java.lang.Override
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            creatorId_ = s;
+            creatorEmail_ = s;
             break;
           }
           default: {
@@ -325,38 +325,38 @@ private static final long serialVersionUID = 0L;
     return getLocation();
   }
 
-  public static final int CREATORID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object creatorId_;
+  public static final int CREATOREMAIL_FIELD_NUMBER = 7;
+  private volatile java.lang.Object creatorEmail_;
   /**
-   * <code>string creatorId = 7;</code>
-   * @return The creatorId.
+   * <code>string creatorEmail = 7;</code>
+   * @return The creatorEmail.
    */
   @java.lang.Override
-  public java.lang.String getCreatorId() {
-    java.lang.Object ref = creatorId_;
+  public java.lang.String getCreatorEmail() {
+    java.lang.Object ref = creatorEmail_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      creatorId_ = s;
+      creatorEmail_ = s;
       return s;
     }
   }
   /**
-   * <code>string creatorId = 7;</code>
-   * @return The bytes for creatorId.
+   * <code>string creatorEmail = 7;</code>
+   * @return The bytes for creatorEmail.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCreatorIdBytes() {
-    java.lang.Object ref = creatorId_;
+      getCreatorEmailBytes() {
+    java.lang.Object ref = creatorEmail_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      creatorId_ = b;
+      creatorEmail_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -395,8 +395,8 @@ private static final long serialVersionUID = 0L;
     if (location_ != null) {
       output.writeMessage(6, getLocation());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creatorId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creatorEmail_);
     }
     unknownFields.writeTo(output);
   }
@@ -427,8 +427,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getLocation());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creatorId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creatorEmail_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,8 +460,8 @@ private static final long serialVersionUID = 0L;
       if (!getLocation()
           .equals(other.getLocation())) return false;
     }
-    if (!getCreatorId()
-        .equals(other.getCreatorId())) return false;
+    if (!getCreatorEmail()
+        .equals(other.getCreatorEmail())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,8 +487,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
     }
-    hash = (37 * hash) + CREATORID_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatorId().hashCode();
+    hash = (37 * hash) + CREATOREMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatorEmail().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
         location_ = null;
         locationBuilder_ = null;
       }
-      creatorId_ = "";
+      creatorEmail_ = "";
 
       return this;
     }
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.location_ = locationBuilder_.build();
       }
-      result.creatorId_ = creatorId_;
+      result.creatorEmail_ = creatorEmail_;
       onBuilt();
       return result;
     }
@@ -747,8 +747,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
-      if (!other.getCreatorId().isEmpty()) {
-        creatorId_ = other.creatorId_;
+      if (!other.getCreatorEmail().isEmpty()) {
+        creatorEmail_ = other.creatorEmail_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1237,78 +1237,78 @@ private static final long serialVersionUID = 0L;
       return locationBuilder_;
     }
 
-    private java.lang.Object creatorId_ = "";
+    private java.lang.Object creatorEmail_ = "";
     /**
-     * <code>string creatorId = 7;</code>
-     * @return The creatorId.
+     * <code>string creatorEmail = 7;</code>
+     * @return The creatorEmail.
      */
-    public java.lang.String getCreatorId() {
-      java.lang.Object ref = creatorId_;
+    public java.lang.String getCreatorEmail() {
+      java.lang.Object ref = creatorEmail_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        creatorId_ = s;
+        creatorEmail_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string creatorId = 7;</code>
-     * @return The bytes for creatorId.
+     * <code>string creatorEmail = 7;</code>
+     * @return The bytes for creatorEmail.
      */
     public com.google.protobuf.ByteString
-        getCreatorIdBytes() {
-      java.lang.Object ref = creatorId_;
+        getCreatorEmailBytes() {
+      java.lang.Object ref = creatorEmail_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        creatorId_ = b;
+        creatorEmail_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string creatorId = 7;</code>
-     * @param value The creatorId to set.
+     * <code>string creatorEmail = 7;</code>
+     * @param value The creatorEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatorId(
+    public Builder setCreatorEmail(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      creatorId_ = value;
+      creatorEmail_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string creatorId = 7;</code>
+     * <code>string creatorEmail = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCreatorId() {
+    public Builder clearCreatorEmail() {
       
-      creatorId_ = getDefaultInstance().getCreatorId();
+      creatorEmail_ = getDefaultInstance().getCreatorEmail();
       onChanged();
       return this;
     }
     /**
-     * <code>string creatorId = 7;</code>
-     * @param value The bytes for creatorId to set.
+     * <code>string creatorEmail = 7;</code>
+     * @param value The bytes for creatorEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatorIdBytes(
+    public Builder setCreatorEmailBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      creatorId_ = value;
+      creatorEmail_ = value;
       onChanged();
       return this;
     }

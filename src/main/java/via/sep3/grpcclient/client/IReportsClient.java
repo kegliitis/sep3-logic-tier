@@ -8,6 +8,6 @@ import java.util.List;
 public interface IReportsClient
 {
 
-    Report createReport(CreateReport newReport);
+    Report createReport(CreateReport newReport, String creatorEmail);
     List<Report> getReports();
 }
