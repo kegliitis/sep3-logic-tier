@@ -4,12 +4,12 @@ option java_multiple_files = true;
 option java_package = "via.sep3.protobuf.report";
 
 service Report {
-  rpc GetReports(ReportFilter) returns (ReportList);
+  rpc GetReports(ReportsFilter) returns (ReportList);
   rpc CreateReport(CreateReportObject) returns (ReportObject);
   rpc ReviewReport(ToReviewReport) returns (ReviewedReport);
 }
 
-message ReportFilter {
+message ReportsFilter {
   string email = 1;
   bool approved = 2;
 }
@@ -21,7 +21,7 @@ message ReportList {
 message ReportObject {
   string date = 2;
   string time = 3;
-  bytes proof = 4;
+  optional bytes proof = 4;
   string description = 5;
   string status = 6;
   LocationObject location = 7;
