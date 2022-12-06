@@ -1,9 +1,8 @@
-package via.sep3.model;
+package via.sep3.model.dtos;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import via.sep3.model.Location;
 
-public class GetReportDto
+public class GetReportResponseDto
 {
     private String id;
     private int[] date;
@@ -13,11 +12,11 @@ public class GetReportDto
     private String status;
     private Location location;
 
-    public GetReportDto()
+    public GetReportResponseDto()
     {
     }
 
-    public GetReportDto(String id, int[] date, int[] time, byte[] proof, String description, String status, Location location)
+    public GetReportResponseDto(String id, int[] date, int[] time, byte[] proof, String description, String status, Location location)
     {
         this.id = id;
         this.date = date;

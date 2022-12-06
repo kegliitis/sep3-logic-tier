@@ -3,8 +3,8 @@
 
 package via.sep3.protobuf.report;
 
-public interface ReportFilterOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ReportFilter)
+public interface ReportsFilterOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ReportsFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**

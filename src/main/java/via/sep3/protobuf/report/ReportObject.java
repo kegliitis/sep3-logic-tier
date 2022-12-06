@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-
+            bitField0_ |= 0x00000001;
             proof_ = input.readBytes();
             break;
           }
@@ -149,13 +150,10 @@ private static final long serialVersionUID = 0L;
             via.sep3.protobuf.report.ReportObject.class, via.sep3.protobuf.report.ReportObject.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DATE_FIELD_NUMBER = 2;
   private volatile java.lang.Object date_;
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The date.
    */
@@ -173,10 +171,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The bytes for date.
    */
@@ -236,7 +230,15 @@ private static final long serialVersionUID = 0L;
   public static final int PROOF_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString proof_;
   /**
-   * <code>bytes proof = 4;</code>
+   * <code>optional bytes proof = 4;</code>
+   * @return Whether the proof field is set.
+   */
+  @java.lang.Override
+  public boolean hasProof() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional bytes proof = 4;</code>
    * @return The proof.
    */
   @java.lang.Override
@@ -433,7 +435,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(time_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, time_);
     }
-    if (!proof_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBytes(4, proof_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
@@ -466,7 +468,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(time_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, time_);
     }
-    if (!proof_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(4, proof_);
     }
@@ -503,8 +505,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDate())) return false;
     if (!getTime()
         .equals(other.getTime())) return false;
-    if (!getProof()
-        .equals(other.getProof())) return false;
+    if (hasProof() != other.hasProof()) return false;
+    if (hasProof()) {
+      if (!getProof()
+          .equals(other.getProof())) return false;
+    }
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (!getStatus()
@@ -536,8 +541,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDate().hashCode();
     hash = (37 * hash) + TIME_FIELD_NUMBER;
     hash = (53 * hash) + getTime().hashCode();
-    hash = (37 * hash) + PROOF_FIELD_NUMBER;
-    hash = (53 * hash) + getProof().hashCode();
+    if (hasProof()) {
+      hash = (37 * hash) + PROOF_FIELD_NUMBER;
+      hash = (53 * hash) + getProof().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -690,7 +697,7 @@ private static final long serialVersionUID = 0L;
       time_ = "";
 
       proof_ = com.google.protobuf.ByteString.EMPTY;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       status_ = "";
@@ -735,8 +742,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public via.sep3.protobuf.report.ReportObject buildPartial() {
       via.sep3.protobuf.report.ReportObject result = new via.sep3.protobuf.report.ReportObject(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.date_ = date_;
       result.time_ = time_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.proof_ = proof_;
       result.description_ = description_;
       result.status_ = status_;
@@ -751,6 +763,7 @@ private static final long serialVersionUID = 0L;
         result.user_ = userBuilder_.build();
       }
       result.id_ = id_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -807,7 +820,7 @@ private static final long serialVersionUID = 0L;
         time_ = other.time_;
         onChanged();
       }
-      if (other.getProof() != com.google.protobuf.ByteString.EMPTY) {
+      if (other.hasProof()) {
         setProof(other.getProof());
       }
       if (!other.getDescription().isEmpty()) {
@@ -856,13 +869,10 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object date_ = "";
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return The date.
      */
@@ -879,10 +889,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return The bytes for date.
      */
@@ -900,10 +906,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @param value The date to set.
      * @return This builder for chaining.
@@ -919,10 +921,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return This builder for chaining.
      */
@@ -933,10 +931,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @param value The bytes for date to set.
      * @return This builder for chaining.
@@ -1031,7 +1025,15 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString proof_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>optional bytes proof = 4;</code>
+     * @return Whether the proof field is set.
+     */
+    @java.lang.Override
+    public boolean hasProof() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional bytes proof = 4;</code>
      * @return The proof.
      */
     @java.lang.Override
@@ -1039,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       return proof_;
     }
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>optional bytes proof = 4;</code>
      * @param value The proof to set.
      * @return This builder for chaining.
      */
@@ -1047,17 +1049,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       proof_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bytes proof = 4;</code>
+     * <code>optional bytes proof = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearProof() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       proof_ = getDefaultInstance().getProof();
       onChanged();
       return this;

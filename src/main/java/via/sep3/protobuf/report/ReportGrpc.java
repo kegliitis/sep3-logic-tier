@@ -14,27 +14,27 @@ public final class ReportGrpc {
   public static final String SERVICE_NAME = "Report";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportFilter,
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportsFilter,
       via.sep3.protobuf.report.ReportList> getGetReportsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetReports",
-      requestType = via.sep3.protobuf.report.ReportFilter.class,
+      requestType = via.sep3.protobuf.report.ReportsFilter.class,
       responseType = via.sep3.protobuf.report.ReportList.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportFilter,
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportsFilter,
       via.sep3.protobuf.report.ReportList> getGetReportsMethod() {
-    io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportFilter, via.sep3.protobuf.report.ReportList> getGetReportsMethod;
+    io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportsFilter, via.sep3.protobuf.report.ReportList> getGetReportsMethod;
     if ((getGetReportsMethod = ReportGrpc.getGetReportsMethod) == null) {
       synchronized (ReportGrpc.class) {
         if ((getGetReportsMethod = ReportGrpc.getGetReportsMethod) == null) {
           ReportGrpc.getGetReportsMethod = getGetReportsMethod =
-              io.grpc.MethodDescriptor.<via.sep3.protobuf.report.ReportFilter, via.sep3.protobuf.report.ReportList>newBuilder()
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.report.ReportsFilter, via.sep3.protobuf.report.ReportList>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReports"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sep3.protobuf.report.ReportFilter.getDefaultInstance()))
+                  via.sep3.protobuf.report.ReportsFilter.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   via.sep3.protobuf.report.ReportList.getDefaultInstance()))
               .setSchemaDescriptor(new ReportMethodDescriptorSupplier("GetReports"))
@@ -107,6 +107,37 @@ public final class ReportGrpc {
     return getReviewReportMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportId,
+      via.sep3.protobuf.report.ReportObject> getGetReportByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportById",
+      requestType = via.sep3.protobuf.report.ReportId.class,
+      responseType = via.sep3.protobuf.report.ReportObject.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportId,
+      via.sep3.protobuf.report.ReportObject> getGetReportByIdMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.report.ReportId, via.sep3.protobuf.report.ReportObject> getGetReportByIdMethod;
+    if ((getGetReportByIdMethod = ReportGrpc.getGetReportByIdMethod) == null) {
+      synchronized (ReportGrpc.class) {
+        if ((getGetReportByIdMethod = ReportGrpc.getGetReportByIdMethod) == null) {
+          ReportGrpc.getGetReportByIdMethod = getGetReportByIdMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.report.ReportId, via.sep3.protobuf.report.ReportObject>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReportById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.ReportId.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.report.ReportObject.getDefaultInstance()))
+              .setSchemaDescriptor(new ReportMethodDescriptorSupplier("GetReportById"))
+              .build();
+        }
+      }
+    }
+    return getGetReportByIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -157,7 +188,7 @@ public final class ReportGrpc {
 
     /**
      */
-    public void getReports(via.sep3.protobuf.report.ReportFilter request,
+    public void getReports(via.sep3.protobuf.report.ReportsFilter request,
         io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportList> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetReportsMethod(), responseObserver);
     }
@@ -176,13 +207,20 @@ public final class ReportGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReviewReportMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getReportById(via.sep3.protobuf.report.ReportId request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetReportByIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetReportsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sep3.protobuf.report.ReportFilter,
+                via.sep3.protobuf.report.ReportsFilter,
                 via.sep3.protobuf.report.ReportList>(
                   this, METHODID_GET_REPORTS)))
           .addMethod(
@@ -199,6 +237,13 @@ public final class ReportGrpc {
                 via.sep3.protobuf.report.ToReviewReport,
                 via.sep3.protobuf.report.ReviewedReport>(
                   this, METHODID_REVIEW_REPORT)))
+          .addMethod(
+            getGetReportByIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.report.ReportId,
+                via.sep3.protobuf.report.ReportObject>(
+                  this, METHODID_GET_REPORT_BY_ID)))
           .build();
     }
   }
@@ -219,7 +264,7 @@ public final class ReportGrpc {
 
     /**
      */
-    public void getReports(via.sep3.protobuf.report.ReportFilter request,
+    public void getReports(via.sep3.protobuf.report.ReportsFilter request,
         io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportList> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetReportsMethod(), getCallOptions()), request, responseObserver);
@@ -240,6 +285,14 @@ public final class ReportGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReviewReportMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getReportById(via.sep3.protobuf.report.ReportId request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportByIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -258,7 +311,7 @@ public final class ReportGrpc {
 
     /**
      */
-    public via.sep3.protobuf.report.ReportList getReports(via.sep3.protobuf.report.ReportFilter request) {
+    public via.sep3.protobuf.report.ReportList getReports(via.sep3.protobuf.report.ReportsFilter request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReportsMethod(), getCallOptions(), request);
     }
@@ -275,6 +328,13 @@ public final class ReportGrpc {
     public via.sep3.protobuf.report.ReviewedReport reviewReport(via.sep3.protobuf.report.ToReviewReport request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReviewReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.report.ReportObject getReportById(via.sep3.protobuf.report.ReportId request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportByIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -295,7 +355,7 @@ public final class ReportGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.report.ReportList> getReports(
-        via.sep3.protobuf.report.ReportFilter request) {
+        via.sep3.protobuf.report.ReportsFilter request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReportsMethod(), getCallOptions()), request);
     }
@@ -315,11 +375,20 @@ public final class ReportGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReviewReportMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.report.ReportObject> getReportById(
+        via.sep3.protobuf.report.ReportId request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportByIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_REPORTS = 0;
   private static final int METHODID_CREATE_REPORT = 1;
   private static final int METHODID_REVIEW_REPORT = 2;
+  private static final int METHODID_GET_REPORT_BY_ID = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -339,7 +408,7 @@ public final class ReportGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_REPORTS:
-          serviceImpl.getReports((via.sep3.protobuf.report.ReportFilter) request,
+          serviceImpl.getReports((via.sep3.protobuf.report.ReportsFilter) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportList>) responseObserver);
           break;
         case METHODID_CREATE_REPORT:
@@ -349,6 +418,10 @@ public final class ReportGrpc {
         case METHODID_REVIEW_REPORT:
           serviceImpl.reviewReport((via.sep3.protobuf.report.ToReviewReport) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReviewedReport>) responseObserver);
+          break;
+        case METHODID_GET_REPORT_BY_ID:
+          serviceImpl.getReportById((via.sep3.protobuf.report.ReportId) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.report.ReportObject>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -414,6 +487,7 @@ public final class ReportGrpc {
               .addMethod(getGetReportsMethod())
               .addMethod(getCreateReportMethod())
               .addMethod(getReviewReportMethod())
+              .addMethod(getGetReportByIdMethod())
               .build();
         }
       }
