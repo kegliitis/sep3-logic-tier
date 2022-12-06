@@ -152,10 +152,6 @@ private static final long serialVersionUID = 0L;
   public static final int DATE_FIELD_NUMBER = 2;
   private volatile java.lang.Object date_;
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The date.
    */
@@ -173,10 +169,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The bytes for date.
    */
@@ -859,10 +851,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object date_ = "";
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return The date.
      */
@@ -879,10 +867,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return The bytes for date.
      */
@@ -900,10 +884,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @param value The date to set.
      * @return This builder for chaining.
@@ -919,10 +899,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @return This builder for chaining.
      */
@@ -933,10 +909,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *if we agree on the format, this should be okay TODO:Add id?
-     * </pre>
-     *
      * <code>string date = 2;</code>
      * @param value The bytes for date to set.
      * @return This builder for chaining.

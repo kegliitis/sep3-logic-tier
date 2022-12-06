@@ -6,4 +6,22 @@ package via.sep3.protobuf.report;
 public interface ReportFilterOrBuilder extends
     // @@protoc_insertion_point(interface_extends:ReportFilter)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>string email = 1;</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>string email = 1;</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
+
+  /**
+   * <code>bool approved = 2;</code>
+   * @return The approved.
+   */
+  boolean getApproved();
 }

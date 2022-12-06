@@ -88,7 +88,7 @@
                         <configuration>
                             <protocVersion>3.21.4</protocVersion>
                             <inputDirectories>
-                                <include>src/main/protos</include>
+                                <include>src/main/java/via/sep3/protos</include>
                             </inputDirectories>
 
                             <outputTargets>

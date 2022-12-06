@@ -52,9 +52,12 @@ public class ReportsClient implements IReportsClient
     }
 
     @Override
-    public List<Report> getReports()
+    public List<Report> getReports(String email, boolean approved)
     {
-        ReportFilter filter = ReportFilter.newBuilder().build();
+        ReportFilter filter = ReportFilter.newBuilder()
+                .setEmail(email)
+                .setApproved(approved)
+                .build();
         ReportList reportList = reportBlockingStub.getReports(filter);
         List<Report> reports = new ArrayList<>();
 

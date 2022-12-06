@@ -10,7 +10,8 @@ service Report {
 }
 
 message ReportFilter {
-  //TODO implement filters
+  string email = 1;
+  bool approved = 2;
 }
 
 message ReportList {

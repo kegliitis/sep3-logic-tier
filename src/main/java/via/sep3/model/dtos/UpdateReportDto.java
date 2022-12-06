@@ -1,4 +1,4 @@
-package via.sep3.model;
+package via.sep3.model.dtos;
 
 public class UpdateReportDto
 {

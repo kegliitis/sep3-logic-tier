@@ -4,10 +4,6 @@
 package via.sep3.protobuf.report;
 
 /**
- * <pre>
- *TODO implement filters
- * </pre>
- *
  * Protobuf type {@code ReportFilter}
  */
 public final class ReportFilter extends
@@ -20,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ReportFilter() {
+    email_ = "";
   }
 
   @java.lang.Override
@@ -52,6 +49,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            email_ = s;
+            break;
+          }
+          case 16: {
+
+            approved_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -86,6 +94,55 @@ private static final long serialVersionUID = 0L;
             via.sep3.protobuf.report.ReportFilter.class, via.sep3.protobuf.report.ReportFilter.Builder.class);
   }
 
+  public static final int EMAIL_FIELD_NUMBER = 1;
+  private volatile java.lang.Object email_;
+  /**
+   * <code>string email = 1;</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string email = 1;</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVED_FIELD_NUMBER = 2;
+  private boolean approved_;
+  /**
+   * <code>bool approved = 2;</code>
+   * @return The approved.
+   */
+  @java.lang.Override
+  public boolean getApproved() {
+    return approved_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -100,6 +157,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+    }
+    if (approved_ != false) {
+      output.writeBool(2, approved_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -109,6 +172,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    }
+    if (approved_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, approved_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -124,6 +194,10 @@ private static final long serialVersionUID = 0L;
     }
     via.sep3.protobuf.report.ReportFilter other = (via.sep3.protobuf.report.ReportFilter) obj;
 
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
+    if (getApproved()
+        != other.getApproved()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -135,6 +209,11 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + APPROVED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getApproved());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -231,10 +310,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *TODO implement filters
-   * </pre>
-   *
    * Protobuf type {@code ReportFilter}
    */
   public static final class Builder extends
@@ -272,6 +347,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      email_ = "";
+
+      approved_ = false;
+
       return this;
     }
 
@@ -298,6 +377,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public via.sep3.protobuf.report.ReportFilter buildPartial() {
       via.sep3.protobuf.report.ReportFilter result = new via.sep3.protobuf.report.ReportFilter(this);
+      result.email_ = email_;
+      result.approved_ = approved_;
       onBuilt();
       return result;
     }
@@ -346,6 +427,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(via.sep3.protobuf.report.ReportFilter other) {
       if (other == via.sep3.protobuf.report.ReportFilter.getDefaultInstance()) return this;
+      if (!other.getEmail().isEmpty()) {
+        email_ = other.email_;
+        onChanged();
+      }
+      if (other.getApproved() != false) {
+        setApproved(other.getApproved());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -372,6 +460,113 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>string email = 1;</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      email_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      
+      email_ = getDefaultInstance().getEmail();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      email_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean approved_ ;
+    /**
+     * <code>bool approved = 2;</code>
+     * @return The approved.
+     */
+    @java.lang.Override
+    public boolean getApproved() {
+      return approved_;
+    }
+    /**
+     * <code>bool approved = 2;</code>
+     * @param value The approved to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApproved(boolean value) {
+      
+      approved_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool approved = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApproved() {
+      
+      approved_ = false;
+      onChanged();
       return this;
     }
     @java.lang.Override

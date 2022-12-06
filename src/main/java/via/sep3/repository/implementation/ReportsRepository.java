@@ -3,7 +3,6 @@ package via.sep3.repository.implementation;
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IReportsClient;
 import via.sep3.grpcclient.implementation.ReportsClient;
-import via.sep3.protobuf.report.ToReviewReport;
 import via.sep3.repository.intf.IReportsRepository;
 import via.sep3.model.CreateReport;
 import via.sep3.model.Report;
@@ -19,9 +18,9 @@ public class ReportsRepository implements IReportsRepository {
     }
 
     @Override
-    public List<Report> getReports() {
+    public List<Report> getReports(String email, boolean approved) {
         try {
-            return reportsClient.getReports();
+            return reportsClient.getReports(email, approved);
         } catch (Exception ex) {
             throw ex;
         }
