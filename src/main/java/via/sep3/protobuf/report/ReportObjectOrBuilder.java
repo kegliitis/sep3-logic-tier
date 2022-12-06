@@ -8,19 +8,11 @@ public interface ReportObjectOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The date.
    */
   java.lang.String getDate();
   /**
-   * <pre>
-   *if we agree on the format, this should be okay TODO:Add id?
-   * </pre>
-   *
    * <code>string date = 2;</code>
    * @return The bytes for date.
    */

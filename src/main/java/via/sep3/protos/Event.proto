@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sep3.protobuf.event";
+
+service Event
+{
+  rpc CreateEvent(CreateEventObject) returns (EventObject);
+}
+
+message CreateEventObject
+{
+  string date = 1;
+  string time = 2;
+  string description = 3;
+  string status = 4;
+  string creatorEmail = 5;
+  string reportId = 6;
+}
+
+message EventObject
+{
+  string id = 1;
+  string date = 2;
+  string time = 3;
+  string description = 4;
+  string status = 5;
+  bytes validation = 6;
+  UserObject organiser = 7;
+  ReportObject report = 8;
+}
+
+message UserObject
+{
+  string id = 1;
+  string username = 2;
+}
+
+message ReportObject
+{
+  bytes proof = 1;
+  string description = 2;
+  LocationObject location = 3;
+}
+
+message LocationObject
+{
+  double longitude = 1;
+  double latitude = 2;
+  int32 size = 3;
+}
+
+
