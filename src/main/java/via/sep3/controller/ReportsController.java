@@ -88,4 +88,20 @@ public class ReportsController
         }
     }
 
+    @RequestMapping(value = "/reports/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getReportById(@PathVariable String id)
+    {
+        try
+        {
+            Report report = reportRepo.getReportById(id);
+            return ResponseEntity.ok(report);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
 }

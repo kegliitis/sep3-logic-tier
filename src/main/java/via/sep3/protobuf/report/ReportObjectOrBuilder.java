@@ -32,7 +32,12 @@ public interface ReportObjectOrBuilder extends
       getTimeBytes();
 
   /**
-   * <code>bytes proof = 4;</code>
+   * <code>optional bytes proof = 4;</code>
+   * @return Whether the proof field is set.
+   */
+  boolean hasProof();
+  /**
+   * <code>optional bytes proof = 4;</code>
    * @return The proof.
    */
   com.google.protobuf.ByteString getProof();

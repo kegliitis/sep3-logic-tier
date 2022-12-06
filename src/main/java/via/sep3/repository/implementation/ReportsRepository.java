@@ -36,6 +36,19 @@ public class ReportsRepository implements IReportsRepository {
     }
 
     @Override
+    public Report getReportById(String reportId)
+    {
+        try
+        {
+            return reportsClient.getReportById(reportId);
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    @Override
     public String reviewReport(String id, String status)
     {
         try {

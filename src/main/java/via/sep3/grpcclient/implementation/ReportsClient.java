@@ -54,7 +54,7 @@ public class ReportsClient implements IReportsClient
     @Override
     public List<Report> getReports(String email, boolean approved)
     {
-        ReportFilter filter = ReportFilter.newBuilder()
+        ReportsFilter filter = ReportsFilter.newBuilder()
                 .setEmail(email)
                 .setApproved(approved)
                 .build();
@@ -70,6 +70,21 @@ public class ReportsClient implements IReportsClient
             reports.add(report);
         }
         return reports;
+    }
+
+    @Override
+    public Report getReportById(String reportId)
+    {
+        ReportId input = ReportId.newBuilder()
+                .setId(reportId)
+                .build();
+
+        ReportObject response = reportBlockingStub.getReportById(input);
+
+        return new Report(LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
+                response.getProof().toByteArray(), response.getDescription(), response.getStatus(),
+                new Location(response.getLocation().getLatitude(), response.getLocation().getLongitude(), (byte) response.getLocation().getSize())
+                , response.getUser().getUserId(),response.getUser().getUsername(),response.getId());
     }
 
     @Override

@@ -11,5 +11,6 @@ public interface IReportsClient
     Report createReport(CreateReport newReport, String creatorEmail);
     List<Report> getReports(String email, boolean approved);
 
+    Report getReportById(String reportId);
     String reviewReport(String id, String status);
 }
