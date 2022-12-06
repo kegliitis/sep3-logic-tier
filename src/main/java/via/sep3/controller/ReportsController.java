@@ -95,7 +95,9 @@ public class ReportsController
         try
         {
             Report report = reportRepo.getReportById(id);
-            return ResponseEntity.ok(report);
+            int[] date = new int[]{report.getDate().getYear(), report.getDate().getMonthValue(), report.getDate().getDayOfMonth()};
+            int[] time = new int[]{report.getTime().getHour(), report.getTime().getMinute(), report.getTime().getSecond()};
+            return ResponseEntity.ok(new GetReportResponseDto(report.getReportId(), date, time, report.getProof(), report.getDescription(), report.getStatus(), report.getLocation()));
         }
         catch (Exception e)
         {
