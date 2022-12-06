@@ -88,4 +88,22 @@ public class ReportsController
         }
     }
 
+    @RequestMapping(value = "/reports/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getReportById(@PathVariable String id)
+    {
+        try
+        {
+            Report report = reportRepo.getReportById(id);
+            int[] date = new int[]{report.getDate().getYear(), report.getDate().getMonthValue(), report.getDate().getDayOfMonth()};
+            int[] time = new int[]{report.getTime().getHour(), report.getTime().getMinute(), report.getTime().getSecond()};
+            return ResponseEntity.ok(new GetReportResponseDto(report.getReportId(), date, time, report.getProof(), report.getDescription(), report.getStatus(), report.getLocation()));
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
 }
