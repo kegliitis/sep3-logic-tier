@@ -6,6 +6,7 @@ option java_package = "via.sep3.protobuf.report";
 service Report {
   rpc GetReports(ReportFilter) returns (ReportList);
   rpc CreateReport(CreateReportObject) returns (ReportObject);
+  rpc ReviewReport(ToReviewReport) returns (ReviewedReport);
 }
 
 message ReportFilter {
@@ -17,7 +18,6 @@ message ReportList {
 }
 
 message ReportObject {
-  //if we agree on the format, this should be okay TODO:Add id?
   string date = 2;
   string time = 3;
   bytes proof = 4;
@@ -48,4 +48,14 @@ message CreateReportObject{
   string status = 5;
   LocationObject location = 6;
   string creatorEmail = 7;
+}
+
+
+message ToReviewReport{
+  string reportId=1;
+  string updatedStatus=2;
+}
+
+message ReviewedReport{
+  string confirmation=1;
 }

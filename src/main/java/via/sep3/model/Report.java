@@ -29,7 +29,7 @@ public class Report
         this.location = location;
         this.userId = userId;
         this.userName = userName;
-        this.reportId = "";
+        this.reportId = reportId;
     }
 
     public String getUserId() {

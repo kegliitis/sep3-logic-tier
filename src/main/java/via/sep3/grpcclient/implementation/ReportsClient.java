@@ -68,4 +68,17 @@ public class ReportsClient implements IReportsClient
         }
         return reports;
     }
+
+    @Override
+    public String reviewReport(String id, String status) {
+        ToReviewReport toReviewReport = ToReviewReport.newBuilder()
+                .setReportId(id)
+                .setUpdatedStatus(status)
+                .build();
+
+        ReviewedReport reviewedReport = reportBlockingStub.reviewReport(toReviewReport);
+
+        return reviewedReport.getConfirmation();
+
+    }
 }

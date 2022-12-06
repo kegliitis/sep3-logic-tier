@@ -3,6 +3,7 @@ package via.sep3.repository.implementation;
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IReportsClient;
 import via.sep3.grpcclient.implementation.ReportsClient;
+import via.sep3.protobuf.report.ToReviewReport;
 import via.sep3.repository.intf.IReportsRepository;
 import via.sep3.model.CreateReport;
 import via.sep3.model.Report;
@@ -13,7 +14,7 @@ import java.util.List;
 public class ReportsRepository implements IReportsRepository {
     private IReportsClient reportsClient;
 
-    public ReportsRepository(ReportsClient reportsClient){
+    public ReportsRepository(ReportsClient reportsClient) {
         this.reportsClient = reportsClient;
     }
 
@@ -21,19 +22,27 @@ public class ReportsRepository implements IReportsRepository {
     public List<Report> getReports() {
         try {
             return reportsClient.getReports();
-        } catch (Exception ex){
+        } catch (Exception ex) {
             throw ex;
         }
     }
 
     @Override
     public Report createReport(CreateReport report, String creatorEmail) {
-        try
-        {
+        try {
             return reportsClient.createReport(report, creatorEmail);
+        } catch (Exception e) {
+            throw e;
         }
-        catch (Exception e)
-        {
+    }
+
+    @Override
+    public String reviewReport(String id, String status)
+    {
+        try {
+            return reportsClient.reviewReport(id, status);
+        }
+        catch (Exception e) {
             throw e;
         }
     }

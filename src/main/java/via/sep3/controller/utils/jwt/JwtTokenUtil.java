@@ -1,11 +1,13 @@
 package via.sep3.controller.utils.jwt;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.Iterables;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -57,13 +59,19 @@ public class JwtTokenUtil implements Serializable {
 
 	public String generateToken(User user) {
 		Map<String, Object> claims = new HashMap<>();
+		claims.put("role", (Iterables.get(user.getAuthorities(), 0)).getAuthority());
 		return doGenerateToken(claims, user.getEmail());
 	}
 
 	private String doGenerateToken(Map<String, Object> claims, String subject) {
 
-		return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY*1000)).signWith(SignatureAlgorithm.HS512, secret).compact();
+		return Jwts.builder()
+				.setClaims(claims)
+				.setSubject(subject)
+				.setIssuedAt(new Date(System.currentTimeMillis()))
+				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY*1000))
+				.signWith(SignatureAlgorithm.HS512, secret)
+				.compact();
 	}
 
 	public Boolean canTokenBeRefreshed(String token) {
