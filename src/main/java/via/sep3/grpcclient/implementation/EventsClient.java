@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
-import via.sep3.protobuf.event.CreateEventObject;
-import via.sep3.protobuf.event.EventGrpc;
-import via.sep3.protobuf.event.EventObject;
+import via.sep3.protobuf.event.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class EventsClient implements IEventsClient
@@ -40,5 +40,27 @@ public class EventsClient implements IEventsClient
                 new EventReport(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
                         (byte)response.getReport().getLocation().getSize())));
+    }
+
+    @Override
+    public List<Event> getEvents()
+    {
+        EventFilter input = EventFilter.newBuilder().build();
+
+        EventList response = eventBlockingStub.getEvents(input);
+
+        List<Event> events = new ArrayList<>();
+
+        for (EventObject grpcEvent: response.getEventsList())
+        {
+            Event event = new Event(grpcEvent.getId(), LocalDate.parse(grpcEvent.getDate()), LocalTime.parse(grpcEvent.getTime()),
+                    grpcEvent.getDescription(), grpcEvent.getStatus(), grpcEvent.getValidation().toByteArray(),
+                    grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
+                    new EventReport(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
+                            new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),
+                                    (byte)grpcEvent.getReport().getLocation().getSize())));
+            events.add(event);
+        }
+        return events;
     }
 }

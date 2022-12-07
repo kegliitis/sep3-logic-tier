@@ -9,6 +9,7 @@ import via.sep3.model.Event;
 import via.sep3.repository.implementation.EventsRepository;
 import via.sep3.repository.intf.IEventsRepository;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -40,6 +41,21 @@ public class EventsController
         catch (Exception e)
         {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Oh Shit!: " + e);
+        }
+    }
+
+    @RequestMapping(value = "/events", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getEvents()
+    {
+        try
+        {
+            List<Event> events = repository.getEvents();
+            return ResponseEntity.ok(events);
+        }
+        catch (Exception e)
+        {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 }

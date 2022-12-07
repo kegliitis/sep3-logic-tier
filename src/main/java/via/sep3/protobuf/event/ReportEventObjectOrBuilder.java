@@ -8,7 +8,12 @@ public interface ReportEventObjectOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bytes proof = 1;</code>
+   * <code>optional bytes proof = 1;</code>
+   * @return Whether the proof field is set.
+   */
+  boolean hasProof();
+  /**
+   * <code>optional bytes proof = 1;</code>
    * @return The proof.
    */
   com.google.protobuf.ByteString getProof();
