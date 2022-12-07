@@ -3,8 +3,8 @@
 
 package via.sep3.protobuf.event;
 
-public interface UserObjectOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:UserObject)
+public interface UserEventObjectOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:UserEventObject)
     com.google.protobuf.MessageOrBuilder {
 
   /**

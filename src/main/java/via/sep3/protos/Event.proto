@@ -26,24 +26,24 @@ message EventObject
   string description = 4;
   string status = 5;
   bytes validation = 6;
-  UserObject organiser = 7;
-  ReportObject report = 8;
+  UserEventObject organiser = 7;
+  ReportEventObject report = 8;
 }
 
-message UserObject
+message UserEventObject
 {
   string id = 1;
   string username = 2;
 }
 
-message ReportObject
+message ReportEventObject
 {
   bytes proof = 1;
   string description = 2;
-  LocationObject location = 3;
+  LocationEventObject location = 3;
 }
 
-message LocationObject
+message LocationEventObject
 {
   double longitude = 1;
   double latitude = 2;

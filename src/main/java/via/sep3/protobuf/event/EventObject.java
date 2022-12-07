@@ -90,11 +90,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            via.sep3.protobuf.event.UserObject.Builder subBuilder = null;
+            via.sep3.protobuf.event.UserEventObject.Builder subBuilder = null;
             if (organiser_ != null) {
               subBuilder = organiser_.toBuilder();
             }
-            organiser_ = input.readMessage(via.sep3.protobuf.event.UserObject.parser(), extensionRegistry);
+            organiser_ = input.readMessage(via.sep3.protobuf.event.UserEventObject.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(organiser_);
               organiser_ = subBuilder.buildPartial();
@@ -103,11 +103,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            via.sep3.protobuf.event.ReportObject.Builder subBuilder = null;
+            via.sep3.protobuf.event.ReportEventObject.Builder subBuilder = null;
             if (report_ != null) {
               subBuilder = report_.toBuilder();
             }
-            report_ = input.readMessage(via.sep3.protobuf.event.ReportObject.parser(), extensionRegistry);
+            report_ = input.readMessage(via.sep3.protobuf.event.ReportEventObject.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(report_);
               report_ = subBuilder.buildPartial();
@@ -351,9 +351,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ORGANISER_FIELD_NUMBER = 7;
-  private via.sep3.protobuf.event.UserObject organiser_;
+  private via.sep3.protobuf.event.UserEventObject organiser_;
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    * @return Whether the organiser field is set.
    */
   @java.lang.Override
@@ -361,25 +361,25 @@ private static final long serialVersionUID = 0L;
     return organiser_ != null;
   }
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    * @return The organiser.
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.UserObject getOrganiser() {
-    return organiser_ == null ? via.sep3.protobuf.event.UserObject.getDefaultInstance() : organiser_;
+  public via.sep3.protobuf.event.UserEventObject getOrganiser() {
+    return organiser_ == null ? via.sep3.protobuf.event.UserEventObject.getDefaultInstance() : organiser_;
   }
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.UserObjectOrBuilder getOrganiserOrBuilder() {
+  public via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder() {
     return getOrganiser();
   }
 
   public static final int REPORT_FIELD_NUMBER = 8;
-  private via.sep3.protobuf.event.ReportObject report_;
+  private via.sep3.protobuf.event.ReportEventObject report_;
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    * @return Whether the report field is set.
    */
   @java.lang.Override
@@ -387,18 +387,18 @@ private static final long serialVersionUID = 0L;
     return report_ != null;
   }
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    * @return The report.
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.ReportObject getReport() {
-    return report_ == null ? via.sep3.protobuf.event.ReportObject.getDefaultInstance() : report_;
+  public via.sep3.protobuf.event.ReportEventObject getReport() {
+    return report_ == null ? via.sep3.protobuf.event.ReportEventObject.getDefaultInstance() : report_;
   }
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.ReportObjectOrBuilder getReportOrBuilder() {
+  public via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder() {
     return getReport();
   }
 
@@ -1263,31 +1263,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private via.sep3.protobuf.event.UserObject organiser_;
+    private via.sep3.protobuf.event.UserEventObject organiser_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.UserObject, via.sep3.protobuf.event.UserObject.Builder, via.sep3.protobuf.event.UserObjectOrBuilder> organiserBuilder_;
+        via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> organiserBuilder_;
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      * @return Whether the organiser field is set.
      */
     public boolean hasOrganiser() {
       return organiserBuilder_ != null || organiser_ != null;
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      * @return The organiser.
      */
-    public via.sep3.protobuf.event.UserObject getOrganiser() {
+    public via.sep3.protobuf.event.UserEventObject getOrganiser() {
       if (organiserBuilder_ == null) {
-        return organiser_ == null ? via.sep3.protobuf.event.UserObject.getDefaultInstance() : organiser_;
+        return organiser_ == null ? via.sep3.protobuf.event.UserEventObject.getDefaultInstance() : organiser_;
       } else {
         return organiserBuilder_.getMessage();
       }
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
-    public Builder setOrganiser(via.sep3.protobuf.event.UserObject value) {
+    public Builder setOrganiser(via.sep3.protobuf.event.UserEventObject value) {
       if (organiserBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1301,10 +1301,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
     public Builder setOrganiser(
-        via.sep3.protobuf.event.UserObject.Builder builderForValue) {
+        via.sep3.protobuf.event.UserEventObject.Builder builderForValue) {
       if (organiserBuilder_ == null) {
         organiser_ = builderForValue.build();
         onChanged();
@@ -1315,13 +1315,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
-    public Builder mergeOrganiser(via.sep3.protobuf.event.UserObject value) {
+    public Builder mergeOrganiser(via.sep3.protobuf.event.UserEventObject value) {
       if (organiserBuilder_ == null) {
         if (organiser_ != null) {
           organiser_ =
-            via.sep3.protobuf.event.UserObject.newBuilder(organiser_).mergeFrom(value).buildPartial();
+            via.sep3.protobuf.event.UserEventObject.newBuilder(organiser_).mergeFrom(value).buildPartial();
         } else {
           organiser_ = value;
         }
@@ -1333,7 +1333,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
     public Builder clearOrganiser() {
       if (organiserBuilder_ == null) {
@@ -1347,33 +1347,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
-    public via.sep3.protobuf.event.UserObject.Builder getOrganiserBuilder() {
+    public via.sep3.protobuf.event.UserEventObject.Builder getOrganiserBuilder() {
       
       onChanged();
       return getOrganiserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
-    public via.sep3.protobuf.event.UserObjectOrBuilder getOrganiserOrBuilder() {
+    public via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder() {
       if (organiserBuilder_ != null) {
         return organiserBuilder_.getMessageOrBuilder();
       } else {
         return organiser_ == null ?
-            via.sep3.protobuf.event.UserObject.getDefaultInstance() : organiser_;
+            via.sep3.protobuf.event.UserEventObject.getDefaultInstance() : organiser_;
       }
     }
     /**
-     * <code>.UserObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.UserObject, via.sep3.protobuf.event.UserObject.Builder, via.sep3.protobuf.event.UserObjectOrBuilder> 
+        via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> 
         getOrganiserFieldBuilder() {
       if (organiserBuilder_ == null) {
         organiserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            via.sep3.protobuf.event.UserObject, via.sep3.protobuf.event.UserObject.Builder, via.sep3.protobuf.event.UserObjectOrBuilder>(
+            via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder>(
                 getOrganiser(),
                 getParentForChildren(),
                 isClean());
@@ -1382,31 +1382,31 @@ private static final long serialVersionUID = 0L;
       return organiserBuilder_;
     }
 
-    private via.sep3.protobuf.event.ReportObject report_;
+    private via.sep3.protobuf.event.ReportEventObject report_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.ReportObject, via.sep3.protobuf.event.ReportObject.Builder, via.sep3.protobuf.event.ReportObjectOrBuilder> reportBuilder_;
+        via.sep3.protobuf.event.ReportEventObject, via.sep3.protobuf.event.ReportEventObject.Builder, via.sep3.protobuf.event.ReportEventObjectOrBuilder> reportBuilder_;
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      * @return Whether the report field is set.
      */
     public boolean hasReport() {
       return reportBuilder_ != null || report_ != null;
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      * @return The report.
      */
-    public via.sep3.protobuf.event.ReportObject getReport() {
+    public via.sep3.protobuf.event.ReportEventObject getReport() {
       if (reportBuilder_ == null) {
-        return report_ == null ? via.sep3.protobuf.event.ReportObject.getDefaultInstance() : report_;
+        return report_ == null ? via.sep3.protobuf.event.ReportEventObject.getDefaultInstance() : report_;
       } else {
         return reportBuilder_.getMessage();
       }
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
-    public Builder setReport(via.sep3.protobuf.event.ReportObject value) {
+    public Builder setReport(via.sep3.protobuf.event.ReportEventObject value) {
       if (reportBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1420,10 +1420,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
     public Builder setReport(
-        via.sep3.protobuf.event.ReportObject.Builder builderForValue) {
+        via.sep3.protobuf.event.ReportEventObject.Builder builderForValue) {
       if (reportBuilder_ == null) {
         report_ = builderForValue.build();
         onChanged();
@@ -1434,13 +1434,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
-    public Builder mergeReport(via.sep3.protobuf.event.ReportObject value) {
+    public Builder mergeReport(via.sep3.protobuf.event.ReportEventObject value) {
       if (reportBuilder_ == null) {
         if (report_ != null) {
           report_ =
-            via.sep3.protobuf.event.ReportObject.newBuilder(report_).mergeFrom(value).buildPartial();
+            via.sep3.protobuf.event.ReportEventObject.newBuilder(report_).mergeFrom(value).buildPartial();
         } else {
           report_ = value;
         }
@@ -1452,7 +1452,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
     public Builder clearReport() {
       if (reportBuilder_ == null) {
@@ -1466,33 +1466,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
-    public via.sep3.protobuf.event.ReportObject.Builder getReportBuilder() {
+    public via.sep3.protobuf.event.ReportEventObject.Builder getReportBuilder() {
       
       onChanged();
       return getReportFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
-    public via.sep3.protobuf.event.ReportObjectOrBuilder getReportOrBuilder() {
+    public via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder() {
       if (reportBuilder_ != null) {
         return reportBuilder_.getMessageOrBuilder();
       } else {
         return report_ == null ?
-            via.sep3.protobuf.event.ReportObject.getDefaultInstance() : report_;
+            via.sep3.protobuf.event.ReportEventObject.getDefaultInstance() : report_;
       }
     }
     /**
-     * <code>.ReportObject report = 8;</code>
+     * <code>.ReportEventObject report = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.ReportObject, via.sep3.protobuf.event.ReportObject.Builder, via.sep3.protobuf.event.ReportObjectOrBuilder> 
+        via.sep3.protobuf.event.ReportEventObject, via.sep3.protobuf.event.ReportEventObject.Builder, via.sep3.protobuf.event.ReportEventObjectOrBuilder> 
         getReportFieldBuilder() {
       if (reportBuilder_ == null) {
         reportBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            via.sep3.protobuf.event.ReportObject, via.sep3.protobuf.event.ReportObject.Builder, via.sep3.protobuf.event.ReportObjectOrBuilder>(
+            via.sep3.protobuf.event.ReportEventObject, via.sep3.protobuf.event.ReportEventObject.Builder, via.sep3.protobuf.event.ReportEventObjectOrBuilder>(
                 getReport(),
                 getParentForChildren(),
                 isClean());

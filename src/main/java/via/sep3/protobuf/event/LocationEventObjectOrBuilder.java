@@ -3,8 +3,8 @@
 
 package via.sep3.protobuf.event;
 
-public interface LocationObjectOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:LocationObject)
+public interface LocationEventObjectOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:LocationEventObject)
     com.google.protobuf.MessageOrBuilder {
 
   /**

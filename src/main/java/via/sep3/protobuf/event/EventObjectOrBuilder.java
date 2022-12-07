@@ -74,32 +74,32 @@ public interface EventObjectOrBuilder extends
   com.google.protobuf.ByteString getValidation();
 
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    * @return Whether the organiser field is set.
    */
   boolean hasOrganiser();
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    * @return The organiser.
    */
-  via.sep3.protobuf.event.UserObject getOrganiser();
+  via.sep3.protobuf.event.UserEventObject getOrganiser();
   /**
-   * <code>.UserObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 7;</code>
    */
-  via.sep3.protobuf.event.UserObjectOrBuilder getOrganiserOrBuilder();
+  via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder();
 
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    * @return Whether the report field is set.
    */
   boolean hasReport();
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    * @return The report.
    */
-  via.sep3.protobuf.event.ReportObject getReport();
+  via.sep3.protobuf.event.ReportEventObject getReport();
   /**
-   * <code>.ReportObject report = 8;</code>
+   * <code>.ReportEventObject report = 8;</code>
    */
-  via.sep3.protobuf.event.ReportObjectOrBuilder getReportOrBuilder();
+  via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder();
 }

@@ -3,8 +3,8 @@
 
 package via.sep3.protobuf.event;
 
-public interface ReportObjectOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ReportObject)
+public interface ReportEventObjectOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ReportEventObject)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -26,17 +26,17 @@ public interface ReportObjectOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    * @return The location.
    */
-  via.sep3.protobuf.event.LocationObject getLocation();
+  via.sep3.protobuf.event.LocationEventObject getLocation();
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    */
-  via.sep3.protobuf.event.LocationObjectOrBuilder getLocationOrBuilder();
+  via.sep3.protobuf.event.LocationEventObjectOrBuilder getLocationOrBuilder();
 }

@@ -4,18 +4,18 @@
 package via.sep3.protobuf.event;
 
 /**
- * Protobuf type {@code UserObject}
+ * Protobuf type {@code UserEventObject}
  */
-public final class UserObject extends
+public final class UserEventObject extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:UserObject)
-    UserObjectOrBuilder {
+    // @@protoc_insertion_point(message_implements:UserEventObject)
+    UserEventObjectOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UserObject.newBuilder() to construct.
-  private UserObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UserEventObject.newBuilder() to construct.
+  private UserEventObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UserObject() {
+  private UserEventObject() {
     id_ = "";
     username_ = "";
   }
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UserObject();
+    return new UserEventObject();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UserObject(
+  private UserEventObject(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -85,15 +85,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_UserObject_descriptor;
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_UserEventObject_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_UserObject_fieldAccessorTable
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_UserEventObject_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sep3.protobuf.event.UserObject.class, via.sep3.protobuf.event.UserObject.Builder.class);
+            via.sep3.protobuf.event.UserEventObject.class, via.sep3.protobuf.event.UserEventObject.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -217,10 +217,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sep3.protobuf.event.UserObject)) {
+    if (!(obj instanceof via.sep3.protobuf.event.UserEventObject)) {
       return super.equals(obj);
     }
-    via.sep3.protobuf.event.UserObject other = (via.sep3.protobuf.event.UserObject) obj;
+    via.sep3.protobuf.event.UserEventObject other = (via.sep3.protobuf.event.UserEventObject) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
@@ -246,69 +246,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(byte[] data)
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.UserObject parseDelimitedFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.UserEventObject parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.UserObject parseDelimitedFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.UserObject parseFrom(
+  public static via.sep3.protobuf.event.UserEventObject parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sep3.protobuf.event.UserObject prototype) {
+  public static Builder newBuilder(via.sep3.protobuf.event.UserEventObject prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -337,26 +337,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code UserObject}
+   * Protobuf type {@code UserEventObject}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:UserObject)
-      via.sep3.protobuf.event.UserObjectOrBuilder {
+      // @@protoc_insertion_point(builder_implements:UserEventObject)
+      via.sep3.protobuf.event.UserEventObjectOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserEventObject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserObject_fieldAccessorTable
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserEventObject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.protobuf.event.UserObject.class, via.sep3.protobuf.event.UserObject.Builder.class);
+              via.sep3.protobuf.event.UserEventObject.class, via.sep3.protobuf.event.UserEventObject.Builder.class);
     }
 
-    // Construct using via.sep3.protobuf.event.UserObject.newBuilder()
+    // Construct using via.sep3.protobuf.event.UserEventObject.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -384,17 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_UserEventObject_descriptor;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.UserObject getDefaultInstanceForType() {
-      return via.sep3.protobuf.event.UserObject.getDefaultInstance();
+    public via.sep3.protobuf.event.UserEventObject getDefaultInstanceForType() {
+      return via.sep3.protobuf.event.UserEventObject.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.UserObject build() {
-      via.sep3.protobuf.event.UserObject result = buildPartial();
+    public via.sep3.protobuf.event.UserEventObject build() {
+      via.sep3.protobuf.event.UserEventObject result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -402,8 +402,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.UserObject buildPartial() {
-      via.sep3.protobuf.event.UserObject result = new via.sep3.protobuf.event.UserObject(this);
+    public via.sep3.protobuf.event.UserEventObject buildPartial() {
+      via.sep3.protobuf.event.UserEventObject result = new via.sep3.protobuf.event.UserEventObject(this);
       result.id_ = id_;
       result.username_ = username_;
       onBuilt();
@@ -444,16 +444,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sep3.protobuf.event.UserObject) {
-        return mergeFrom((via.sep3.protobuf.event.UserObject)other);
+      if (other instanceof via.sep3.protobuf.event.UserEventObject) {
+        return mergeFrom((via.sep3.protobuf.event.UserEventObject)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sep3.protobuf.event.UserObject other) {
-      if (other == via.sep3.protobuf.event.UserObject.getDefaultInstance()) return this;
+    public Builder mergeFrom(via.sep3.protobuf.event.UserEventObject other) {
+      if (other == via.sep3.protobuf.event.UserEventObject.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
@@ -477,11 +477,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sep3.protobuf.event.UserObject parsedMessage = null;
+      via.sep3.protobuf.event.UserEventObject parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sep3.protobuf.event.UserObject) e.getUnfinishedMessage();
+        parsedMessage = (via.sep3.protobuf.event.UserEventObject) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -655,41 +655,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:UserObject)
+    // @@protoc_insertion_point(builder_scope:UserEventObject)
   }
 
-  // @@protoc_insertion_point(class_scope:UserObject)
-  private static final via.sep3.protobuf.event.UserObject DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:UserEventObject)
+  private static final via.sep3.protobuf.event.UserEventObject DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sep3.protobuf.event.UserObject();
+    DEFAULT_INSTANCE = new via.sep3.protobuf.event.UserEventObject();
   }
 
-  public static via.sep3.protobuf.event.UserObject getDefaultInstance() {
+  public static via.sep3.protobuf.event.UserEventObject getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UserObject>
-      PARSER = new com.google.protobuf.AbstractParser<UserObject>() {
+  private static final com.google.protobuf.Parser<UserEventObject>
+      PARSER = new com.google.protobuf.AbstractParser<UserEventObject>() {
     @java.lang.Override
-    public UserObject parsePartialFrom(
+    public UserEventObject parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UserObject(input, extensionRegistry);
+      return new UserEventObject(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UserObject> parser() {
+  public static com.google.protobuf.Parser<UserEventObject> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UserObject> getParserForType() {
+  public com.google.protobuf.Parser<UserEventObject> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sep3.protobuf.event.UserObject getDefaultInstanceForType() {
+  public via.sep3.protobuf.event.UserEventObject getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

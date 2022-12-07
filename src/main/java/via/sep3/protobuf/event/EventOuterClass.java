@@ -25,20 +25,20 @@ public final class EventOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_EventObject_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserObject_descriptor;
+    internal_static_UserEventObject_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserObject_fieldAccessorTable;
+      internal_static_UserEventObject_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ReportObject_descriptor;
+    internal_static_ReportEventObject_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ReportObject_fieldAccessorTable;
+      internal_static_ReportEventObject_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LocationObject_descriptor;
+    internal_static_LocationEventObject_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LocationObject_fieldAccessorTable;
+      internal_static_LocationEventObject_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -51,19 +51,19 @@ public final class EventOuterClass {
       "\n\013Event.proto\"|\n\021CreateEventObject\022\014\n\004da" +
       "te\030\001 \001(\t\022\014\n\004time\030\002 \001(\t\022\023\n\013description\030\003 " +
       "\001(\t\022\016\n\006status\030\004 \001(\t\022\024\n\014creatorEmail\030\005 \001(" +
-      "\t\022\020\n\010reportId\030\006 \001(\t\"\255\001\n\013EventObject\022\n\n\002i" +
+      "\t\022\020\n\010reportId\030\006 \001(\t\"\267\001\n\013EventObject\022\n\n\002i" +
       "d\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\023\n\013d" +
       "escription\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022\022\n\nvali" +
-      "dation\030\006 \001(\014\022\036\n\torganiser\030\007 \001(\0132\013.UserOb" +
-      "ject\022\035\n\006report\030\010 \001(\0132\r.ReportObject\"*\n\nU" +
-      "serObject\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002 \001(\t\"" +
-      "U\n\014ReportObject\022\r\n\005proof\030\001 \001(\014\022\023\n\013descri" +
-      "ption\030\002 \001(\t\022!\n\010location\030\003 \001(\0132\017.Location" +
-      "Object\"C\n\016LocationObject\022\021\n\tlongitude\030\001 " +
-      "\001(\001\022\020\n\010latitude\030\002 \001(\001\022\014\n\004size\030\003 \001(\00528\n\005E" +
-      "vent\022/\n\013CreateEvent\022\022.CreateEventObject\032" +
-      "\014.EventObjectB\033\n\027via.sep3.protobuf.event" +
-      "P\001b\006proto3"
+      "dation\030\006 \001(\014\022#\n\torganiser\030\007 \001(\0132\020.UserEv" +
+      "entObject\022\"\n\006report\030\010 \001(\0132\022.ReportEventO" +
+      "bject\"/\n\017UserEventObject\022\n\n\002id\030\001 \001(\t\022\020\n\010" +
+      "username\030\002 \001(\t\"_\n\021ReportEventObject\022\r\n\005p" +
+      "roof\030\001 \001(\014\022\023\n\013description\030\002 \001(\t\022&\n\010locat" +
+      "ion\030\003 \001(\0132\024.LocationEventObject\"H\n\023Locat" +
+      "ionEventObject\022\021\n\tlongitude\030\001 \001(\001\022\020\n\010lat" +
+      "itude\030\002 \001(\001\022\014\n\004size\030\003 \001(\00528\n\005Event\022/\n\013Cr" +
+      "eateEvent\022\022.CreateEventObject\032\014.EventObj" +
+      "ectB\033\n\027via.sep3.protobuf.eventP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -81,23 +81,23 @@ public final class EventOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EventObject_descriptor,
         new java.lang.String[] { "Id", "Date", "Time", "Description", "Status", "Validation", "Organiser", "Report", });
-    internal_static_UserObject_descriptor =
+    internal_static_UserEventObject_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_UserObject_fieldAccessorTable = new
+    internal_static_UserEventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserObject_descriptor,
+        internal_static_UserEventObject_descriptor,
         new java.lang.String[] { "Id", "Username", });
-    internal_static_ReportObject_descriptor =
+    internal_static_ReportEventObject_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_ReportObject_fieldAccessorTable = new
+    internal_static_ReportEventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ReportObject_descriptor,
+        internal_static_ReportEventObject_descriptor,
         new java.lang.String[] { "Proof", "Description", "Location", });
-    internal_static_LocationObject_descriptor =
+    internal_static_LocationEventObject_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_LocationObject_fieldAccessorTable = new
+    internal_static_LocationEventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LocationObject_descriptor,
+        internal_static_LocationEventObject_descriptor,
         new java.lang.String[] { "Longitude", "Latitude", "Size", });
   }
 

@@ -4,18 +4,18 @@
 package via.sep3.protobuf.event;
 
 /**
- * Protobuf type {@code ReportObject}
+ * Protobuf type {@code ReportEventObject}
  */
-public final class ReportObject extends
+public final class ReportEventObject extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ReportObject)
-    ReportObjectOrBuilder {
+    // @@protoc_insertion_point(message_implements:ReportEventObject)
+    ReportEventObjectOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ReportObject.newBuilder() to construct.
-  private ReportObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ReportEventObject.newBuilder() to construct.
+  private ReportEventObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReportObject() {
+  private ReportEventObject() {
     proof_ = com.google.protobuf.ByteString.EMPTY;
     description_ = "";
   }
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ReportObject();
+    return new ReportEventObject();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReportObject(
+  private ReportEventObject(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            via.sep3.protobuf.event.LocationObject.Builder subBuilder = null;
+            via.sep3.protobuf.event.LocationEventObject.Builder subBuilder = null;
             if (location_ != null) {
               subBuilder = location_.toBuilder();
             }
-            location_ = input.readMessage(via.sep3.protobuf.event.LocationObject.parser(), extensionRegistry);
+            location_ = input.readMessage(via.sep3.protobuf.event.LocationEventObject.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(location_);
               location_ = subBuilder.buildPartial();
@@ -97,15 +97,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportObject_descriptor;
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportEventObject_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportObject_fieldAccessorTable
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportEventObject_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sep3.protobuf.event.ReportObject.class, via.sep3.protobuf.event.ReportObject.Builder.class);
+            via.sep3.protobuf.event.ReportEventObject.class, via.sep3.protobuf.event.ReportEventObject.Builder.class);
   }
 
   public static final int PROOF_FIELD_NUMBER = 1;
@@ -158,9 +158,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 3;
-  private via.sep3.protobuf.event.LocationObject location_;
+  private via.sep3.protobuf.event.LocationEventObject location_;
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    * @return Whether the location field is set.
    */
   @java.lang.Override
@@ -168,18 +168,18 @@ private static final long serialVersionUID = 0L;
     return location_ != null;
   }
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    * @return The location.
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.LocationObject getLocation() {
-    return location_ == null ? via.sep3.protobuf.event.LocationObject.getDefaultInstance() : location_;
+  public via.sep3.protobuf.event.LocationEventObject getLocation() {
+    return location_ == null ? via.sep3.protobuf.event.LocationEventObject.getDefaultInstance() : location_;
   }
   /**
-   * <code>.LocationObject location = 3;</code>
+   * <code>.LocationEventObject location = 3;</code>
    */
   @java.lang.Override
-  public via.sep3.protobuf.event.LocationObjectOrBuilder getLocationOrBuilder() {
+  public via.sep3.protobuf.event.LocationEventObjectOrBuilder getLocationOrBuilder() {
     return getLocation();
   }
 
@@ -236,10 +236,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sep3.protobuf.event.ReportObject)) {
+    if (!(obj instanceof via.sep3.protobuf.event.ReportEventObject)) {
       return super.equals(obj);
     }
-    via.sep3.protobuf.event.ReportObject other = (via.sep3.protobuf.event.ReportObject) obj;
+    via.sep3.protobuf.event.ReportEventObject other = (via.sep3.protobuf.event.ReportEventObject) obj;
 
     if (!getProof()
         .equals(other.getProof())) return false;
@@ -274,69 +274,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(byte[] data)
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.ReportObject parseDelimitedFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.ReportEventObject parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.ReportObject parseDelimitedFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.ReportObject parseFrom(
+  public static via.sep3.protobuf.event.ReportEventObject parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sep3.protobuf.event.ReportObject prototype) {
+  public static Builder newBuilder(via.sep3.protobuf.event.ReportEventObject prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -365,26 +365,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ReportObject}
+   * Protobuf type {@code ReportEventObject}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ReportObject)
-      via.sep3.protobuf.event.ReportObjectOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ReportEventObject)
+      via.sep3.protobuf.event.ReportEventObjectOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportEventObject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportObject_fieldAccessorTable
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportEventObject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.protobuf.event.ReportObject.class, via.sep3.protobuf.event.ReportObject.Builder.class);
+              via.sep3.protobuf.event.ReportEventObject.class, via.sep3.protobuf.event.ReportEventObject.Builder.class);
     }
 
-    // Construct using via.sep3.protobuf.event.ReportObject.newBuilder()
+    // Construct using via.sep3.protobuf.event.ReportEventObject.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -418,17 +418,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ReportEventObject_descriptor;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.ReportObject getDefaultInstanceForType() {
-      return via.sep3.protobuf.event.ReportObject.getDefaultInstance();
+    public via.sep3.protobuf.event.ReportEventObject getDefaultInstanceForType() {
+      return via.sep3.protobuf.event.ReportEventObject.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.ReportObject build() {
-      via.sep3.protobuf.event.ReportObject result = buildPartial();
+    public via.sep3.protobuf.event.ReportEventObject build() {
+      via.sep3.protobuf.event.ReportEventObject result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -436,8 +436,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.ReportObject buildPartial() {
-      via.sep3.protobuf.event.ReportObject result = new via.sep3.protobuf.event.ReportObject(this);
+    public via.sep3.protobuf.event.ReportEventObject buildPartial() {
+      via.sep3.protobuf.event.ReportEventObject result = new via.sep3.protobuf.event.ReportEventObject(this);
       result.proof_ = proof_;
       result.description_ = description_;
       if (locationBuilder_ == null) {
@@ -483,16 +483,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sep3.protobuf.event.ReportObject) {
-        return mergeFrom((via.sep3.protobuf.event.ReportObject)other);
+      if (other instanceof via.sep3.protobuf.event.ReportEventObject) {
+        return mergeFrom((via.sep3.protobuf.event.ReportEventObject)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sep3.protobuf.event.ReportObject other) {
-      if (other == via.sep3.protobuf.event.ReportObject.getDefaultInstance()) return this;
+    public Builder mergeFrom(via.sep3.protobuf.event.ReportEventObject other) {
+      if (other == via.sep3.protobuf.event.ReportEventObject.getDefaultInstance()) return this;
       if (other.getProof() != com.google.protobuf.ByteString.EMPTY) {
         setProof(other.getProof());
       }
@@ -518,11 +518,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sep3.protobuf.event.ReportObject parsedMessage = null;
+      via.sep3.protobuf.event.ReportEventObject parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sep3.protobuf.event.ReportObject) e.getUnfinishedMessage();
+        parsedMessage = (via.sep3.protobuf.event.ReportEventObject) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -642,31 +642,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private via.sep3.protobuf.event.LocationObject location_;
+    private via.sep3.protobuf.event.LocationEventObject location_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.LocationObject, via.sep3.protobuf.event.LocationObject.Builder, via.sep3.protobuf.event.LocationObjectOrBuilder> locationBuilder_;
+        via.sep3.protobuf.event.LocationEventObject, via.sep3.protobuf.event.LocationEventObject.Builder, via.sep3.protobuf.event.LocationEventObjectOrBuilder> locationBuilder_;
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      * @return The location.
      */
-    public via.sep3.protobuf.event.LocationObject getLocation() {
+    public via.sep3.protobuf.event.LocationEventObject getLocation() {
       if (locationBuilder_ == null) {
-        return location_ == null ? via.sep3.protobuf.event.LocationObject.getDefaultInstance() : location_;
+        return location_ == null ? via.sep3.protobuf.event.LocationEventObject.getDefaultInstance() : location_;
       } else {
         return locationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
-    public Builder setLocation(via.sep3.protobuf.event.LocationObject value) {
+    public Builder setLocation(via.sep3.protobuf.event.LocationEventObject value) {
       if (locationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -680,10 +680,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
     public Builder setLocation(
-        via.sep3.protobuf.event.LocationObject.Builder builderForValue) {
+        via.sep3.protobuf.event.LocationEventObject.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
         onChanged();
@@ -694,13 +694,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
-    public Builder mergeLocation(via.sep3.protobuf.event.LocationObject value) {
+    public Builder mergeLocation(via.sep3.protobuf.event.LocationEventObject value) {
       if (locationBuilder_ == null) {
         if (location_ != null) {
           location_ =
-            via.sep3.protobuf.event.LocationObject.newBuilder(location_).mergeFrom(value).buildPartial();
+            via.sep3.protobuf.event.LocationEventObject.newBuilder(location_).mergeFrom(value).buildPartial();
         } else {
           location_ = value;
         }
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
     public Builder clearLocation() {
       if (locationBuilder_ == null) {
@@ -726,33 +726,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
-    public via.sep3.protobuf.event.LocationObject.Builder getLocationBuilder() {
+    public via.sep3.protobuf.event.LocationEventObject.Builder getLocationBuilder() {
       
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
-    public via.sep3.protobuf.event.LocationObjectOrBuilder getLocationOrBuilder() {
+    public via.sep3.protobuf.event.LocationEventObjectOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
         return locationBuilder_.getMessageOrBuilder();
       } else {
         return location_ == null ?
-            via.sep3.protobuf.event.LocationObject.getDefaultInstance() : location_;
+            via.sep3.protobuf.event.LocationEventObject.getDefaultInstance() : location_;
       }
     }
     /**
-     * <code>.LocationObject location = 3;</code>
+     * <code>.LocationEventObject location = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        via.sep3.protobuf.event.LocationObject, via.sep3.protobuf.event.LocationObject.Builder, via.sep3.protobuf.event.LocationObjectOrBuilder> 
+        via.sep3.protobuf.event.LocationEventObject, via.sep3.protobuf.event.LocationEventObject.Builder, via.sep3.protobuf.event.LocationEventObjectOrBuilder> 
         getLocationFieldBuilder() {
       if (locationBuilder_ == null) {
         locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            via.sep3.protobuf.event.LocationObject, via.sep3.protobuf.event.LocationObject.Builder, via.sep3.protobuf.event.LocationObjectOrBuilder>(
+            via.sep3.protobuf.event.LocationEventObject, via.sep3.protobuf.event.LocationEventObject.Builder, via.sep3.protobuf.event.LocationEventObjectOrBuilder>(
                 getLocation(),
                 getParentForChildren(),
                 isClean());
@@ -773,41 +773,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ReportObject)
+    // @@protoc_insertion_point(builder_scope:ReportEventObject)
   }
 
-  // @@protoc_insertion_point(class_scope:ReportObject)
-  private static final via.sep3.protobuf.event.ReportObject DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ReportEventObject)
+  private static final via.sep3.protobuf.event.ReportEventObject DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sep3.protobuf.event.ReportObject();
+    DEFAULT_INSTANCE = new via.sep3.protobuf.event.ReportEventObject();
   }
 
-  public static via.sep3.protobuf.event.ReportObject getDefaultInstance() {
+  public static via.sep3.protobuf.event.ReportEventObject getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReportObject>
-      PARSER = new com.google.protobuf.AbstractParser<ReportObject>() {
+  private static final com.google.protobuf.Parser<ReportEventObject>
+      PARSER = new com.google.protobuf.AbstractParser<ReportEventObject>() {
     @java.lang.Override
-    public ReportObject parsePartialFrom(
+    public ReportEventObject parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReportObject(input, extensionRegistry);
+      return new ReportEventObject(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ReportObject> parser() {
+  public static com.google.protobuf.Parser<ReportEventObject> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReportObject> getParserForType() {
+  public com.google.protobuf.Parser<ReportEventObject> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sep3.protobuf.event.ReportObject getDefaultInstanceForType() {
+  public via.sep3.protobuf.event.ReportEventObject getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

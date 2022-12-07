@@ -4,25 +4,25 @@
 package via.sep3.protobuf.event;
 
 /**
- * Protobuf type {@code LocationObject}
+ * Protobuf type {@code LocationEventObject}
  */
-public final class LocationObject extends
+public final class LocationEventObject extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:LocationObject)
-    LocationObjectOrBuilder {
+    // @@protoc_insertion_point(message_implements:LocationEventObject)
+    LocationEventObjectOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use LocationObject.newBuilder() to construct.
-  private LocationObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use LocationEventObject.newBuilder() to construct.
+  private LocationEventObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LocationObject() {
+  private LocationEventObject() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new LocationObject();
+    return new LocationEventObject();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private LocationObject(
+  private LocationEventObject(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -86,15 +86,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationObject_descriptor;
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationEventObject_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationObject_fieldAccessorTable
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationEventObject_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sep3.protobuf.event.LocationObject.class, via.sep3.protobuf.event.LocationObject.Builder.class);
+            via.sep3.protobuf.event.LocationEventObject.class, via.sep3.protobuf.event.LocationEventObject.Builder.class);
   }
 
   public static final int LONGITUDE_FIELD_NUMBER = 1;
@@ -184,10 +184,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sep3.protobuf.event.LocationObject)) {
+    if (!(obj instanceof via.sep3.protobuf.event.LocationEventObject)) {
       return super.equals(obj);
     }
-    via.sep3.protobuf.event.LocationObject other = (via.sep3.protobuf.event.LocationObject) obj;
+    via.sep3.protobuf.event.LocationEventObject other = (via.sep3.protobuf.event.LocationEventObject) obj;
 
     if (java.lang.Double.doubleToLongBits(getLongitude())
         != java.lang.Double.doubleToLongBits(
@@ -221,69 +221,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(byte[] data)
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.LocationObject parseDelimitedFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.LocationEventObject parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.LocationObject parseDelimitedFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.LocationObject parseFrom(
+  public static via.sep3.protobuf.event.LocationEventObject parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sep3.protobuf.event.LocationObject prototype) {
+  public static Builder newBuilder(via.sep3.protobuf.event.LocationEventObject prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -312,26 +312,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code LocationObject}
+   * Protobuf type {@code LocationEventObject}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:LocationObject)
-      via.sep3.protobuf.event.LocationObjectOrBuilder {
+      // @@protoc_insertion_point(builder_implements:LocationEventObject)
+      via.sep3.protobuf.event.LocationEventObjectOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationEventObject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationObject_fieldAccessorTable
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationEventObject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.protobuf.event.LocationObject.class, via.sep3.protobuf.event.LocationObject.Builder.class);
+              via.sep3.protobuf.event.LocationEventObject.class, via.sep3.protobuf.event.LocationEventObject.Builder.class);
     }
 
-    // Construct using via.sep3.protobuf.event.LocationObject.newBuilder()
+    // Construct using via.sep3.protobuf.event.LocationEventObject.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -361,17 +361,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationObject_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_LocationEventObject_descriptor;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.LocationObject getDefaultInstanceForType() {
-      return via.sep3.protobuf.event.LocationObject.getDefaultInstance();
+    public via.sep3.protobuf.event.LocationEventObject getDefaultInstanceForType() {
+      return via.sep3.protobuf.event.LocationEventObject.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.LocationObject build() {
-      via.sep3.protobuf.event.LocationObject result = buildPartial();
+    public via.sep3.protobuf.event.LocationEventObject build() {
+      via.sep3.protobuf.event.LocationEventObject result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -379,8 +379,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.LocationObject buildPartial() {
-      via.sep3.protobuf.event.LocationObject result = new via.sep3.protobuf.event.LocationObject(this);
+    public via.sep3.protobuf.event.LocationEventObject buildPartial() {
+      via.sep3.protobuf.event.LocationEventObject result = new via.sep3.protobuf.event.LocationEventObject(this);
       result.longitude_ = longitude_;
       result.latitude_ = latitude_;
       result.size_ = size_;
@@ -422,16 +422,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sep3.protobuf.event.LocationObject) {
-        return mergeFrom((via.sep3.protobuf.event.LocationObject)other);
+      if (other instanceof via.sep3.protobuf.event.LocationEventObject) {
+        return mergeFrom((via.sep3.protobuf.event.LocationEventObject)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sep3.protobuf.event.LocationObject other) {
-      if (other == via.sep3.protobuf.event.LocationObject.getDefaultInstance()) return this;
+    public Builder mergeFrom(via.sep3.protobuf.event.LocationEventObject other) {
+      if (other == via.sep3.protobuf.event.LocationEventObject.getDefaultInstance()) return this;
       if (other.getLongitude() != 0D) {
         setLongitude(other.getLongitude());
       }
@@ -456,11 +456,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sep3.protobuf.event.LocationObject parsedMessage = null;
+      via.sep3.protobuf.event.LocationEventObject parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sep3.protobuf.event.LocationObject) e.getUnfinishedMessage();
+        parsedMessage = (via.sep3.protobuf.event.LocationEventObject) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -575,41 +575,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:LocationObject)
+    // @@protoc_insertion_point(builder_scope:LocationEventObject)
   }
 
-  // @@protoc_insertion_point(class_scope:LocationObject)
-  private static final via.sep3.protobuf.event.LocationObject DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:LocationEventObject)
+  private static final via.sep3.protobuf.event.LocationEventObject DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sep3.protobuf.event.LocationObject();
+    DEFAULT_INSTANCE = new via.sep3.protobuf.event.LocationEventObject();
   }
 
-  public static via.sep3.protobuf.event.LocationObject getDefaultInstance() {
+  public static via.sep3.protobuf.event.LocationEventObject getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LocationObject>
-      PARSER = new com.google.protobuf.AbstractParser<LocationObject>() {
+  private static final com.google.protobuf.Parser<LocationEventObject>
+      PARSER = new com.google.protobuf.AbstractParser<LocationEventObject>() {
     @java.lang.Override
-    public LocationObject parsePartialFrom(
+    public LocationEventObject parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LocationObject(input, extensionRegistry);
+      return new LocationEventObject(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<LocationObject> parser() {
+  public static com.google.protobuf.Parser<LocationEventObject> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LocationObject> getParserForType() {
+  public com.google.protobuf.Parser<LocationEventObject> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sep3.protobuf.event.LocationObject getDefaultInstanceForType() {
+  public via.sep3.protobuf.event.LocationEventObject getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
