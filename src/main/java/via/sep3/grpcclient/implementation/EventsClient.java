@@ -3,6 +3,7 @@ package via.sep3.grpcclient.implementation;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
+import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
 import via.sep3.protobuf.event.*;
@@ -15,12 +16,7 @@ import java.util.List;
 @Service
 public class EventsClient implements IEventsClient
 {
-
-    private ManagedChannel managedChannel = ManagedChannelBuilder
-            .forAddress("localhost", 5266)
-            .usePlaintext()
-            .build();
-
+    private ManagedChannel managedChannel = ChannelUtils.getInstance();
     private EventGrpc.EventBlockingStub eventBlockingStub = EventGrpc.newBlockingStub(managedChannel);
 
     @Override
