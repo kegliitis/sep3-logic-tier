@@ -6,6 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;
 import via.sep3.model.User;
@@ -17,11 +18,7 @@ import java.util.List;
 
 @Service
 public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
-    private ManagedChannel managedChannel = ManagedChannelBuilder
-            .forAddress("localhost", 5266)
-            .usePlaintext()
-            .build();
-
+    private ManagedChannel managedChannel = ChannelUtils.getInstance();
     private AuthGrpc.AuthBlockingStub authBlockingStub = AuthGrpc.newBlockingStub(managedChannel);
 
     @Override

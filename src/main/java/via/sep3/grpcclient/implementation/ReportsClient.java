@@ -4,6 +4,7 @@ import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
+import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IReportsClient;
 import via.sep3.model.CreateReport;
 import via.sep3.model.Location;
@@ -18,11 +19,7 @@ import java.util.List;
 @Service
 public class ReportsClient implements IReportsClient
 {
-    private ManagedChannel managedChannel = ManagedChannelBuilder
-            .forAddress("localhost", 5266)
-            .usePlaintext()
-            .build();
-
+    private ManagedChannel managedChannel = ChannelUtils.getInstance();
     private ReportGrpc.ReportBlockingStub reportBlockingStub = ReportGrpc.newBlockingStub(managedChannel);
 
     @Override
