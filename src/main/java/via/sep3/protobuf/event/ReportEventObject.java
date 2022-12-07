@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -51,7 +52,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-
+            bitField0_ |= 0x00000001;
             proof_ = input.readBytes();
             break;
           }
@@ -108,10 +109,19 @@ private static final long serialVersionUID = 0L;
             via.sep3.protobuf.event.ReportEventObject.class, via.sep3.protobuf.event.ReportEventObject.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROOF_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString proof_;
   /**
-   * <code>bytes proof = 1;</code>
+   * <code>optional bytes proof = 1;</code>
+   * @return Whether the proof field is set.
+   */
+  @java.lang.Override
+  public boolean hasProof() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional bytes proof = 1;</code>
    * @return The proof.
    */
   @java.lang.Override
@@ -197,7 +207,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!proof_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBytes(1, proof_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
@@ -215,7 +225,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!proof_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, proof_);
     }
@@ -241,8 +251,11 @@ private static final long serialVersionUID = 0L;
     }
     via.sep3.protobuf.event.ReportEventObject other = (via.sep3.protobuf.event.ReportEventObject) obj;
 
-    if (!getProof()
-        .equals(other.getProof())) return false;
+    if (hasProof() != other.hasProof()) return false;
+    if (hasProof()) {
+      if (!getProof()
+          .equals(other.getProof())) return false;
+    }
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (hasLocation() != other.hasLocation()) return false;
@@ -261,8 +274,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROOF_FIELD_NUMBER;
-    hash = (53 * hash) + getProof().hashCode();
+    if (hasProof()) {
+      hash = (37 * hash) + PROOF_FIELD_NUMBER;
+      hash = (53 * hash) + getProof().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (hasLocation()) {
@@ -403,7 +418,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       proof_ = com.google.protobuf.ByteString.EMPTY;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       if (locationBuilder_ == null) {
@@ -438,6 +453,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public via.sep3.protobuf.event.ReportEventObject buildPartial() {
       via.sep3.protobuf.event.ReportEventObject result = new via.sep3.protobuf.event.ReportEventObject(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.proof_ = proof_;
       result.description_ = description_;
       if (locationBuilder_ == null) {
@@ -445,6 +465,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.location_ = locationBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -493,7 +514,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(via.sep3.protobuf.event.ReportEventObject other) {
       if (other == via.sep3.protobuf.event.ReportEventObject.getDefaultInstance()) return this;
-      if (other.getProof() != com.google.protobuf.ByteString.EMPTY) {
+      if (other.hasProof()) {
         setProof(other.getProof());
       }
       if (!other.getDescription().isEmpty()) {
@@ -531,10 +552,19 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.google.protobuf.ByteString proof_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes proof = 1;</code>
+     * <code>optional bytes proof = 1;</code>
+     * @return Whether the proof field is set.
+     */
+    @java.lang.Override
+    public boolean hasProof() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional bytes proof = 1;</code>
      * @return The proof.
      */
     @java.lang.Override
@@ -542,7 +572,7 @@ private static final long serialVersionUID = 0L;
       return proof_;
     }
     /**
-     * <code>bytes proof = 1;</code>
+     * <code>optional bytes proof = 1;</code>
      * @param value The proof to set.
      * @return This builder for chaining.
      */
@@ -550,17 +580,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       proof_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bytes proof = 1;</code>
+     * <code>optional bytes proof = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearProof() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       proof_ = getDefaultInstance().getProof();
       onChanged();
       return this;

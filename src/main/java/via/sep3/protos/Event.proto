@@ -6,6 +6,7 @@ option java_package = "via.sep3.protobuf.event";
 service Event
 {
   rpc CreateEvent(CreateEventObject) returns (EventObject);
+  rpc GetEvents(EventFilter) returns(EventList);
 }
 
 message CreateEventObject
@@ -25,7 +26,7 @@ message EventObject
   string time = 3;
   string description = 4;
   string status = 5;
-  bytes validation = 6;
+  optional bytes validation = 6;
   UserEventObject organiser = 7;
   ReportEventObject report = 8;
 }
@@ -38,7 +39,7 @@ message UserEventObject
 
 message ReportEventObject
 {
-  bytes proof = 1;
+  optional bytes proof = 1;
   string description = 2;
   LocationEventObject location = 3;
 }
@@ -48,6 +49,16 @@ message LocationEventObject
   double longitude = 1;
   double latitude = 2;
   int32 size = 3;
+}
+
+message EventFilter
+{
+
+}
+
+message EventList
+{
+  repeated EventObject events = 1;
 }
 
 

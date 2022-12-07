@@ -13,6 +13,12 @@ public class EventReport
         this.location = location;
     }
 
+    public EventReport(String description, Location location)
+    {
+        this.description = description;
+        this.location = location;
+    }
+
     public byte[] getProof()
     {
         return proof;
