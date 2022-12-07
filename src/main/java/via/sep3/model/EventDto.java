@@ -3,11 +3,11 @@ package via.sep3.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Event
+public class EventDto
 {
     private String id;
-    private LocalDate date;
-    private LocalTime time;
+    private int[] date;
+    private int[] time;
     private String description;
     private String status;
     private byte[] validation;
@@ -15,7 +15,7 @@ public class Event
     private String username;
     private EventReportDto report;
 
-    public Event(String id, LocalDate date, LocalTime time, String description, String status, byte[] validation, String organiserId, String username, EventReportDto report)
+    public EventDto(String id, int[] date, int[] time, String description, String status, byte[] validation, String organiserId, String username, EventReportDto report)
     {
         this.id = id;
         this.date = date;
@@ -38,22 +38,22 @@ public class Event
         this.id = id;
     }
 
-    public LocalDate getDate()
+    public int[] getDate()
     {
         return date;
     }
 
-    public void setDate(LocalDate date)
+    public void setDate(int[] date)
     {
         this.date = date;
     }
 
-    public LocalTime getTime()
+    public int[] getTime()
     {
         return time;
     }
 
-    public void setTime(LocalTime time)
+    public void setTime(int[] time)
     {
         this.time = time;
     }
