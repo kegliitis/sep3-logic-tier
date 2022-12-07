@@ -7,6 +7,8 @@ import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 import via.sep3.repository.intf.IEventsRepository;
 
+import java.util.List;
+
 @Repository
 public class EventsRepository implements IEventsRepository
 {
@@ -23,6 +25,20 @@ public class EventsRepository implements IEventsRepository
         try
         {
             return client.createEvent(createEvent, creatorEmail);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Override
+    public List<Event> getEvents()
+    {
+        try
+        {
+            return client.getEvents();
         }
         catch (Exception e)
         {

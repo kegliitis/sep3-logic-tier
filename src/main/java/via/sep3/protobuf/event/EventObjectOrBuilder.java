@@ -68,7 +68,12 @@ public interface EventObjectOrBuilder extends
       getStatusBytes();
 
   /**
-   * <code>bytes validation = 6;</code>
+   * <code>optional bytes validation = 6;</code>
+   * @return Whether the validation field is set.
+   */
+  boolean hasValidation();
+  /**
+   * <code>optional bytes validation = 6;</code>
    * @return The validation.
    */
   com.google.protobuf.ByteString getValidation();

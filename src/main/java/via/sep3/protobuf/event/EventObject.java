@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -85,7 +86,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-
+            bitField0_ |= 0x00000001;
             validation_ = input.readBytes();
             break;
           }
@@ -149,6 +150,7 @@ private static final long serialVersionUID = 0L;
             via.sep3.protobuf.event.EventObject.class, via.sep3.protobuf.event.EventObject.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -342,7 +344,15 @@ private static final long serialVersionUID = 0L;
   public static final int VALIDATION_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString validation_;
   /**
-   * <code>bytes validation = 6;</code>
+   * <code>optional bytes validation = 6;</code>
+   * @return Whether the validation field is set.
+   */
+  @java.lang.Override
+  public boolean hasValidation() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional bytes validation = 6;</code>
    * @return The validation.
    */
   @java.lang.Override
@@ -431,7 +441,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
     }
-    if (!validation_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBytes(6, validation_);
     }
     if (organiser_ != null) {
@@ -464,7 +474,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
     }
-    if (!validation_.isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(6, validation_);
     }
@@ -501,8 +511,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
-    if (!getValidation()
-        .equals(other.getValidation())) return false;
+    if (hasValidation() != other.hasValidation()) return false;
+    if (hasValidation()) {
+      if (!getValidation()
+          .equals(other.getValidation())) return false;
+    }
     if (hasOrganiser() != other.hasOrganiser()) return false;
     if (hasOrganiser()) {
       if (!getOrganiser()
@@ -534,8 +547,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
-    hash = (37 * hash) + VALIDATION_FIELD_NUMBER;
-    hash = (53 * hash) + getValidation().hashCode();
+    if (hasValidation()) {
+      hash = (37 * hash) + VALIDATION_FIELD_NUMBER;
+      hash = (53 * hash) + getValidation().hashCode();
+    }
     if (hasOrganiser()) {
       hash = (37 * hash) + ORGANISER_FIELD_NUMBER;
       hash = (53 * hash) + getOrganiser().hashCode();
@@ -688,7 +703,7 @@ private static final long serialVersionUID = 0L;
       status_ = "";
 
       validation_ = com.google.protobuf.ByteString.EMPTY;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (organiserBuilder_ == null) {
         organiser_ = null;
       } else {
@@ -727,11 +742,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public via.sep3.protobuf.event.EventObject buildPartial() {
       via.sep3.protobuf.event.EventObject result = new via.sep3.protobuf.event.EventObject(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.id_ = id_;
       result.date_ = date_;
       result.time_ = time_;
       result.description_ = description_;
       result.status_ = status_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.validation_ = validation_;
       if (organiserBuilder_ == null) {
         result.organiser_ = organiser_;
@@ -743,6 +763,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.report_ = reportBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -811,7 +832,7 @@ private static final long serialVersionUID = 0L;
         status_ = other.status_;
         onChanged();
       }
-      if (other.getValidation() != com.google.protobuf.ByteString.EMPTY) {
+      if (other.hasValidation()) {
         setValidation(other.getValidation());
       }
       if (other.hasOrganiser()) {
@@ -848,6 +869,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1231,7 +1253,15 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString validation_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes validation = 6;</code>
+     * <code>optional bytes validation = 6;</code>
+     * @return Whether the validation field is set.
+     */
+    @java.lang.Override
+    public boolean hasValidation() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional bytes validation = 6;</code>
      * @return The validation.
      */
     @java.lang.Override
@@ -1239,7 +1269,7 @@ private static final long serialVersionUID = 0L;
       return validation_;
     }
     /**
-     * <code>bytes validation = 6;</code>
+     * <code>optional bytes validation = 6;</code>
      * @param value The validation to set.
      * @return This builder for chaining.
      */
@@ -1247,17 +1277,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       validation_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bytes validation = 6;</code>
+     * <code>optional bytes validation = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearValidation() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       validation_ = getDefaultInstance().getValidation();
       onChanged();
       return this;
