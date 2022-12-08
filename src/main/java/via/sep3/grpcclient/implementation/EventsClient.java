@@ -37,7 +37,7 @@ public class EventsClient implements IEventsClient
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
                 response.getDescription(), response.getStatus(), response.getValidation().toByteArray(),
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
-                new EventReport(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
+                new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
                         (byte)response.getReport().getLocation().getSize())));
     }
@@ -56,7 +56,7 @@ public class EventsClient implements IEventsClient
             Event event = new Event(grpcEvent.getId(), LocalDate.parse(grpcEvent.getDate()), LocalTime.parse(grpcEvent.getTime()),
                     grpcEvent.getDescription(), grpcEvent.getStatus(), grpcEvent.getValidation().toByteArray(),
                     grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
-                    new EventReport(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
+                    new EventReportDto(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
                             new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),
                                     (byte)grpcEvent.getReport().getLocation().getSize())));
             events.add(event);
