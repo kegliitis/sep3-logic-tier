@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.jwt.JwtTokenUtil;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
+import via.sep3.model.EventDto;
 import via.sep3.repository.implementation.EventsRepository;
 import via.sep3.repository.intf.IEventsRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -51,7 +53,15 @@ public class EventsController
         try
         {
             List<Event> events = repository.getEvents();
-            return ResponseEntity.ok(events);
+
+            List<EventDto> eventsList = new ArrayList<>();
+            for (Event event: events)
+            {
+                int[] date = new int[]{event.getDate().getYear(), event.getDate().getMonthValue(), event.getDate().getDayOfMonth()};
+                int[] time = new int[]{event.getTime().getHour(), event.getTime().getMinute(), event.getTime().getSecond()};
+                eventsList.add(new EventDto(event.getId(), date, time, event.getDescription(), event.getStatus(), event.getValidation(), event.getOrganiserId(), event.getUsername(), event.getReport()));
+            }
+            return ResponseEntity.ok(eventsList);
         }
         catch (Exception e)
         {
