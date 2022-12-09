@@ -3,6 +3,7 @@ package via.sep3.grpcclient.implementation;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
+import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
 import via.sep3.protobuf.event.*;
@@ -15,12 +16,7 @@ import java.util.List;
 @Service
 public class EventsClient implements IEventsClient
 {
-
-    private ManagedChannel managedChannel = ManagedChannelBuilder
-            .forAddress("localhost", 5266)
-            .usePlaintext()
-            .build();
-
+    private ManagedChannel managedChannel = ChannelUtils.getInstance();
     private EventGrpc.EventBlockingStub eventBlockingStub = EventGrpc.newBlockingStub(managedChannel);
 
     @Override
@@ -40,7 +36,7 @@ public class EventsClient implements IEventsClient
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
                 response.getDescription(), response.getValidation().toByteArray(),
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
-                new EventReport(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
+                new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
                         (byte)response.getReport().getLocation().getSize())));
     }
@@ -59,7 +55,7 @@ public class EventsClient implements IEventsClient
             Event event = new Event(grpcEvent.getId(), LocalDate.parse(grpcEvent.getDate()), LocalTime.parse(grpcEvent.getTime()),
                     grpcEvent.getDescription(), grpcEvent.getValidation().toByteArray(),
                     grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
-                    new EventReport(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
+                    new EventReportDto(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
                             new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),
                                     (byte)grpcEvent.getReport().getLocation().getSize())));
             events.add(event);

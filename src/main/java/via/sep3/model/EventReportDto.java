@@ -1,19 +1,19 @@
 package via.sep3.model;
 
-public class EventReport
+public class EventReportDto
 {
     private byte[] proof;
     private String description;
     private Location location;
 
-    public EventReport(byte[] proof, String description, Location location)
+    public EventReportDto(byte[] proof, String description, Location location)
     {
         this.proof = proof;
         this.description = description;
         this.location = location;
     }
 
-    public EventReport(String description, Location location)
+    public EventReportDto(String description, Location location)
     {
         this.description = description;
         this.location = location;
