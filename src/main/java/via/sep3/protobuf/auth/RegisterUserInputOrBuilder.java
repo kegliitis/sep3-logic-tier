@@ -42,4 +42,16 @@ public interface RegisterUserInputOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPasswordBytes();
+
+  /**
+   * <code>string role = 4;</code>
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   * <code>string role = 4;</code>
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString
+      getRoleBytes();
 }

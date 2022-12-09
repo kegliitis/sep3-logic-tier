@@ -5,10 +5,13 @@ public class RegisterUser {
     private String email;
     private String password;
 
-    public RegisterUser(String userName, String email, String password) {
+    private String role;
+
+    public RegisterUser(String userName, String email, String password, String role) {
         this.userName = userName;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public String getUserName() {
@@ -33,5 +36,15 @@ public class RegisterUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole()
+    {
+        return role;
+    }
+
+    public void setRole(String role)
+    {
+        this.role = role;
     }
 }
