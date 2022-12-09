@@ -14,7 +14,7 @@ public class Event
     private String username;
     private EventReportDto report;
 
-    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReport report)
+    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report)
     {
         this.id = id;
         this.date = date;
