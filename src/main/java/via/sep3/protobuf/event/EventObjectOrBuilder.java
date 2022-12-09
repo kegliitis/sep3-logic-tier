@@ -56,55 +56,43 @@ public interface EventObjectOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>string status = 5;</code>
-   * @return The status.
-   */
-  java.lang.String getStatus();
-  /**
-   * <code>string status = 5;</code>
-   * @return The bytes for status.
-   */
-  com.google.protobuf.ByteString
-      getStatusBytes();
-
-  /**
-   * <code>optional bytes validation = 6;</code>
+   * <code>optional bytes validation = 5;</code>
    * @return Whether the validation field is set.
    */
   boolean hasValidation();
   /**
-   * <code>optional bytes validation = 6;</code>
+   * <code>optional bytes validation = 5;</code>
    * @return The validation.
    */
   com.google.protobuf.ByteString getValidation();
 
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    * @return Whether the organiser field is set.
    */
   boolean hasOrganiser();
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    * @return The organiser.
    */
   via.sep3.protobuf.event.UserEventObject getOrganiser();
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    */
   via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder();
 
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    * @return Whether the report field is set.
    */
   boolean hasReport();
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    * @return The report.
    */
   via.sep3.protobuf.event.ReportEventObject getReport();
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    */
   via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder();
 }

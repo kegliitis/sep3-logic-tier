@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     date_ = "";
     time_ = "";
     description_ = "";
-    status_ = "";
     validation_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -80,17 +79,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            status_ = s;
-            break;
-          }
-          case 50: {
             bitField0_ |= 0x00000001;
             validation_ = input.readBytes();
             break;
           }
-          case 58: {
+          case 50: {
             via.sep3.protobuf.event.UserEventObject.Builder subBuilder = null;
             if (organiser_ != null) {
               subBuilder = organiser_.toBuilder();
@@ -103,7 +96,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 66: {
+          case 58: {
             via.sep3.protobuf.event.ReportEventObject.Builder subBuilder = null;
             if (report_ != null) {
               subBuilder = report_.toBuilder();
@@ -303,48 +296,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object status_;
-  /**
-   * <code>string status = 5;</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 5;</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int VALIDATION_FIELD_NUMBER = 6;
+  public static final int VALIDATION_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString validation_;
   /**
-   * <code>optional bytes validation = 6;</code>
+   * <code>optional bytes validation = 5;</code>
    * @return Whether the validation field is set.
    */
   @java.lang.Override
@@ -352,7 +307,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional bytes validation = 6;</code>
+   * <code>optional bytes validation = 5;</code>
    * @return The validation.
    */
   @java.lang.Override
@@ -360,10 +315,10 @@ private static final long serialVersionUID = 0L;
     return validation_;
   }
 
-  public static final int ORGANISER_FIELD_NUMBER = 7;
+  public static final int ORGANISER_FIELD_NUMBER = 6;
   private via.sep3.protobuf.event.UserEventObject organiser_;
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    * @return Whether the organiser field is set.
    */
   @java.lang.Override
@@ -371,7 +326,7 @@ private static final long serialVersionUID = 0L;
     return organiser_ != null;
   }
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    * @return The organiser.
    */
   @java.lang.Override
@@ -379,17 +334,17 @@ private static final long serialVersionUID = 0L;
     return organiser_ == null ? via.sep3.protobuf.event.UserEventObject.getDefaultInstance() : organiser_;
   }
   /**
-   * <code>.UserEventObject organiser = 7;</code>
+   * <code>.UserEventObject organiser = 6;</code>
    */
   @java.lang.Override
   public via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder() {
     return getOrganiser();
   }
 
-  public static final int REPORT_FIELD_NUMBER = 8;
+  public static final int REPORT_FIELD_NUMBER = 7;
   private via.sep3.protobuf.event.ReportEventObject report_;
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    * @return Whether the report field is set.
    */
   @java.lang.Override
@@ -397,7 +352,7 @@ private static final long serialVersionUID = 0L;
     return report_ != null;
   }
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    * @return The report.
    */
   @java.lang.Override
@@ -405,7 +360,7 @@ private static final long serialVersionUID = 0L;
     return report_ == null ? via.sep3.protobuf.event.ReportEventObject.getDefaultInstance() : report_;
   }
   /**
-   * <code>.ReportEventObject report = 8;</code>
+   * <code>.ReportEventObject report = 7;</code>
    */
   @java.lang.Override
   public via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder() {
@@ -438,17 +393,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeBytes(6, validation_);
+      output.writeBytes(5, validation_);
     }
     if (organiser_ != null) {
-      output.writeMessage(7, getOrganiser());
+      output.writeMessage(6, getOrganiser());
     }
     if (report_ != null) {
-      output.writeMessage(8, getReport());
+      output.writeMessage(7, getReport());
     }
     unknownFields.writeTo(output);
   }
@@ -471,20 +423,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(6, validation_);
+        .computeBytesSize(5, validation_);
     }
     if (organiser_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getOrganiser());
+        .computeMessageSize(6, getOrganiser());
     }
     if (report_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getReport());
+        .computeMessageSize(7, getReport());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -509,8 +458,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTime())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (hasValidation() != other.hasValidation()) return false;
     if (hasValidation()) {
       if (!getValidation()
@@ -545,8 +492,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTime().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     if (hasValidation()) {
       hash = (37 * hash) + VALIDATION_FIELD_NUMBER;
       hash = (53 * hash) + getValidation().hashCode();
@@ -700,8 +645,6 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
-      status_ = "";
-
       validation_ = com.google.protobuf.ByteString.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (organiserBuilder_ == null) {
@@ -748,7 +691,6 @@ private static final long serialVersionUID = 0L;
       result.date_ = date_;
       result.time_ = time_;
       result.description_ = description_;
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         to_bitField0_ |= 0x00000001;
       }
@@ -826,10 +768,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        onChanged();
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
         onChanged();
       }
       if (other.hasValidation()) {
@@ -1175,85 +1113,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 5;</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 5;</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 5;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = getDefaultInstance().getStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 5;</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.ByteString validation_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>optional bytes validation = 6;</code>
+     * <code>optional bytes validation = 5;</code>
      * @return Whether the validation field is set.
      */
     @java.lang.Override
@@ -1261,7 +1123,7 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional bytes validation = 6;</code>
+     * <code>optional bytes validation = 5;</code>
      * @return The validation.
      */
     @java.lang.Override
@@ -1269,7 +1131,7 @@ private static final long serialVersionUID = 0L;
       return validation_;
     }
     /**
-     * <code>optional bytes validation = 6;</code>
+     * <code>optional bytes validation = 5;</code>
      * @param value The validation to set.
      * @return This builder for chaining.
      */
@@ -1283,7 +1145,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional bytes validation = 6;</code>
+     * <code>optional bytes validation = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearValidation() {
@@ -1297,14 +1159,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> organiserBuilder_;
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      * @return Whether the organiser field is set.
      */
     public boolean hasOrganiser() {
       return organiserBuilder_ != null || organiser_ != null;
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      * @return The organiser.
      */
     public via.sep3.protobuf.event.UserEventObject getOrganiser() {
@@ -1315,7 +1177,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public Builder setOrganiser(via.sep3.protobuf.event.UserEventObject value) {
       if (organiserBuilder_ == null) {
@@ -1331,7 +1193,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public Builder setOrganiser(
         via.sep3.protobuf.event.UserEventObject.Builder builderForValue) {
@@ -1345,7 +1207,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public Builder mergeOrganiser(via.sep3.protobuf.event.UserEventObject value) {
       if (organiserBuilder_ == null) {
@@ -1363,7 +1225,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public Builder clearOrganiser() {
       if (organiserBuilder_ == null) {
@@ -1377,7 +1239,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public via.sep3.protobuf.event.UserEventObject.Builder getOrganiserBuilder() {
       
@@ -1385,7 +1247,7 @@ private static final long serialVersionUID = 0L;
       return getOrganiserFieldBuilder().getBuilder();
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     public via.sep3.protobuf.event.UserEventObjectOrBuilder getOrganiserOrBuilder() {
       if (organiserBuilder_ != null) {
@@ -1396,7 +1258,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.UserEventObject organiser = 7;</code>
+     * <code>.UserEventObject organiser = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> 
@@ -1416,14 +1278,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.event.ReportEventObject, via.sep3.protobuf.event.ReportEventObject.Builder, via.sep3.protobuf.event.ReportEventObjectOrBuilder> reportBuilder_;
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      * @return Whether the report field is set.
      */
     public boolean hasReport() {
       return reportBuilder_ != null || report_ != null;
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      * @return The report.
      */
     public via.sep3.protobuf.event.ReportEventObject getReport() {
@@ -1434,7 +1296,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public Builder setReport(via.sep3.protobuf.event.ReportEventObject value) {
       if (reportBuilder_ == null) {
@@ -1450,7 +1312,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public Builder setReport(
         via.sep3.protobuf.event.ReportEventObject.Builder builderForValue) {
@@ -1464,7 +1326,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public Builder mergeReport(via.sep3.protobuf.event.ReportEventObject value) {
       if (reportBuilder_ == null) {
@@ -1482,7 +1344,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public Builder clearReport() {
       if (reportBuilder_ == null) {
@@ -1496,7 +1358,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public via.sep3.protobuf.event.ReportEventObject.Builder getReportBuilder() {
       
@@ -1504,7 +1366,7 @@ private static final long serialVersionUID = 0L;
       return getReportFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     public via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder() {
       if (reportBuilder_ != null) {
@@ -1515,7 +1377,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ReportEventObject report = 8;</code>
+     * <code>.ReportEventObject report = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         via.sep3.protobuf.event.ReportEventObject, via.sep3.protobuf.event.ReportEventObject.Builder, via.sep3.protobuf.event.ReportEventObjectOrBuilder> 

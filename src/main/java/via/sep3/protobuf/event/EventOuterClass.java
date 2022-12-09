@@ -58,26 +58,25 @@ public final class EventOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Event.proto\"|\n\021CreateEventObject\022\014\n\004da" +
+      "\n\013Event.proto\"l\n\021CreateEventObject\022\014\n\004da" +
       "te\030\001 \001(\t\022\014\n\004time\030\002 \001(\t\022\023\n\013description\030\003 " +
-      "\001(\t\022\016\n\006status\030\004 \001(\t\022\024\n\014creatorEmail\030\005 \001(" +
-      "\t\022\020\n\010reportId\030\006 \001(\t\"\313\001\n\013EventObject\022\n\n\002i" +
-      "d\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\023\n\013d" +
-      "escription\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022\027\n\nvali" +
-      "dation\030\006 \001(\014H\000\210\001\001\022#\n\torganiser\030\007 \001(\0132\020.U" +
-      "serEventObject\022\"\n\006report\030\010 \001(\0132\022.ReportE" +
-      "ventObjectB\r\n\013_validation\"/\n\017UserEventOb" +
-      "ject\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002 \001(\t\"n\n\021Re" +
-      "portEventObject\022\022\n\005proof\030\001 \001(\014H\000\210\001\001\022\023\n\013d" +
-      "escription\030\002 \001(\t\022&\n\010location\030\003 \001(\0132\024.Loc" +
-      "ationEventObjectB\010\n\006_proof\"H\n\023LocationEv" +
-      "entObject\022\021\n\tlongitude\030\001 \001(\001\022\020\n\010latitude" +
-      "\030\002 \001(\001\022\014\n\004size\030\003 \001(\005\"\r\n\013EventFilter\")\n\tE" +
-      "ventList\022\034\n\006events\030\001 \003(\0132\014.EventObject2_" +
-      "\n\005Event\022/\n\013CreateEvent\022\022.CreateEventObje" +
-      "ct\032\014.EventObject\022%\n\tGetEvents\022\014.EventFil" +
-      "ter\032\n.EventListB\033\n\027via.sep3.protobuf.eve" +
-      "ntP\001b\006proto3"
+      "\001(\t\022\024\n\014creatorEmail\030\004 \001(\t\022\020\n\010reportId\030\005 " +
+      "\001(\t\"\273\001\n\013EventObject\022\n\n\002id\030\001 \001(\t\022\014\n\004date\030" +
+      "\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
+      "\022\027\n\nvalidation\030\005 \001(\014H\000\210\001\001\022#\n\torganiser\030\006" +
+      " \001(\0132\020.UserEventObject\022\"\n\006report\030\007 \001(\0132\022" +
+      ".ReportEventObjectB\r\n\013_validation\"/\n\017Use" +
+      "rEventObject\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002 \001" +
+      "(\t\"n\n\021ReportEventObject\022\022\n\005proof\030\001 \001(\014H\000" +
+      "\210\001\001\022\023\n\013description\030\002 \001(\t\022&\n\010location\030\003 \001" +
+      "(\0132\024.LocationEventObjectB\010\n\006_proof\"H\n\023Lo" +
+      "cationEventObject\022\021\n\tlongitude\030\001 \001(\001\022\020\n\010" +
+      "latitude\030\002 \001(\001\022\014\n\004size\030\003 \001(\005\"\r\n\013EventFil" +
+      "ter\")\n\tEventList\022\034\n\006events\030\001 \003(\0132\014.Event" +
+      "Object2_\n\005Event\022/\n\013CreateEvent\022\022.CreateE" +
+      "ventObject\032\014.EventObject\022%\n\tGetEvents\022\014." +
+      "EventFilter\032\n.EventListB\033\n\027via.sep3.prot" +
+      "obuf.eventP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -88,13 +87,13 @@ public final class EventOuterClass {
     internal_static_CreateEventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateEventObject_descriptor,
-        new java.lang.String[] { "Date", "Time", "Description", "Status", "CreatorEmail", "ReportId", });
+        new java.lang.String[] { "Date", "Time", "Description", "CreatorEmail", "ReportId", });
     internal_static_EventObject_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_EventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EventObject_descriptor,
-        new java.lang.String[] { "Id", "Date", "Time", "Description", "Status", "Validation", "Organiser", "Report", "Validation", });
+        new java.lang.String[] { "Id", "Date", "Time", "Description", "Validation", "Organiser", "Report", "Validation", });
     internal_static_UserEventObject_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_UserEventObject_fieldAccessorTable = new

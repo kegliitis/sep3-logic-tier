@@ -30,7 +30,6 @@ public class EventsClient implements IEventsClient
                 .setDate(String.format("%04d/%02d/%02d", createEvent.getDate()[0], createEvent.getDate()[1], createEvent.getDate()[2]))
                 .setTime(String.format("%02d:%02d:%02d", createEvent.getTime()[0], createEvent.getTime()[1], createEvent.getTime()[2]))
                 .setDescription(createEvent.getDescription())
-                .setStatus(createEvent.getStatus())
                 .setCreatorEmail(creatorEmail)
                 .setReportId(createEvent.getReportId())
                 .build();
@@ -39,7 +38,7 @@ public class EventsClient implements IEventsClient
 
 
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
-                response.getDescription(), response.getStatus(), response.getValidation().toByteArray(),
+                response.getDescription(), response.getValidation().toByteArray(),
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
                 new EventReport(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
@@ -58,7 +57,7 @@ public class EventsClient implements IEventsClient
         for (EventObject grpcEvent: response.getEventsList())
         {
             Event event = new Event(grpcEvent.getId(), LocalDate.parse(grpcEvent.getDate()), LocalTime.parse(grpcEvent.getTime()),
-                    grpcEvent.getDescription(), grpcEvent.getStatus(), grpcEvent.getValidation().toByteArray(),
+                    grpcEvent.getDescription(), grpcEvent.getValidation().toByteArray(),
                     grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
                     new EventReport(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
                             new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),

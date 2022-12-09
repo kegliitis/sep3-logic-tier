@@ -14,9 +14,8 @@ message CreateEventObject
   string date = 1;
   string time = 2;
   string description = 3;
-  string status = 4;
-  string creatorEmail = 5;
-  string reportId = 6;
+  string creatorEmail = 4;
+  string reportId = 5;
 }
 
 message EventObject
@@ -25,10 +24,9 @@ message EventObject
   string date = 2;
   string time = 3;
   string description = 4;
-  string status = 5;
-  optional bytes validation = 6;
-  UserEventObject organiser = 7;
-  ReportEventObject report = 8;
+  optional bytes validation = 5;
+  UserEventObject organiser = 6;
+  ReportEventObject report = 7;
 }
 
 message UserEventObject
@@ -60,5 +58,3 @@ message EventList
 {
   repeated EventObject events = 1;
 }
-
-

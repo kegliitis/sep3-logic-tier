@@ -44,36 +44,24 @@ public interface CreateEventObjectOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>string status = 4;</code>
-   * @return The status.
-   */
-  java.lang.String getStatus();
-  /**
-   * <code>string status = 4;</code>
-   * @return The bytes for status.
-   */
-  com.google.protobuf.ByteString
-      getStatusBytes();
-
-  /**
-   * <code>string creatorEmail = 5;</code>
+   * <code>string creatorEmail = 4;</code>
    * @return The creatorEmail.
    */
   java.lang.String getCreatorEmail();
   /**
-   * <code>string creatorEmail = 5;</code>
+   * <code>string creatorEmail = 4;</code>
    * @return The bytes for creatorEmail.
    */
   com.google.protobuf.ByteString
       getCreatorEmailBytes();
 
   /**
-   * <code>string reportId = 6;</code>
+   * <code>string reportId = 5;</code>
    * @return The reportId.
    */
   java.lang.String getReportId();
   /**
-   * <code>string reportId = 6;</code>
+   * <code>string reportId = 5;</code>
    * @return The bytes for reportId.
    */
   com.google.protobuf.ByteString
