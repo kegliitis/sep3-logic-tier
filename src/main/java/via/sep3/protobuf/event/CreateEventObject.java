@@ -19,7 +19,6 @@ private static final long serialVersionUID = 0L;
     date_ = "";
     time_ = "";
     description_ = "";
-    status_ = "";
     creatorEmail_ = "";
     reportId_ = "";
   }
@@ -75,16 +74,10 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            status_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             creatorEmail_ = s;
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             reportId_ = s;
@@ -238,48 +231,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object status_;
-  /**
-   * <code>string status = 4;</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 4;</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CREATOREMAIL_FIELD_NUMBER = 5;
+  public static final int CREATOREMAIL_FIELD_NUMBER = 4;
   private volatile java.lang.Object creatorEmail_;
   /**
-   * <code>string creatorEmail = 5;</code>
+   * <code>string creatorEmail = 4;</code>
    * @return The creatorEmail.
    */
   @java.lang.Override
@@ -296,7 +251,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string creatorEmail = 5;</code>
+   * <code>string creatorEmail = 4;</code>
    * @return The bytes for creatorEmail.
    */
   @java.lang.Override
@@ -314,10 +269,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int REPORTID_FIELD_NUMBER = 6;
+  public static final int REPORTID_FIELD_NUMBER = 5;
   private volatile java.lang.Object reportId_;
   /**
-   * <code>string reportId = 6;</code>
+   * <code>string reportId = 5;</code>
    * @return The reportId.
    */
   @java.lang.Override
@@ -334,7 +289,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string reportId = 6;</code>
+   * <code>string reportId = 5;</code>
    * @return The bytes for reportId.
    */
   @java.lang.Override
@@ -375,14 +330,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, creatorEmail_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, creatorEmail_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, reportId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, reportId_);
     }
     unknownFields.writeTo(output);
   }
@@ -402,14 +354,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmail_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, creatorEmail_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, creatorEmail_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, reportId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, reportId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,8 +381,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTime())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (!getCreatorEmail()
         .equals(other.getCreatorEmail())) return false;
     if (!getReportId()
@@ -455,8 +402,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTime().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     hash = (37 * hash) + CREATOREMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getCreatorEmail().hashCode();
     hash = (37 * hash) + REPORTID_FIELD_NUMBER;
@@ -600,8 +545,6 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
-      status_ = "";
-
       creatorEmail_ = "";
 
       reportId_ = "";
@@ -635,7 +578,6 @@ private static final long serialVersionUID = 0L;
       result.date_ = date_;
       result.time_ = time_;
       result.description_ = description_;
-      result.status_ = status_;
       result.creatorEmail_ = creatorEmail_;
       result.reportId_ = reportId_;
       onBuilt();
@@ -696,10 +638,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        onChanged();
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
         onChanged();
       }
       if (!other.getCreatorEmail().isEmpty()) {
@@ -967,85 +905,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 4;</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = getDefaultInstance().getStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object creatorEmail_ = "";
     /**
-     * <code>string creatorEmail = 5;</code>
+     * <code>string creatorEmail = 4;</code>
      * @return The creatorEmail.
      */
     public java.lang.String getCreatorEmail() {
@@ -1061,7 +923,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creatorEmail = 5;</code>
+     * <code>string creatorEmail = 4;</code>
      * @return The bytes for creatorEmail.
      */
     public com.google.protobuf.ByteString
@@ -1078,7 +940,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creatorEmail = 5;</code>
+     * <code>string creatorEmail = 4;</code>
      * @param value The creatorEmail to set.
      * @return This builder for chaining.
      */
@@ -1093,7 +955,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creatorEmail = 5;</code>
+     * <code>string creatorEmail = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatorEmail() {
@@ -1103,7 +965,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creatorEmail = 5;</code>
+     * <code>string creatorEmail = 4;</code>
      * @param value The bytes for creatorEmail to set.
      * @return This builder for chaining.
      */
@@ -1121,7 +983,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object reportId_ = "";
     /**
-     * <code>string reportId = 6;</code>
+     * <code>string reportId = 5;</code>
      * @return The reportId.
      */
     public java.lang.String getReportId() {
@@ -1137,7 +999,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reportId = 6;</code>
+     * <code>string reportId = 5;</code>
      * @return The bytes for reportId.
      */
     public com.google.protobuf.ByteString
@@ -1154,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reportId = 6;</code>
+     * <code>string reportId = 5;</code>
      * @param value The reportId to set.
      * @return This builder for chaining.
      */
@@ -1169,7 +1031,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string reportId = 6;</code>
+     * <code>string reportId = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearReportId() {
@@ -1179,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string reportId = 6;</code>
+     * <code>string reportId = 5;</code>
      * @param value The bytes for reportId to set.
      * @return This builder for chaining.
      */
