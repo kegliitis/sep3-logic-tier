@@ -9,19 +9,17 @@ public class EventDto
     private int[] date;
     private int[] time;
     private String description;
-    private String status;
     private byte[] validation;
     private String organiserId;
     private String username;
     private EventReportDto report;
 
-    public EventDto(String id, int[] date, int[] time, String description, String status, byte[] validation, String organiserId, String username, EventReportDto report)
+    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, String organiserId, String username, EventReportDto report)
     {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
-        this.status = status;
         this.validation = validation;
         this.organiserId = organiserId;
         this.username = username;
@@ -66,16 +64,6 @@ public class EventDto
     public void setDescription(String description)
     {
         this.description = description;
-    }
-
-    public String getStatus()
-    {
-        return status;
-    }
-
-    public void setStatus(String status)
-    {
-        this.status = status;
     }
 
     public byte[] getValidation()
