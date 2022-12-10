@@ -3,6 +3,7 @@ package via.sep3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.jwt.JwtTokenUtil;
+import via.sep3.model.CreateEvent;
 import via.sep3.repository.intf.IAuthRepository;
 import via.sep3.model.LoginUser;
 import via.sep3.model.RegisterUser;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -54,6 +57,22 @@ public class AuthController {
             String token = jwtTokenUtil.generateToken(user);
 
             return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public ResponseEntity getUserByEmail(@RequestHeader Map<String, String> headers)
+    {
+        try{
+            String token = headers.get("authorization").split(" ")[1];
+            String email = jwtTokenUtil.getEmailFromToken(token);
+
+            User user = authRepository.getUserByEmail(email);
+
+            return ResponseEntity.ok(user);
         } catch (Exception e) {
             System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());

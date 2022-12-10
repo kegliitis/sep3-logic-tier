@@ -22,4 +22,5 @@ public class AuthRepository implements IAuthRepository {
     public User login(LoginUser user) {
         return authClient.login(user);
     }
+    public User getUserByEmail(String email) {return authClient.getUserByEmail(email);}
 }
