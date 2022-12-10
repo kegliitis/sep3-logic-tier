@@ -27,6 +27,7 @@ public class AuthClient implements via.sep3.grpcclient.client.IAuthClient {
                 .setEmail(user.getEmail())
                 .setUsername(user.getUserName())
                 .setPassword(user.getPassword())
+                .setRole(user.getRole())
                 .build();
         UserOutput response = authBlockingStub.register(input);
 

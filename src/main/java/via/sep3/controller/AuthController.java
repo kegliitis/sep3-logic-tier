@@ -50,6 +50,32 @@ public class AuthController {
         }
     }
 
+    @RequestMapping(value= "/register/admin", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity registerAdmin(@RequestHeader Map<String, String> headers, @RequestBody RegisterUser registerUser)
+    {
+        String creatorToken = headers.get("authorization").split(" ")[1];
+        String creatorRole = jwtTokenUtil.getRoleFromToken(creatorToken);
+
+        if (!creatorRole.equals("Admin"))
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Only admins can register new admins!");
+
+        try
+        {
+            User user = authRepository.register(registerUser);
+
+            if (user == null)
+                throw new Exception("The user couldn't be registered. Please try again later!");
+
+            String token = jwtTokenUtil.generateToken(user);
+
+            return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity login(@RequestBody LoginUser loginUser) {
         try{
