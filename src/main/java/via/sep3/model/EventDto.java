@@ -13,8 +13,9 @@ public class EventDto
     private String organiserId;
     private String username;
     private EventReportDto report;
+    private boolean approved;
 
-    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, String organiserId, String username, EventReportDto report)
+    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved)
     {
         this.id = id;
         this.date = date;
@@ -24,6 +25,7 @@ public class EventDto
         this.organiserId = organiserId;
         this.username = username;
         this.report = report;
+        this.approved = approved;
     }
 
     public String getId()
@@ -104,5 +106,15 @@ public class EventDto
     public void setReport(EventReportDto report)
     {
         this.report = report;
+    }
+
+    public boolean getApproved()
+    {
+        return approved;
+    }
+
+    public void setApproved(boolean approved)
+    {
+        this.approved = approved;
     }
 }
