@@ -42,7 +42,7 @@ public class EventsClient implements IEventsClient
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
                 new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
-                        (byte)response.getReport().getLocation().getSize())));
+                        (byte)response.getReport().getLocation().getSize())), response.getApproved());
     }
 
     @Override
@@ -61,7 +61,7 @@ public class EventsClient implements IEventsClient
                     grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
                     new EventReportDto(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
                             new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),
-                                    (byte)grpcEvent.getReport().getLocation().getSize())));
+                                    (byte)grpcEvent.getReport().getLocation().getSize())), grpcEvent.getApproved());
             events.add(event);
         }
         return events;
@@ -81,7 +81,7 @@ public class EventsClient implements IEventsClient
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
             new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                     new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
-                            (byte)response.getReport().getLocation().getSize())));
+                            (byte)response.getReport().getLocation().getSize())), response.getApproved());
     }
 
     @Override
