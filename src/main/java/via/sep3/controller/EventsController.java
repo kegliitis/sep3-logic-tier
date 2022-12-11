@@ -51,14 +51,16 @@ public class EventsController
 
     @RequestMapping(value = "/events", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getEvents()
+    public ResponseEntity getEvents(@RequestHeader Map<String, String> headers, @RequestParam(required = false, defaultValue = "Upcoming") String filter)
     {
         try
         {
-            List<Event> events = repository.getEvents();
+            String token = headers.get("authorization").split(" ")[1];
+            String email = jwtTokenUtil.getEmailFromToken(token);
+            List<Event> events = repository.getEvents(email, filter);
 
             List<EventDto> eventsList = new ArrayList<>();
-            for (Event event: events)
+            for (Event event : events)
             {
                 int[] date = new int[]{event.getDate().getYear(), event.getDate().getMonthValue(), event.getDate().getDayOfMonth()};
                 int[] time = new int[]{event.getTime().getHour(), event.getTime().getMinute(), event.getTime().getSecond()};

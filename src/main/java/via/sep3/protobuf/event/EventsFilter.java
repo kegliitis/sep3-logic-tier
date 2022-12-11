@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EventsFilter() {
+    email_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -48,6 +50,18 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            email_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -82,6 +96,90 @@ private static final long serialVersionUID = 0L;
             via.sep3.protobuf.event.EventsFilter.class, via.sep3.protobuf.event.EventsFilter.Builder.class);
   }
 
+  public static final int EMAIL_FIELD_NUMBER = 1;
+  private volatile java.lang.Object email_;
+  /**
+   * <code>string email = 1;</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string email = 1;</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 2;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   *Values can be: {"Upcoming", "Organised by me"}
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *Values can be: {"Upcoming", "Organised by me"}
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -96,6 +194,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -105,6 +209,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -120,6 +230,10 @@ private static final long serialVersionUID = 0L;
     }
     via.sep3.protobuf.event.EventsFilter other = (via.sep3.protobuf.event.EventsFilter) obj;
 
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -131,6 +245,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -264,6 +382,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      email_ = "";
+
+      filter_ = "";
+
       return this;
     }
 
@@ -290,6 +412,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public via.sep3.protobuf.event.EventsFilter buildPartial() {
       via.sep3.protobuf.event.EventsFilter result = new via.sep3.protobuf.event.EventsFilter(this);
+      result.email_ = email_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -338,6 +462,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(via.sep3.protobuf.event.EventsFilter other) {
       if (other == via.sep3.protobuf.event.EventsFilter.getDefaultInstance()) return this;
+      if (!other.getEmail().isEmpty()) {
+        email_ = other.email_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -364,6 +496,178 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>string email = 1;</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      email_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      
+      email_ = getDefaultInstance().getEmail();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      email_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     *Values can be: {"Upcoming", "Organised by me"}
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *Values can be: {"Upcoming", "Organised by me"}
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *Values can be: {"Upcoming", "Organised by me"}
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Values can be: {"Upcoming", "Organised by me"}
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Values can be: {"Upcoming", "Organised by me"}
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
+      onChanged();
       return this;
     }
     @java.lang.Override

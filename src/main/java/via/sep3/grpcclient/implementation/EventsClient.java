@@ -46,9 +46,12 @@ public class EventsClient implements IEventsClient
     }
 
     @Override
-    public List<Event> getEvents()
+    public List<Event> getEvents(String email, String filter)
     {
-        EventsFilter input = EventsFilter.newBuilder().build();
+        EventsFilter input = EventsFilter.newBuilder()
+                .setEmail(email)
+                .setFilter(filter)
+                .build();
 
         EventList response = eventBlockingStub.getEvents(input);
 

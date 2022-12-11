@@ -54,7 +54,9 @@ message LocationEventObject
 
 message EventsFilter
 {
-
+  string email = 1;
+  //Values can be: {"Upcoming", "Organised by me"}
+  string filter = 2;
 }
 
 message EventFilter
