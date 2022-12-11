@@ -48,7 +48,7 @@ public class EventsClient implements IEventsClient
     @Override
     public List<Event> getEvents()
     {
-        EventFilter input = EventFilter.newBuilder().build();
+        EventsFilter input = EventsFilter.newBuilder().build();
 
         EventList response = eventBlockingStub.getEvents(input);
 
@@ -68,32 +68,29 @@ public class EventsClient implements IEventsClient
     }
 
     @Override
-    public Event getEventById(String reportId)
+    public Event getEventById(String eventId)
     {
-        /*ReportId input = ReportId.newBuilder()
-                .setId(reportId)
+        EventFilter input = EventFilter.newBuilder()
+                .setId(eventId)
                 .build();
 
-        ReportObject response = reportBlockingStub.getReportById(input);
+        EventObject response = eventBlockingStub.getEvent(input);
 
-        return new Report(LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
-                response.getProof().toByteArray(), response.getDescription(), response.getStatus(),
-                new Location(response.getLocation().getLatitude(), response.getLocation().getLongitude(), (byte) response.getLocation().getSize())
-                , response.getUser().getUserId(),response.getUser().getUsername(),response.getId());
-        */
-        return null;
+        return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
+                response.getDescription(), response.getValidation().toByteArray(),
+                response.getOrganiser().getId(), response.getOrganiser().getUsername(),
+            new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
+                    new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
+                            (byte)response.getReport().getLocation().getSize())));
     }
 
     @Override
     public void approveEvent(String id, boolean approve) {
-        /*ToReviewReport toReviewReport = ToReviewReport.newBuilder()
-                .setReportId(id)
-                .setUpdatedStatus(status)
+        ApproveEventFilter input = ApproveEventFilter.newBuilder()
+                .setId(id)
+                .setApprove(approve)
                 .build();
 
-        ReviewedReport reviewedReport = reportBlockingStub.reviewReport(toReviewReport);
-
-        return reviewedReport.getConfirmation();
-        */
+        eventBlockingStub.approveEvent(input);
     }
 }

@@ -109,6 +109,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 64: {
+
+            approved_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -367,6 +372,17 @@ private static final long serialVersionUID = 0L;
     return getReport();
   }
 
+  public static final int APPROVED_FIELD_NUMBER = 8;
+  private boolean approved_;
+  /**
+   * <code>bool approved = 8;</code>
+   * @return The approved.
+   */
+  @java.lang.Override
+  public boolean getApproved() {
+    return approved_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -402,6 +418,9 @@ private static final long serialVersionUID = 0L;
     if (report_ != null) {
       output.writeMessage(7, getReport());
     }
+    if (approved_ != false) {
+      output.writeBool(8, approved_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -434,6 +453,10 @@ private static final long serialVersionUID = 0L;
     if (report_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getReport());
+    }
+    if (approved_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, approved_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -473,6 +496,8 @@ private static final long serialVersionUID = 0L;
       if (!getReport()
           .equals(other.getReport())) return false;
     }
+    if (getApproved()
+        != other.getApproved()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -504,6 +529,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REPORT_FIELD_NUMBER;
       hash = (53 * hash) + getReport().hashCode();
     }
+    hash = (37 * hash) + APPROVED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getApproved());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -659,6 +687,8 @@ private static final long serialVersionUID = 0L;
         report_ = null;
         reportBuilder_ = null;
       }
+      approved_ = false;
+
       return this;
     }
 
@@ -705,6 +735,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.report_ = reportBuilder_.build();
       }
+      result.approved_ = approved_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -778,6 +809,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasReport()) {
         mergeReport(other.getReport());
+      }
+      if (other.getApproved() != false) {
+        setApproved(other.getApproved());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1391,6 +1425,37 @@ private static final long serialVersionUID = 0L;
         report_ = null;
       }
       return reportBuilder_;
+    }
+
+    private boolean approved_ ;
+    /**
+     * <code>bool approved = 8;</code>
+     * @return The approved.
+     */
+    @java.lang.Override
+    public boolean getApproved() {
+      return approved_;
+    }
+    /**
+     * <code>bool approved = 8;</code>
+     * @param value The approved to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApproved(boolean value) {
+      
+      approved_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool approved = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApproved() {
+      
+      approved_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

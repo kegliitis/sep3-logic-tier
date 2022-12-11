@@ -6,7 +6,9 @@ option java_package = "via.sep3.protobuf.event";
 service Event
 {
   rpc CreateEvent(CreateEventObject) returns (EventObject);
-  rpc GetEvents(EventFilter) returns(EventList);
+  rpc GetEvents(EventsFilter) returns(EventList);
+  rpc GetEvent(EventFilter) returns (EventObject);
+  rpc ApproveEvent(ApproveEventFilter) returns (ApproveEventResult);
 }
 
 message CreateEventObject
@@ -27,6 +29,7 @@ message EventObject
   optional bytes validation = 5;
   UserEventObject organiser = 6;
   ReportEventObject report = 7;
+  bool approved = 8;
 }
 
 message UserEventObject
@@ -49,9 +52,25 @@ message LocationEventObject
   int32 size = 3;
 }
 
-message EventFilter
+message EventsFilter
 {
 
+}
+
+message EventFilter
+{
+  string id = 1;
+}
+
+message ApproveEventFilter
+{
+  string id = 1;
+  bool approve = 2;
+}
+
+message ApproveEventResult
+{
+  string confirmation = 1;
 }
 
 message EventList
