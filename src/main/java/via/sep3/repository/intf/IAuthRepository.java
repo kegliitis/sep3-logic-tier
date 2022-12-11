@@ -8,4 +8,5 @@ public interface IAuthRepository {
 
     User register(RegisterUser user);
     User login(LoginUser user);
+    User getUserByEmail(String email);
 }

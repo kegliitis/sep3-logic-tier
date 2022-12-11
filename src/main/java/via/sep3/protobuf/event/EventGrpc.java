@@ -45,27 +45,27 @@ public final class EventGrpc {
     return getCreateEventMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter,
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventsFilter,
       via.sep3.protobuf.event.EventList> getGetEventsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetEvents",
-      requestType = via.sep3.protobuf.event.EventFilter.class,
+      requestType = via.sep3.protobuf.event.EventsFilter.class,
       responseType = via.sep3.protobuf.event.EventList.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter,
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventsFilter,
       via.sep3.protobuf.event.EventList> getGetEventsMethod() {
-    io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter, via.sep3.protobuf.event.EventList> getGetEventsMethod;
+    io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventsFilter, via.sep3.protobuf.event.EventList> getGetEventsMethod;
     if ((getGetEventsMethod = EventGrpc.getGetEventsMethod) == null) {
       synchronized (EventGrpc.class) {
         if ((getGetEventsMethod = EventGrpc.getGetEventsMethod) == null) {
           EventGrpc.getGetEventsMethod = getGetEventsMethod =
-              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.EventFilter, via.sep3.protobuf.event.EventList>newBuilder()
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.EventsFilter, via.sep3.protobuf.event.EventList>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEvents"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  via.sep3.protobuf.event.EventFilter.getDefaultInstance()))
+                  via.sep3.protobuf.event.EventsFilter.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   via.sep3.protobuf.event.EventList.getDefaultInstance()))
               .setSchemaDescriptor(new EventMethodDescriptorSupplier("GetEvents"))
@@ -74,6 +74,68 @@ public final class EventGrpc {
       }
     }
     return getGetEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter,
+      via.sep3.protobuf.event.EventObject> getGetEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEvent",
+      requestType = via.sep3.protobuf.event.EventFilter.class,
+      responseType = via.sep3.protobuf.event.EventObject.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter,
+      via.sep3.protobuf.event.EventObject> getGetEventMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventFilter, via.sep3.protobuf.event.EventObject> getGetEventMethod;
+    if ((getGetEventMethod = EventGrpc.getGetEventMethod) == null) {
+      synchronized (EventGrpc.class) {
+        if ((getGetEventMethod = EventGrpc.getGetEventMethod) == null) {
+          EventGrpc.getGetEventMethod = getGetEventMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.EventFilter, via.sep3.protobuf.event.EventObject>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEvent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.EventFilter.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.EventObject.getDefaultInstance()))
+              .setSchemaDescriptor(new EventMethodDescriptorSupplier("GetEvent"))
+              .build();
+        }
+      }
+    }
+    return getGetEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.ApproveEventFilter,
+      via.sep3.protobuf.event.ApproveEventResult> getApproveEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ApproveEvent",
+      requestType = via.sep3.protobuf.event.ApproveEventFilter.class,
+      responseType = via.sep3.protobuf.event.ApproveEventResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.ApproveEventFilter,
+      via.sep3.protobuf.event.ApproveEventResult> getApproveEventMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.event.ApproveEventFilter, via.sep3.protobuf.event.ApproveEventResult> getApproveEventMethod;
+    if ((getApproveEventMethod = EventGrpc.getApproveEventMethod) == null) {
+      synchronized (EventGrpc.class) {
+        if ((getApproveEventMethod = EventGrpc.getApproveEventMethod) == null) {
+          EventGrpc.getApproveEventMethod = getApproveEventMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.ApproveEventFilter, via.sep3.protobuf.event.ApproveEventResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ApproveEvent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.ApproveEventFilter.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.ApproveEventResult.getDefaultInstance()))
+              .setSchemaDescriptor(new EventMethodDescriptorSupplier("ApproveEvent"))
+              .build();
+        }
+      }
+    }
+    return getApproveEventMethod;
   }
 
   /**
@@ -133,9 +195,23 @@ public final class EventGrpc {
 
     /**
      */
-    public void getEvents(via.sep3.protobuf.event.EventFilter request,
+    public void getEvents(via.sep3.protobuf.event.EventsFilter request,
         io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventList> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEventsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getEvent(via.sep3.protobuf.event.EventFilter request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventObject> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEventMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void approveEvent(via.sep3.protobuf.event.ApproveEventFilter request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ApproveEventResult> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getApproveEventMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -151,9 +227,23 @@ public final class EventGrpc {
             getGetEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                via.sep3.protobuf.event.EventFilter,
+                via.sep3.protobuf.event.EventsFilter,
                 via.sep3.protobuf.event.EventList>(
                   this, METHODID_GET_EVENTS)))
+          .addMethod(
+            getGetEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.event.EventFilter,
+                via.sep3.protobuf.event.EventObject>(
+                  this, METHODID_GET_EVENT)))
+          .addMethod(
+            getApproveEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.event.ApproveEventFilter,
+                via.sep3.protobuf.event.ApproveEventResult>(
+                  this, METHODID_APPROVE_EVENT)))
           .build();
     }
   }
@@ -182,10 +272,26 @@ public final class EventGrpc {
 
     /**
      */
-    public void getEvents(via.sep3.protobuf.event.EventFilter request,
+    public void getEvents(via.sep3.protobuf.event.EventsFilter request,
         io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventList> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEventsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getEvent(via.sep3.protobuf.event.EventFilter request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventObject> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEventMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void approveEvent(via.sep3.protobuf.event.ApproveEventFilter request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ApproveEventResult> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getApproveEventMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -212,9 +318,23 @@ public final class EventGrpc {
 
     /**
      */
-    public via.sep3.protobuf.event.EventList getEvents(via.sep3.protobuf.event.EventFilter request) {
+    public via.sep3.protobuf.event.EventList getEvents(via.sep3.protobuf.event.EventsFilter request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.event.EventObject getEvent(via.sep3.protobuf.event.EventFilter request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.event.ApproveEventResult approveEvent(via.sep3.protobuf.event.ApproveEventFilter request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveEventMethod(), getCallOptions(), request);
     }
   }
 
@@ -243,14 +363,32 @@ public final class EventGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.event.EventList> getEvents(
-        via.sep3.protobuf.event.EventFilter request) {
+        via.sep3.protobuf.event.EventsFilter request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.event.EventObject> getEvent(
+        via.sep3.protobuf.event.EventFilter request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.event.ApproveEventResult> approveEvent(
+        via.sep3.protobuf.event.ApproveEventFilter request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getApproveEventMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_CREATE_EVENT = 0;
   private static final int METHODID_GET_EVENTS = 1;
+  private static final int METHODID_GET_EVENT = 2;
+  private static final int METHODID_APPROVE_EVENT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -274,8 +412,16 @@ public final class EventGrpc {
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventObject>) responseObserver);
           break;
         case METHODID_GET_EVENTS:
-          serviceImpl.getEvents((via.sep3.protobuf.event.EventFilter) request,
+          serviceImpl.getEvents((via.sep3.protobuf.event.EventsFilter) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventList>) responseObserver);
+          break;
+        case METHODID_GET_EVENT:
+          serviceImpl.getEvent((via.sep3.protobuf.event.EventFilter) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventObject>) responseObserver);
+          break;
+        case METHODID_APPROVE_EVENT:
+          serviceImpl.approveEvent((via.sep3.protobuf.event.ApproveEventFilter) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ApproveEventResult>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -340,6 +486,8 @@ public final class EventGrpc {
               .setSchemaDescriptor(new EventFileDescriptorSupplier())
               .addMethod(getCreateEventMethod())
               .addMethod(getGetEventsMethod())
+              .addMethod(getGetEventMethod())
+              .addMethod(getApproveEventMethod())
               .build();
         }
       }

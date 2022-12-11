@@ -9,4 +9,6 @@ public interface IEventsClient
 {
     Event createEvent(CreateEvent createEvent, String creatorEmail);
     List<Event> getEvents();
+    Event getEventById(String id);
+    void approveEvent(String id, boolean approve);
 }
