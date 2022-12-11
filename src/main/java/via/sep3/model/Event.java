@@ -13,8 +13,9 @@ public class Event
     private String organiserId;
     private String username;
     private EventReportDto report;
+    private boolean approved;
 
-    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report)
+    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved)
     {
         this.id = id;
         this.date = date;
@@ -24,6 +25,7 @@ public class Event
         this.organiserId = organiserId;
         this.username = username;
         this.report = report;
+        this.approved = approved;
     }
 
     public String getId()
@@ -104,5 +106,15 @@ public class Event
     public void setReport(EventReportDto report)
     {
         this.report = report;
+    }
+
+    public boolean getApproved()
+    {
+        return approved;
+    }
+
+    public void setApproved(boolean approved)
+    {
+        this.approved = approved;
     }
 }
