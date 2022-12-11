@@ -46,4 +46,30 @@ public class EventsRepository implements IEventsRepository
             throw e;
         }
     }
+
+    @Override
+    public Event getEventById(String id) {
+        try
+        {
+            return client.getEventById(id);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Override
+    public void approveEvent(String id, boolean approve) {
+        try
+        {
+            client.approveEvent(id, approve);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+    }
 }

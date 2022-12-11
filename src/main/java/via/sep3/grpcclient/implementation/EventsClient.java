@@ -7,6 +7,10 @@ import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
 import via.sep3.protobuf.event.*;
+import via.sep3.protobuf.report.ReportId;
+import via.sep3.protobuf.report.ReportObject;
+import via.sep3.protobuf.report.ReviewedReport;
+import via.sep3.protobuf.report.ToReviewReport;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -44,7 +48,7 @@ public class EventsClient implements IEventsClient
     @Override
     public List<Event> getEvents()
     {
-        EventFilter input = EventFilter.newBuilder().build();
+        EventsFilter input = EventsFilter.newBuilder().build();
 
         EventList response = eventBlockingStub.getEvents(input);
 
@@ -61,5 +65,32 @@ public class EventsClient implements IEventsClient
             events.add(event);
         }
         return events;
+    }
+
+    @Override
+    public Event getEventById(String eventId)
+    {
+        EventFilter input = EventFilter.newBuilder()
+                .setId(eventId)
+                .build();
+
+        EventObject response = eventBlockingStub.getEvent(input);
+
+        return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
+                response.getDescription(), response.getValidation().toByteArray(),
+                response.getOrganiser().getId(), response.getOrganiser().getUsername(),
+            new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
+                    new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
+                            (byte)response.getReport().getLocation().getSize())));
+    }
+
+    @Override
+    public void approveEvent(String id, boolean approve) {
+        ApproveEventFilter input = ApproveEventFilter.newBuilder()
+                .setId(id)
+                .setApprove(approve)
+                .build();
+
+        eventBlockingStub.approveEvent(input);
     }
 }

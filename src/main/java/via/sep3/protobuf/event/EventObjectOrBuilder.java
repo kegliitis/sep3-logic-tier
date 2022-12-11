@@ -95,4 +95,10 @@ public interface EventObjectOrBuilder extends
    * <code>.ReportEventObject report = 7;</code>
    */
   via.sep3.protobuf.event.ReportEventObjectOrBuilder getReportOrBuilder();
+
+  /**
+   * <code>bool approved = 8;</code>
+   * @return The approved.
+   */
+  boolean getApproved();
 }

@@ -4,18 +4,18 @@
 package via.sep3.protobuf.event;
 
 /**
- * Protobuf type {@code EventFilter}
+ * Protobuf type {@code ApproveEventFilter}
  */
-public final class EventFilter extends
+public final class ApproveEventFilter extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:EventFilter)
-    EventFilterOrBuilder {
+    // @@protoc_insertion_point(message_implements:ApproveEventFilter)
+    ApproveEventFilterOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use EventFilter.newBuilder() to construct.
-  private EventFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApproveEventFilter.newBuilder() to construct.
+  private ApproveEventFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private EventFilter() {
+  private ApproveEventFilter() {
     id_ = "";
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new EventFilter();
+    return new ApproveEventFilter();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private EventFilter(
+  private ApproveEventFilter(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,6 +53,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             id_ = s;
+            break;
+          }
+          case 16: {
+
+            approve_ = input.readBool();
             break;
           }
           default: {
@@ -78,15 +83,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_EventFilter_descriptor;
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_ApproveEventFilter_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return via.sep3.protobuf.event.EventOuterClass.internal_static_EventFilter_fieldAccessorTable
+    return via.sep3.protobuf.event.EventOuterClass.internal_static_ApproveEventFilter_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            via.sep3.protobuf.event.EventFilter.class, via.sep3.protobuf.event.EventFilter.Builder.class);
+            via.sep3.protobuf.event.ApproveEventFilter.class, via.sep3.protobuf.event.ApproveEventFilter.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -127,6 +132,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPROVE_FIELD_NUMBER = 2;
+  private boolean approve_;
+  /**
+   * <code>bool approve = 2;</code>
+   * @return The approve.
+   */
+  @java.lang.Override
+  public boolean getApprove() {
+    return approve_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -144,6 +160,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
+    if (approve_ != false) {
+      output.writeBool(2, approve_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -156,6 +175,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
+    if (approve_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, approve_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -166,13 +189,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof via.sep3.protobuf.event.EventFilter)) {
+    if (!(obj instanceof via.sep3.protobuf.event.ApproveEventFilter)) {
       return super.equals(obj);
     }
-    via.sep3.protobuf.event.EventFilter other = (via.sep3.protobuf.event.EventFilter) obj;
+    via.sep3.protobuf.event.ApproveEventFilter other = (via.sep3.protobuf.event.ApproveEventFilter) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (getApprove()
+        != other.getApprove()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,74 +211,77 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + APPROVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getApprove());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(byte[] data)
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.EventFilter parseDelimitedFrom(java.io.InputStream input)
+  public static via.sep3.protobuf.event.ApproveEventFilter parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.EventFilter parseDelimitedFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static via.sep3.protobuf.event.EventFilter parseFrom(
+  public static via.sep3.protobuf.event.ApproveEventFilter parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -266,7 +294,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(via.sep3.protobuf.event.EventFilter prototype) {
+  public static Builder newBuilder(via.sep3.protobuf.event.ApproveEventFilter prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -282,26 +310,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code EventFilter}
+   * Protobuf type {@code ApproveEventFilter}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:EventFilter)
-      via.sep3.protobuf.event.EventFilterOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ApproveEventFilter)
+      via.sep3.protobuf.event.ApproveEventFilterOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_EventFilter_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ApproveEventFilter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_EventFilter_fieldAccessorTable
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ApproveEventFilter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.protobuf.event.EventFilter.class, via.sep3.protobuf.event.EventFilter.Builder.class);
+              via.sep3.protobuf.event.ApproveEventFilter.class, via.sep3.protobuf.event.ApproveEventFilter.Builder.class);
     }
 
-    // Construct using via.sep3.protobuf.event.EventFilter.newBuilder()
+    // Construct using via.sep3.protobuf.event.ApproveEventFilter.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -321,23 +349,25 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      approve_ = false;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return via.sep3.protobuf.event.EventOuterClass.internal_static_EventFilter_descriptor;
+      return via.sep3.protobuf.event.EventOuterClass.internal_static_ApproveEventFilter_descriptor;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.EventFilter getDefaultInstanceForType() {
-      return via.sep3.protobuf.event.EventFilter.getDefaultInstance();
+    public via.sep3.protobuf.event.ApproveEventFilter getDefaultInstanceForType() {
+      return via.sep3.protobuf.event.ApproveEventFilter.getDefaultInstance();
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.EventFilter build() {
-      via.sep3.protobuf.event.EventFilter result = buildPartial();
+    public via.sep3.protobuf.event.ApproveEventFilter build() {
+      via.sep3.protobuf.event.ApproveEventFilter result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -345,9 +375,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public via.sep3.protobuf.event.EventFilter buildPartial() {
-      via.sep3.protobuf.event.EventFilter result = new via.sep3.protobuf.event.EventFilter(this);
+    public via.sep3.protobuf.event.ApproveEventFilter buildPartial() {
+      via.sep3.protobuf.event.ApproveEventFilter result = new via.sep3.protobuf.event.ApproveEventFilter(this);
       result.id_ = id_;
+      result.approve_ = approve_;
       onBuilt();
       return result;
     }
@@ -386,19 +417,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof via.sep3.protobuf.event.EventFilter) {
-        return mergeFrom((via.sep3.protobuf.event.EventFilter)other);
+      if (other instanceof via.sep3.protobuf.event.ApproveEventFilter) {
+        return mergeFrom((via.sep3.protobuf.event.ApproveEventFilter)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(via.sep3.protobuf.event.EventFilter other) {
-      if (other == via.sep3.protobuf.event.EventFilter.getDefaultInstance()) return this;
+    public Builder mergeFrom(via.sep3.protobuf.event.ApproveEventFilter other) {
+      if (other == via.sep3.protobuf.event.ApproveEventFilter.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
+      }
+      if (other.getApprove() != false) {
+        setApprove(other.getApprove());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -415,11 +449,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      via.sep3.protobuf.event.EventFilter parsedMessage = null;
+      via.sep3.protobuf.event.ApproveEventFilter parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (via.sep3.protobuf.event.EventFilter) e.getUnfinishedMessage();
+        parsedMessage = (via.sep3.protobuf.event.ApproveEventFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -504,6 +538,37 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private boolean approve_ ;
+    /**
+     * <code>bool approve = 2;</code>
+     * @return The approve.
+     */
+    @java.lang.Override
+    public boolean getApprove() {
+      return approve_;
+    }
+    /**
+     * <code>bool approve = 2;</code>
+     * @param value The approve to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprove(boolean value) {
+      
+      approve_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool approve = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprove() {
+      
+      approve_ = false;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -517,41 +582,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:EventFilter)
+    // @@protoc_insertion_point(builder_scope:ApproveEventFilter)
   }
 
-  // @@protoc_insertion_point(class_scope:EventFilter)
-  private static final via.sep3.protobuf.event.EventFilter DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ApproveEventFilter)
+  private static final via.sep3.protobuf.event.ApproveEventFilter DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new via.sep3.protobuf.event.EventFilter();
+    DEFAULT_INSTANCE = new via.sep3.protobuf.event.ApproveEventFilter();
   }
 
-  public static via.sep3.protobuf.event.EventFilter getDefaultInstance() {
+  public static via.sep3.protobuf.event.ApproveEventFilter getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<EventFilter>
-      PARSER = new com.google.protobuf.AbstractParser<EventFilter>() {
+  private static final com.google.protobuf.Parser<ApproveEventFilter>
+      PARSER = new com.google.protobuf.AbstractParser<ApproveEventFilter>() {
     @java.lang.Override
-    public EventFilter parsePartialFrom(
+    public ApproveEventFilter parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new EventFilter(input, extensionRegistry);
+      return new ApproveEventFilter(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<EventFilter> parser() {
+  public static com.google.protobuf.Parser<ApproveEventFilter> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<EventFilter> getParserForType() {
+  public com.google.protobuf.Parser<ApproveEventFilter> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public via.sep3.protobuf.event.EventFilter getDefaultInstanceForType() {
+  public via.sep3.protobuf.event.ApproveEventFilter getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

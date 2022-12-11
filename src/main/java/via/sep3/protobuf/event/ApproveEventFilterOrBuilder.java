@@ -3,8 +3,8 @@
 
 package via.sep3.protobuf.event;
 
-public interface EventFilterOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:EventFilter)
+public interface ApproveEventFilterOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ApproveEventFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -18,4 +18,10 @@ public interface EventFilterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <code>bool approve = 2;</code>
+   * @return The approve.
+   */
+  boolean getApprove();
 }
