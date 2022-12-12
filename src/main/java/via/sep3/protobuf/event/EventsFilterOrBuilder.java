@@ -6,4 +6,36 @@ package via.sep3.protobuf.event;
 public interface EventsFilterOrBuilder extends
     // @@protoc_insertion_point(interface_extends:EventsFilter)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>string email = 1;</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>string email = 1;</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
+
+  /**
+   * <pre>
+   *Values can be: {"Upcoming", "Organised by me"}
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   * <pre>
+   *Values can be: {"Upcoming", "Organised by me"}
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString
+      getFilterBytes();
 }

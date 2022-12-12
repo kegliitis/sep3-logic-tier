@@ -35,11 +35,11 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public List<Event> getEvents()
+    public List<Event> getEvents(String email, String filter)
     {
         try
         {
-            return client.getEvents();
+            return client.getEvents(email, filter);
         }
         catch (Exception e)
         {
