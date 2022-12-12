@@ -1,9 +1,12 @@
 package via.sep3.model;
 
+import via.sep3.model.dtos.EventAttendeesDto;
 import via.sep3.model.dtos.EventReportDto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Event
 {
@@ -16,6 +19,22 @@ public class Event
     private String username;
     private EventReportDto report;
     private boolean approved;
+
+    private List<EventAttendeesDto> attendees;
+
+    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved, ArrayList<EventAttendeesDto> attendees)
+    {
+        this.id = id;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.validation = validation;
+        this.organiserId = organiserId;
+        this.username = username;
+        this.report = report;
+        this.approved = approved;
+        this.attendees = attendees;
+    }
 
     public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved)
     {
@@ -119,4 +138,15 @@ public class Event
     {
         this.approved = approved;
     }
+
+    public List<EventAttendeesDto> getAttendees()
+    {
+        return attendees;
+    }
+
+    public void setAttendees(List<EventAttendeesDto> attendees)
+    {
+        this.attendees = attendees;
+    }
+
 }

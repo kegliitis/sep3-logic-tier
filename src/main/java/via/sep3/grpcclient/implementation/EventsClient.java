@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
+import via.sep3.model.dtos.EventAttendeesDto;
 import via.sep3.model.dtos.EventReportDto;
 import via.sep3.protobuf.event.*;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -75,12 +77,19 @@ public class EventsClient implements IEventsClient
 
         EventObject response = eventBlockingStub.getEvent(input);
 
+        ArrayList<EventAttendeesDto> attendees = new ArrayList<>();
+
+        for (UserEventObject attendee: response.getAttendeesList())
+        {
+            attendees.add(new EventAttendeesDto(attendee.getId(), attendee.getUsername()));
+        }
+
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
                 response.getDescription(), response.getValidation().toByteArray(),
                 response.getOrganiser().getId(), response.getOrganiser().getUsername(),
             new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                     new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
-                            (byte)response.getReport().getLocation().getSize())), response.getApproved());
+                            (byte)response.getReport().getLocation().getSize())), response.getApproved(), attendees);
     }
 
     @Override
