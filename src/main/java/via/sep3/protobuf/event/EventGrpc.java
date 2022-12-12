@@ -138,6 +138,37 @@ public final class EventGrpc {
     return getApproveEventMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventToAttend,
+      via.sep3.protobuf.event.EventToAttendConfirmation> getAttendEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AttendEvent",
+      requestType = via.sep3.protobuf.event.EventToAttend.class,
+      responseType = via.sep3.protobuf.event.EventToAttendConfirmation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventToAttend,
+      via.sep3.protobuf.event.EventToAttendConfirmation> getAttendEventMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.event.EventToAttend, via.sep3.protobuf.event.EventToAttendConfirmation> getAttendEventMethod;
+    if ((getAttendEventMethod = EventGrpc.getAttendEventMethod) == null) {
+      synchronized (EventGrpc.class) {
+        if ((getAttendEventMethod = EventGrpc.getAttendEventMethod) == null) {
+          EventGrpc.getAttendEventMethod = getAttendEventMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.EventToAttend, via.sep3.protobuf.event.EventToAttendConfirmation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AttendEvent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.EventToAttend.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.EventToAttendConfirmation.getDefaultInstance()))
+              .setSchemaDescriptor(new EventMethodDescriptorSupplier("AttendEvent"))
+              .build();
+        }
+      }
+    }
+    return getAttendEventMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class EventGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getApproveEventMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void attendEvent(via.sep3.protobuf.event.EventToAttend request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventToAttendConfirmation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAttendEventMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -244,6 +282,13 @@ public final class EventGrpc {
                 via.sep3.protobuf.event.ApproveEventFilter,
                 via.sep3.protobuf.event.ApproveEventResult>(
                   this, METHODID_APPROVE_EVENT)))
+          .addMethod(
+            getAttendEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.event.EventToAttend,
+                via.sep3.protobuf.event.EventToAttendConfirmation>(
+                  this, METHODID_ATTEND_EVENT)))
           .build();
     }
   }
@@ -293,6 +338,14 @@ public final class EventGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getApproveEventMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void attendEvent(via.sep3.protobuf.event.EventToAttend request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventToAttendConfirmation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAttendEventMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -335,6 +388,13 @@ public final class EventGrpc {
     public via.sep3.protobuf.event.ApproveEventResult approveEvent(via.sep3.protobuf.event.ApproveEventFilter request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApproveEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.event.EventToAttendConfirmation attendEvent(via.sep3.protobuf.event.EventToAttend request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAttendEventMethod(), getCallOptions(), request);
     }
   }
 
@@ -383,12 +443,21 @@ public final class EventGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApproveEventMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.event.EventToAttendConfirmation> attendEvent(
+        via.sep3.protobuf.event.EventToAttend request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAttendEventMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EVENT = 0;
   private static final int METHODID_GET_EVENTS = 1;
   private static final int METHODID_GET_EVENT = 2;
   private static final int METHODID_APPROVE_EVENT = 3;
+  private static final int METHODID_ATTEND_EVENT = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -422,6 +491,10 @@ public final class EventGrpc {
         case METHODID_APPROVE_EVENT:
           serviceImpl.approveEvent((via.sep3.protobuf.event.ApproveEventFilter) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ApproveEventResult>) responseObserver);
+          break;
+        case METHODID_ATTEND_EVENT:
+          serviceImpl.attendEvent((via.sep3.protobuf.event.EventToAttend) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventToAttendConfirmation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -488,6 +561,7 @@ public final class EventGrpc {
               .addMethod(getGetEventsMethod())
               .addMethod(getGetEventMethod())
               .addMethod(getApproveEventMethod())
+              .addMethod(getAttendEventMethod())
               .build();
         }
       }

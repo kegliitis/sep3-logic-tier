@@ -80,7 +80,7 @@ public class EventsController
             Event event = repository.getEventById(id);
             int[] date = new int[]{event.getDate().getYear(), event.getDate().getMonthValue(), event.getDate().getDayOfMonth()};
             int[] time = new int[]{event.getTime().getHour(), event.getTime().getMinute(), event.getTime().getSecond()};
-            return ResponseEntity.ok(new EventDto(event.getId(), date, time, event.getDescription(), event.getValidation(), event.getOrganiserId(), event.getUsername(), event.getReport(), event.getApproved()));
+            return ResponseEntity.ok(new EventDto(event.getId(), date, time, event.getDescription(), event.getValidation(), event.getOrganiserId(), event.getUsername(), event.getReport(), event.getApproved(), event.getAttendees()));
         }
         catch (Exception e)
         {

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     time_ = "";
     description_ = "";
     validation_ = com.google.protobuf.ByteString.EMPTY;
+    attendees_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -114,6 +115,15 @@ private static final long serialVersionUID = 0L;
             approved_ = input.readBool();
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              attendees_ = new java.util.ArrayList<via.sep3.protobuf.event.UserEventObject>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            attendees_.add(
+                input.readMessage(via.sep3.protobuf.event.UserEventObject.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -131,6 +141,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        attendees_ = java.util.Collections.unmodifiableList(attendees_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -383,6 +396,46 @@ private static final long serialVersionUID = 0L;
     return approved_;
   }
 
+  public static final int ATTENDEES_FIELD_NUMBER = 9;
+  private java.util.List<via.sep3.protobuf.event.UserEventObject> attendees_;
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<via.sep3.protobuf.event.UserEventObject> getAttendeesList() {
+    return attendees_;
+  }
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends via.sep3.protobuf.event.UserEventObjectOrBuilder> 
+      getAttendeesOrBuilderList() {
+    return attendees_;
+  }
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  @java.lang.Override
+  public int getAttendeesCount() {
+    return attendees_.size();
+  }
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  @java.lang.Override
+  public via.sep3.protobuf.event.UserEventObject getAttendees(int index) {
+    return attendees_.get(index);
+  }
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  @java.lang.Override
+  public via.sep3.protobuf.event.UserEventObjectOrBuilder getAttendeesOrBuilder(
+      int index) {
+    return attendees_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -421,6 +474,9 @@ private static final long serialVersionUID = 0L;
     if (approved_ != false) {
       output.writeBool(8, approved_);
     }
+    for (int i = 0; i < attendees_.size(); i++) {
+      output.writeMessage(9, attendees_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -457,6 +513,10 @@ private static final long serialVersionUID = 0L;
     if (approved_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, approved_);
+    }
+    for (int i = 0; i < attendees_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, attendees_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -498,6 +558,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getApproved()
         != other.getApproved()) return false;
+    if (!getAttendeesList()
+        .equals(other.getAttendeesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -532,6 +594,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + APPROVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getApproved());
+    if (getAttendeesCount() > 0) {
+      hash = (37 * hash) + ATTENDEES_FIELD_NUMBER;
+      hash = (53 * hash) + getAttendeesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -660,6 +726,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAttendeesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -689,6 +756,12 @@ private static final long serialVersionUID = 0L;
       }
       approved_ = false;
 
+      if (attendeesBuilder_ == null) {
+        attendees_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        attendeesBuilder_.clear();
+      }
       return this;
     }
 
@@ -736,6 +809,15 @@ private static final long serialVersionUID = 0L;
         result.report_ = reportBuilder_.build();
       }
       result.approved_ = approved_;
+      if (attendeesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          attendees_ = java.util.Collections.unmodifiableList(attendees_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.attendees_ = attendees_;
+      } else {
+        result.attendees_ = attendeesBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -812,6 +894,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getApproved() != false) {
         setApproved(other.getApproved());
+      }
+      if (attendeesBuilder_ == null) {
+        if (!other.attendees_.isEmpty()) {
+          if (attendees_.isEmpty()) {
+            attendees_ = other.attendees_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAttendeesIsMutable();
+            attendees_.addAll(other.attendees_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.attendees_.isEmpty()) {
+          if (attendeesBuilder_.isEmpty()) {
+            attendeesBuilder_.dispose();
+            attendeesBuilder_ = null;
+            attendees_ = other.attendees_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            attendeesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAttendeesFieldBuilder() : null;
+          } else {
+            attendeesBuilder_.addAllMessages(other.attendees_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1456,6 +1564,246 @@ private static final long serialVersionUID = 0L;
       approved_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<via.sep3.protobuf.event.UserEventObject> attendees_ =
+      java.util.Collections.emptyList();
+    private void ensureAttendeesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        attendees_ = new java.util.ArrayList<via.sep3.protobuf.event.UserEventObject>(attendees_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> attendeesBuilder_;
+
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public java.util.List<via.sep3.protobuf.event.UserEventObject> getAttendeesList() {
+      if (attendeesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(attendees_);
+      } else {
+        return attendeesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public int getAttendeesCount() {
+      if (attendeesBuilder_ == null) {
+        return attendees_.size();
+      } else {
+        return attendeesBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public via.sep3.protobuf.event.UserEventObject getAttendees(int index) {
+      if (attendeesBuilder_ == null) {
+        return attendees_.get(index);
+      } else {
+        return attendeesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder setAttendees(
+        int index, via.sep3.protobuf.event.UserEventObject value) {
+      if (attendeesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttendeesIsMutable();
+        attendees_.set(index, value);
+        onChanged();
+      } else {
+        attendeesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder setAttendees(
+        int index, via.sep3.protobuf.event.UserEventObject.Builder builderForValue) {
+      if (attendeesBuilder_ == null) {
+        ensureAttendeesIsMutable();
+        attendees_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        attendeesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder addAttendees(via.sep3.protobuf.event.UserEventObject value) {
+      if (attendeesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttendeesIsMutable();
+        attendees_.add(value);
+        onChanged();
+      } else {
+        attendeesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder addAttendees(
+        int index, via.sep3.protobuf.event.UserEventObject value) {
+      if (attendeesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttendeesIsMutable();
+        attendees_.add(index, value);
+        onChanged();
+      } else {
+        attendeesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder addAttendees(
+        via.sep3.protobuf.event.UserEventObject.Builder builderForValue) {
+      if (attendeesBuilder_ == null) {
+        ensureAttendeesIsMutable();
+        attendees_.add(builderForValue.build());
+        onChanged();
+      } else {
+        attendeesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder addAttendees(
+        int index, via.sep3.protobuf.event.UserEventObject.Builder builderForValue) {
+      if (attendeesBuilder_ == null) {
+        ensureAttendeesIsMutable();
+        attendees_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        attendeesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder addAllAttendees(
+        java.lang.Iterable<? extends via.sep3.protobuf.event.UserEventObject> values) {
+      if (attendeesBuilder_ == null) {
+        ensureAttendeesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, attendees_);
+        onChanged();
+      } else {
+        attendeesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder clearAttendees() {
+      if (attendeesBuilder_ == null) {
+        attendees_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        attendeesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public Builder removeAttendees(int index) {
+      if (attendeesBuilder_ == null) {
+        ensureAttendeesIsMutable();
+        attendees_.remove(index);
+        onChanged();
+      } else {
+        attendeesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public via.sep3.protobuf.event.UserEventObject.Builder getAttendeesBuilder(
+        int index) {
+      return getAttendeesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public via.sep3.protobuf.event.UserEventObjectOrBuilder getAttendeesOrBuilder(
+        int index) {
+      if (attendeesBuilder_ == null) {
+        return attendees_.get(index);  } else {
+        return attendeesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public java.util.List<? extends via.sep3.protobuf.event.UserEventObjectOrBuilder> 
+         getAttendeesOrBuilderList() {
+      if (attendeesBuilder_ != null) {
+        return attendeesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(attendees_);
+      }
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public via.sep3.protobuf.event.UserEventObject.Builder addAttendeesBuilder() {
+      return getAttendeesFieldBuilder().addBuilder(
+          via.sep3.protobuf.event.UserEventObject.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public via.sep3.protobuf.event.UserEventObject.Builder addAttendeesBuilder(
+        int index) {
+      return getAttendeesFieldBuilder().addBuilder(
+          index, via.sep3.protobuf.event.UserEventObject.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .UserEventObject attendees = 9;</code>
+     */
+    public java.util.List<via.sep3.protobuf.event.UserEventObject.Builder> 
+         getAttendeesBuilderList() {
+      return getAttendeesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder> 
+        getAttendeesFieldBuilder() {
+      if (attendeesBuilder_ == null) {
+        attendeesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            via.sep3.protobuf.event.UserEventObject, via.sep3.protobuf.event.UserEventObject.Builder, via.sep3.protobuf.event.UserEventObjectOrBuilder>(
+                attendees_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        attendees_ = null;
+      }
+      return attendeesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
