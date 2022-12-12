@@ -3,6 +3,7 @@ package via.sep3.repository.implementation;
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.grpcclient.implementation.EventsClient;
+import via.sep3.model.AttendEvent;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 import via.sep3.repository.intf.IEventsRepository;
@@ -25,8 +26,7 @@ public class EventsRepository implements IEventsRepository
         try
         {
             return client.createEvent(createEvent, creatorEmail);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -39,8 +39,7 @@ public class EventsRepository implements IEventsRepository
         try
         {
             return client.getEvents(email, filter);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -48,12 +47,12 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public Event getEventById(String id) {
+    public Event getEventById(String id)
+    {
         try
         {
             return client.getEventById(id);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -61,12 +60,38 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public void approveEvent(String id, boolean approve) {
+    public void approveEvent(String id, boolean approve)
+    {
         try
         {
             client.approveEvent(id, approve);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
         }
-        catch (Exception e)
+    }
+
+    @Override
+    public void attendEvent(String eventId, String creatorEmail)
+    {
+        try
+        {
+            client.attendEvent(eventId, creatorEmail);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Override
+    public String submitValidation(String id, byte[] validation)
+    {
+        try
+        {
+            return client.submitValidation(id, validation);
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
