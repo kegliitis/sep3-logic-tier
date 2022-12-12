@@ -64,6 +64,16 @@ public final class EventOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_EventList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_EventToAttend_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_EventToAttend_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_EventToAttendConfirmation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_EventToAttendConfirmation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -76,27 +86,32 @@ public final class EventOuterClass {
       "\n\013Event.proto\"l\n\021CreateEventObject\022\014\n\004da" +
       "te\030\001 \001(\t\022\014\n\004time\030\002 \001(\t\022\023\n\013description\030\003 " +
       "\001(\t\022\024\n\014creatorEmail\030\004 \001(\t\022\020\n\010reportId\030\005 " +
-      "\001(\t\"\315\001\n\013EventObject\022\n\n\002id\030\001 \001(\t\022\014\n\004date\030" +
+      "\001(\t\"\362\001\n\013EventObject\022\n\n\002id\030\001 \001(\t\022\014\n\004date\030" +
       "\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\023\n\013description\030\004 \001(\t" +
       "\022\027\n\nvalidation\030\005 \001(\014H\000\210\001\001\022#\n\torganiser\030\006" +
       " \001(\0132\020.UserEventObject\022\"\n\006report\030\007 \001(\0132\022" +
-      ".ReportEventObject\022\020\n\010approved\030\010 \001(\010B\r\n\013" +
-      "_validation\"/\n\017UserEventObject\022\n\n\002id\030\001 \001" +
-      "(\t\022\020\n\010username\030\002 \001(\t\"n\n\021ReportEventObjec" +
-      "t\022\022\n\005proof\030\001 \001(\014H\000\210\001\001\022\023\n\013description\030\002 \001" +
-      "(\t\022&\n\010location\030\003 \001(\0132\024.LocationEventObje" +
-      "ctB\010\n\006_proof\"H\n\023LocationEventObject\022\021\n\tl" +
-      "ongitude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\022\014\n\004size" +
-      "\030\003 \001(\005\"\016\n\014EventsFilter\"\031\n\013EventFilter\022\n\n" +
-      "\002id\030\001 \001(\t\"1\n\022ApproveEventFilter\022\n\n\002id\030\001 " +
-      "\001(\t\022\017\n\007approve\030\002 \001(\010\"*\n\022ApproveEventResu" +
-      "lt\022\024\n\014confirmation\030\001 \001(\t\")\n\tEventList\022\034\n" +
-      "\006events\030\001 \003(\0132\014.EventObject2\302\001\n\005Event\022/\n" +
-      "\013CreateEvent\022\022.CreateEventObject\032\014.Event" +
-      "Object\022&\n\tGetEvents\022\r.EventsFilter\032\n.Eve" +
-      "ntList\022&\n\010GetEvent\022\014.EventFilter\032\014.Event" +
-      "Object\0228\n\014ApproveEvent\022\023.ApproveEventFil" +
-      "ter\032\023.ApproveEventResultB\033\n\027via.sep3.pro" +
+      ".ReportEventObject\022\020\n\010approved\030\010 \001(\010\022#\n\t" +
+      "attendees\030\t \003(\0132\020.UserEventObjectB\r\n\013_va" +
+      "lidation\"/\n\017UserEventObject\022\n\n\002id\030\001 \001(\t\022" +
+      "\020\n\010username\030\002 \001(\t\"n\n\021ReportEventObject\022\022" +
+      "\n\005proof\030\001 \001(\014H\000\210\001\001\022\023\n\013description\030\002 \001(\t\022" +
+      "&\n\010location\030\003 \001(\0132\024.LocationEventObjectB" +
+      "\010\n\006_proof\"H\n\023LocationEventObject\022\021\n\tlong" +
+      "itude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\022\014\n\004size\030\003 " +
+      "\001(\005\"\016\n\014EventsFilter\"\031\n\013EventFilter\022\n\n\002id" +
+      "\030\001 \001(\t\"1\n\022ApproveEventFilter\022\n\n\002id\030\001 \001(\t" +
+      "\022\017\n\007approve\030\002 \001(\010\"*\n\022ApproveEventResult\022" +
+      "\024\n\014confirmation\030\001 \001(\t\")\n\tEventList\022\034\n\006ev" +
+      "ents\030\001 \003(\0132\014.EventObject\"3\n\rEventToAtten" +
+      "d\022\017\n\007eventId\030\001 \001(\t\022\021\n\tuserEmail\030\002 \001(\t\"1\n" +
+      "\031EventToAttendConfirmation\022\024\n\014confirmati" +
+      "on\030\001 \001(\t2\375\001\n\005Event\022/\n\013CreateEvent\022\022.Crea" +
+      "teEventObject\032\014.EventObject\022&\n\tGetEvents" +
+      "\022\r.EventsFilter\032\n.EventList\022&\n\010GetEvent\022" +
+      "\014.EventFilter\032\014.EventObject\0228\n\014ApproveEv" +
+      "ent\022\023.ApproveEventFilter\032\023.ApproveEventR" +
+      "esult\0229\n\013AttendEvent\022\016.EventToAttend\032\032.E" +
+      "ventToAttendConfirmationB\033\n\027via.sep3.pro" +
       "tobuf.eventP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -114,7 +129,7 @@ public final class EventOuterClass {
     internal_static_EventObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EventObject_descriptor,
-        new java.lang.String[] { "Id", "Date", "Time", "Description", "Validation", "Organiser", "Report", "Approved", "Validation", });
+        new java.lang.String[] { "Id", "Date", "Time", "Description", "Validation", "Organiser", "Report", "Approved", "Attendees", "Validation", });
     internal_static_UserEventObject_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_UserEventObject_fieldAccessorTable = new
@@ -163,6 +178,18 @@ public final class EventOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EventList_descriptor,
         new java.lang.String[] { "Events", });
+    internal_static_EventToAttend_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_EventToAttend_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_EventToAttend_descriptor,
+        new java.lang.String[] { "EventId", "UserEmail", });
+    internal_static_EventToAttendConfirmation_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_EventToAttendConfirmation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_EventToAttendConfirmation_descriptor,
+        new java.lang.String[] { "Confirmation", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

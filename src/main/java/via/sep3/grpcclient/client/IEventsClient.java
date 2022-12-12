@@ -1,5 +1,6 @@
 package via.sep3.grpcclient.client;
 
+import via.sep3.model.AttendEvent;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 
@@ -11,4 +12,6 @@ public interface IEventsClient
     List<Event> getEvents();
     Event getEventById(String id);
     void approveEvent(String id, boolean approve);
+
+    void attendEvent(String eventId, String creatorEmail);
 }

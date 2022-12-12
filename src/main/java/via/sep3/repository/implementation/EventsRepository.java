@@ -3,6 +3,7 @@ package via.sep3.repository.implementation;
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.grpcclient.implementation.EventsClient;
+import via.sep3.model.AttendEvent;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 import via.sep3.repository.intf.IEventsRepository;
@@ -65,6 +66,19 @@ public class EventsRepository implements IEventsRepository
         try
         {
             client.approveEvent(id, approve);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Override
+    public void attendEvent(String eventId, String creatorEmail) {
+        try
+        {
+             client.attendEvent(eventId, creatorEmail);
         }
         catch (Exception e)
         {

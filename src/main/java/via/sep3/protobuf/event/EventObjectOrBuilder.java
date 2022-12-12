@@ -101,4 +101,28 @@ public interface EventObjectOrBuilder extends
    * @return The approved.
    */
   boolean getApproved();
+
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  java.util.List<via.sep3.protobuf.event.UserEventObject> 
+      getAttendeesList();
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  via.sep3.protobuf.event.UserEventObject getAttendees(int index);
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  int getAttendeesCount();
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  java.util.List<? extends via.sep3.protobuf.event.UserEventObjectOrBuilder> 
+      getAttendeesOrBuilderList();
+  /**
+   * <code>repeated .UserEventObject attendees = 9;</code>
+   */
+  via.sep3.protobuf.event.UserEventObjectOrBuilder getAttendeesOrBuilder(
+      int index);
 }

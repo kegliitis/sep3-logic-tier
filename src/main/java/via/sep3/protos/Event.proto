@@ -9,6 +9,8 @@ service Event
   rpc GetEvents(EventsFilter) returns(EventList);
   rpc GetEvent(EventFilter) returns (EventObject);
   rpc ApproveEvent(ApproveEventFilter) returns (ApproveEventResult);
+  rpc AttendEvent(EventToAttend) returns (EventToAttendConfirmation);
+
 }
 
 message CreateEventObject
@@ -30,6 +32,7 @@ message EventObject
   UserEventObject organiser = 6;
   ReportEventObject report = 7;
   bool approved = 8;
+  repeated UserEventObject attendees=9;
 }
 
 message UserEventObject
@@ -77,3 +80,15 @@ message EventList
 {
   repeated EventObject events = 1;
 }
+
+message EventToAttend
+{
+  string eventId = 1;
+  string userEmail = 2;
+}
+
+message EventToAttendConfirmation
+{
+  string confirmation = 1;
+}
+

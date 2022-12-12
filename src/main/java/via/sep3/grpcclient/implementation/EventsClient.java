@@ -93,4 +93,15 @@ public class EventsClient implements IEventsClient
 
         eventBlockingStub.approveEvent(input);
     }
+
+    @Override
+    public void attendEvent(String eventId, String creatorEmail) {
+
+        EventToAttend eventToAttend=EventToAttend.newBuilder()
+                .setEventId(eventId)
+                .setUserEmail(creatorEmail)
+                .build();
+
+        eventBlockingStub.attendEvent(eventToAttend);
+    }
 }
