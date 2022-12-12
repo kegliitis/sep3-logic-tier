@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import via.sep3.controller.utils.jwt.JwtTokenUtil;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
-import via.sep3.model.EventDto;
-import via.sep3.model.Report;
-import via.sep3.model.dtos.GetReportResponseDto;
-import via.sep3.model.dtos.UpdateReportDto;
+import via.sep3.model.dtos.EventDto;
 import via.sep3.repository.implementation.EventsRepository;
 import via.sep3.repository.intf.IEventsRepository;
 

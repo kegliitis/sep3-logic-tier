@@ -1,4 +1,6 @@
-package via.sep3.model;
+package via.sep3.model.dtos;
+
+import via.sep3.model.Location;
 
 public class EventReportDto
 {

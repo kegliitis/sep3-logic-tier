@@ -1,7 +1,4 @@
-package via.sep3.model;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
+package via.sep3.model.dtos;
 
 public class EventDto
 {

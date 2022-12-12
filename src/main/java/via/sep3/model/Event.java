@@ -1,5 +1,7 @@
 package via.sep3.model;
 
+import via.sep3.model.dtos.EventReportDto;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 

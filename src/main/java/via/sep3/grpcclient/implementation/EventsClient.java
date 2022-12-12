@@ -1,16 +1,12 @@
 package via.sep3.grpcclient.implementation;
 
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import org.springframework.stereotype.Service;
 import via.sep3.controller.utils.jwt.ChannelUtils;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
+import via.sep3.model.dtos.EventReportDto;
 import via.sep3.protobuf.event.*;
-import via.sep3.protobuf.report.ReportId;
-import via.sep3.protobuf.report.ReportObject;
-import via.sep3.protobuf.report.ReviewedReport;
-import via.sep3.protobuf.report.ToReviewReport;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
