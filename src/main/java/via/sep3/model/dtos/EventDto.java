@@ -1,5 +1,7 @@
 package via.sep3.model.dtos;
 
+import via.sep3.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,38 +12,22 @@ public class EventDto
     private int[] time;
     private String description;
     private byte[] validation;
-    private String organiserId;
-    private String username;
+    private UserDto organiser;
     private EventReportDto report;
     private boolean approved;
-
     private List<EventAttendeesDto> attendees;
 
-    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved, List<EventAttendeesDto> attendees)
+    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, UserDto organiser, EventReportDto report, boolean approved, List<EventAttendeesDto> attendees)
     {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
         this.validation = validation;
-        this.organiserId = organiserId;
-        this.username = username;
+        this.organiser = organiser;
         this.report = report;
         this.approved = approved;
         this.attendees = attendees;
-    }
-
-    public EventDto(String id, int[] date, int[] time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved)
-    {
-        this.id = id;
-        this.date = date;
-        this.time = time;
-        this.description = description;
-        this.validation = validation;
-        this.organiserId = organiserId;
-        this.username = username;
-        this.report = report;
-        this.approved = approved;
     }
 
     public String getId()
@@ -94,24 +80,14 @@ public class EventDto
         this.validation = validation;
     }
 
-    public String getOrganiserId()
+    public UserDto getOrganiser()
     {
-        return organiserId;
+        return organiser;
     }
 
-    public void setOrganiserId(String organiserId)
+    public void setOrganiserId(UserDto organiser)
     {
-        this.organiserId = organiserId;
-    }
-
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
+        this.organiser = organiser;
     }
 
     public EventReportDto getReport()

@@ -2,6 +2,7 @@ package via.sep3.model;
 
 import via.sep3.model.dtos.EventAttendeesDto;
 import via.sep3.model.dtos.EventReportDto;
+import via.sep3.model.dtos.UserDto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -15,37 +16,34 @@ public class Event
     private LocalTime time;
     private String description;
     private byte[] validation;
-    private String organiserId;
-    private String username;
+    private UserDto organiser;
     private EventReportDto report;
     private boolean approved;
 
     private List<EventAttendeesDto> attendees;
 
-    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved, ArrayList<EventAttendeesDto> attendees)
+    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, UserDto organiser, EventReportDto report, boolean approved, ArrayList<EventAttendeesDto> attendees)
     {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
         this.validation = validation;
-        this.organiserId = organiserId;
-        this.username = username;
         this.report = report;
         this.approved = approved;
+        this.organiser = organiser;
         this.attendees = attendees;
     }
 
-    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, String organiserId, String username, EventReportDto report, boolean approved)
+    public Event(String id, LocalDate date, LocalTime time, String description, byte[] validation, UserDto organiser, EventReportDto report, boolean approved)
     {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
         this.validation = validation;
-        this.organiserId = organiserId;
-        this.username = username;
         this.report = report;
+        this.organiser = organiser;
         this.approved = approved;
     }
 
@@ -99,24 +97,14 @@ public class Event
         this.validation = validation;
     }
 
-    public String getOrganiserId()
+    public UserDto getOrganiser()
     {
-        return organiserId;
+        return organiser;
     }
 
-    public void setOrganiserId(String organiserId)
+    public void setOrganiser(UserDto organiser)
     {
-        this.organiserId = organiserId;
-    }
-
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
+        this.organiser = organiser;
     }
 
     public EventReportDto getReport()
