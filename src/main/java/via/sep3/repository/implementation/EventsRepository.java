@@ -25,8 +25,7 @@ public class EventsRepository implements IEventsRepository
         try
         {
             return client.createEvent(createEvent, creatorEmail);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -39,8 +38,7 @@ public class EventsRepository implements IEventsRepository
         try
         {
             return client.getEvents(email, filter);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -48,12 +46,12 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public Event getEventById(String id) {
+    public Event getEventById(String id)
+    {
         try
         {
             return client.getEventById(id);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -61,12 +59,12 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public void approveEvent(String id, boolean approve) {
+    public void approveEvent(String id, boolean approve)
+    {
         try
         {
             client.approveEvent(id, approve);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;
@@ -74,12 +72,25 @@ public class EventsRepository implements IEventsRepository
     }
 
     @Override
-    public void attendEvent(String eventId, String creatorEmail) {
+    public void attendEvent(String eventId, String creatorEmail)
+    {
         try
         {
-             client.attendEvent(eventId, creatorEmail);
+            client.attendEvent(eventId, creatorEmail);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
         }
-        catch (Exception e)
+    }
+
+    @Override
+    public String submitValidation(String id, byte[] validation)
+    {
+        try
+        {
+            return client.submitValidation(id, validation);
+        } catch (Exception e)
         {
             e.printStackTrace();
             throw e;

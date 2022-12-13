@@ -89,7 +89,7 @@ public class EventsController
         }
     }
 
-    @PatchMapping("/events/{id}")
+    @PatchMapping("/events/{id}/approve")
     public ResponseEntity<String> approveEvent(@PathVariable String id, @RequestBody boolean approved)
     {
         try
@@ -120,4 +120,3 @@ public class EventsController
         }
     }
 }
-

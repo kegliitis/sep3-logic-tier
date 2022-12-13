@@ -10,7 +10,7 @@ service Event
   rpc GetEvent(EventFilter) returns (EventObject);
   rpc ApproveEvent(ApproveEventFilter) returns (ApproveEventResult);
   rpc AttendEvent(EventToAttend) returns (EventToAttendConfirmation);
-
+  rpc SubmitValidation(Validation) returns (ValidationConfirmation);
 }
 
 message CreateEventObject
@@ -57,7 +57,9 @@ message LocationEventObject
 
 message EventsFilter
 {
-
+  string email = 1;
+  //Values can be: {"Upcoming", "Organised by me"}
+  string filter = 2;
 }
 
 message EventFilter
@@ -92,3 +94,13 @@ message EventToAttendConfirmation
   string confirmation = 1;
 }
 
+message Validation
+{
+  string eventId = 1;
+  bytes validation = 2;
+}
+
+message ValidationConfirmation
+{
+  string confirmation = 1;
+}

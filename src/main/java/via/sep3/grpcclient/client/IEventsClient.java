@@ -13,4 +13,5 @@ public interface IEventsClient
     void approveEvent(String id, boolean approve);
 
     void attendEvent(String eventId, String creatorEmail);
+    String submitValidation(String id, byte[] validation);
 }

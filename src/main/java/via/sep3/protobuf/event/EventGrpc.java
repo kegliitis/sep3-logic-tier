@@ -169,6 +169,37 @@ public final class EventGrpc {
     return getAttendEventMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sep3.protobuf.event.Validation,
+      via.sep3.protobuf.event.ValidationConfirmation> getSubmitValidationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitValidation",
+      requestType = via.sep3.protobuf.event.Validation.class,
+      responseType = via.sep3.protobuf.event.ValidationConfirmation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sep3.protobuf.event.Validation,
+      via.sep3.protobuf.event.ValidationConfirmation> getSubmitValidationMethod() {
+    io.grpc.MethodDescriptor<via.sep3.protobuf.event.Validation, via.sep3.protobuf.event.ValidationConfirmation> getSubmitValidationMethod;
+    if ((getSubmitValidationMethod = EventGrpc.getSubmitValidationMethod) == null) {
+      synchronized (EventGrpc.class) {
+        if ((getSubmitValidationMethod = EventGrpc.getSubmitValidationMethod) == null) {
+          EventGrpc.getSubmitValidationMethod = getSubmitValidationMethod =
+              io.grpc.MethodDescriptor.<via.sep3.protobuf.event.Validation, via.sep3.protobuf.event.ValidationConfirmation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitValidation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.Validation.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sep3.protobuf.event.ValidationConfirmation.getDefaultInstance()))
+              .setSchemaDescriptor(new EventMethodDescriptorSupplier("SubmitValidation"))
+              .build();
+        }
+      }
+    }
+    return getSubmitValidationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -252,6 +283,13 @@ public final class EventGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAttendEventMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void submitValidation(via.sep3.protobuf.event.Validation request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ValidationConfirmation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitValidationMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -289,6 +327,13 @@ public final class EventGrpc {
                 via.sep3.protobuf.event.EventToAttend,
                 via.sep3.protobuf.event.EventToAttendConfirmation>(
                   this, METHODID_ATTEND_EVENT)))
+          .addMethod(
+            getSubmitValidationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sep3.protobuf.event.Validation,
+                via.sep3.protobuf.event.ValidationConfirmation>(
+                  this, METHODID_SUBMIT_VALIDATION)))
           .build();
     }
   }
@@ -346,6 +391,14 @@ public final class EventGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAttendEventMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void submitValidation(via.sep3.protobuf.event.Validation request,
+        io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ValidationConfirmation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitValidationMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -395,6 +448,13 @@ public final class EventGrpc {
     public via.sep3.protobuf.event.EventToAttendConfirmation attendEvent(via.sep3.protobuf.event.EventToAttend request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAttendEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public via.sep3.protobuf.event.ValidationConfirmation submitValidation(via.sep3.protobuf.event.Validation request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitValidationMethod(), getCallOptions(), request);
     }
   }
 
@@ -451,6 +511,14 @@ public final class EventGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAttendEventMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sep3.protobuf.event.ValidationConfirmation> submitValidation(
+        via.sep3.protobuf.event.Validation request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitValidationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EVENT = 0;
@@ -458,6 +526,7 @@ public final class EventGrpc {
   private static final int METHODID_GET_EVENT = 2;
   private static final int METHODID_APPROVE_EVENT = 3;
   private static final int METHODID_ATTEND_EVENT = 4;
+  private static final int METHODID_SUBMIT_VALIDATION = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -495,6 +564,10 @@ public final class EventGrpc {
         case METHODID_ATTEND_EVENT:
           serviceImpl.attendEvent((via.sep3.protobuf.event.EventToAttend) request,
               (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.EventToAttendConfirmation>) responseObserver);
+          break;
+        case METHODID_SUBMIT_VALIDATION:
+          serviceImpl.submitValidation((via.sep3.protobuf.event.Validation) request,
+              (io.grpc.stub.StreamObserver<via.sep3.protobuf.event.ValidationConfirmation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -562,6 +635,7 @@ public final class EventGrpc {
               .addMethod(getGetEventMethod())
               .addMethod(getApproveEventMethod())
               .addMethod(getAttendEventMethod())
+              .addMethod(getSubmitValidationMethod())
               .build();
         }
       }
