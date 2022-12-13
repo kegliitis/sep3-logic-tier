@@ -1,5 +1,6 @@
 package via.sep3.grpcclient.implementation;
 
+import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import org.springframework.stereotype.Service;
 import via.sep3.controller.utils.jwt.ChannelUtils;
@@ -111,5 +112,17 @@ public class EventsClient implements IEventsClient
                 .build();
 
         eventBlockingStub.attendEvent(eventToAttend);
+    }
+
+    @Override
+    public String submitValidation(String id, byte[] validation)
+    {
+        Validation grpcValidation = Validation.newBuilder()
+                .setEventId(id)
+                .setValidation(ByteString.copyFrom(validation))
+                .build();
+
+        ValidationConfirmation response = eventBlockingStub.submitValidation(grpcValidation);
+        return response.getConfirmation();
     }
 }
