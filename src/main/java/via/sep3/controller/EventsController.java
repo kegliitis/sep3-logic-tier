@@ -119,4 +119,16 @@ public class EventsController
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Oh naur!: " + e);
         }
     }
+
+    @PatchMapping("/events/validate")
+    public ResponseEntity<String> validateEvent(@PathVariable String id, @RequestBody byte[] validation) {
+        try {
+            repository.submitValidation(id, validation);
+            return ResponseEntity.ok("ok");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
 }
