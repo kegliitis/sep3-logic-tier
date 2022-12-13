@@ -3,7 +3,6 @@ package via.sep3.repository.implementation;
 import org.springframework.stereotype.Repository;
 import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.grpcclient.implementation.EventsClient;
-import via.sep3.model.AttendEvent;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 import via.sep3.repository.intf.IEventsRepository;
