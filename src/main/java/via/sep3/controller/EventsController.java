@@ -89,12 +89,27 @@ public class EventsController
         }
     }
 
-    @PatchMapping("/events/{id}")
+    @PatchMapping("/events/{id}/approve")
     public ResponseEntity<String> approveEvent(@PathVariable String id, @RequestBody boolean approved)
     {
         try
         {
             repository.approveEvent(id, approved);
+            return ResponseEntity.ok("ok");
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @PatchMapping("/events/{id}/validate")
+    public ResponseEntity<String> validateEvent(@PathVariable String id, @RequestBody byte[] validation)
+    {
+        try
+        {
+            repository.submitValidation(id, validation);
             return ResponseEntity.ok("ok");
         }
         catch (Exception e)
