@@ -8,6 +8,7 @@ import via.sep3.grpcclient.client.IEventsClient;
 import via.sep3.model.*;
 import via.sep3.model.dtos.EventAttendeesDto;
 import via.sep3.model.dtos.EventReportDto;
+import via.sep3.model.dtos.UserDto;
 import via.sep3.protobuf.event.*;
 
 import java.lang.reflect.Array;
@@ -35,10 +36,10 @@ public class EventsClient implements IEventsClient
 
         EventObject response = eventBlockingStub.createEvent(input);
 
+        UserDto organiser = new UserDto(response.getOrganiser().getId(), response.getOrganiser().getUsername());
 
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
-                response.getDescription(), response.getValidation().toByteArray(),
-                response.getOrganiser().getId(), response.getOrganiser().getUsername(),
+                response.getDescription(), response.getValidation().toByteArray(), organiser,
                 new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                         new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
                         (byte)response.getReport().getLocation().getSize())), response.getApproved());
@@ -58,9 +59,10 @@ public class EventsClient implements IEventsClient
 
         for (EventObject grpcEvent: response.getEventsList())
         {
+            UserDto organiser = new UserDto(grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername());
+
             Event event = new Event(grpcEvent.getId(), LocalDate.parse(grpcEvent.getDate()), LocalTime.parse(grpcEvent.getTime()),
-                    grpcEvent.getDescription(), grpcEvent.getValidation().toByteArray(),
-                    grpcEvent.getOrganiser().getId(), grpcEvent.getOrganiser().getUsername(),
+                    grpcEvent.getDescription(), grpcEvent.getValidation().toByteArray(), organiser,
                     new EventReportDto(grpcEvent.getReport().getProof().toByteArray(), grpcEvent.getReport().getDescription(),
                             new Location(grpcEvent.getReport().getLocation().getLatitude(), grpcEvent.getReport().getLocation().getLongitude(),
                                     (byte)grpcEvent.getReport().getLocation().getSize())), grpcEvent.getApproved());
@@ -85,9 +87,10 @@ public class EventsClient implements IEventsClient
             attendees.add(new EventAttendeesDto(attendee.getId(), attendee.getUsername()));
         }
 
+        UserDto organiser = new UserDto(response.getOrganiser().getId(), response.getOrganiser().getUsername());
+
         return new Event(response.getId(), LocalDate.parse(response.getDate()), LocalTime.parse(response.getTime()),
-                response.getDescription(), response.getValidation().toByteArray(),
-                response.getOrganiser().getId(), response.getOrganiser().getUsername(),
+                response.getDescription(), response.getValidation().toByteArray(), organiser,
             new EventReportDto(response.getReport().getProof().toByteArray(), response.getReport().getDescription(),
                     new Location(response.getReport().getLocation().getLatitude(), response.getReport().getLocation().getLongitude(),
                             (byte)response.getReport().getLocation().getSize())), response.getApproved(), attendees);

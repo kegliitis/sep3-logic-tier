@@ -7,6 +7,8 @@ import via.sep3.controller.utils.jwt.JwtTokenUtil;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 import via.sep3.model.dtos.EventDto;
+import via.sep3.model.dtos.EventOverviewDto;
+import via.sep3.model.dtos.ValidateEventDto;
 import via.sep3.repository.implementation.EventsRepository;
 import via.sep3.repository.intf.IEventsRepository;
 
@@ -56,12 +58,12 @@ public class EventsController
             String email = jwtTokenUtil.getEmailFromToken(token);
             List<Event> events = repository.getEvents(email, filter);
 
-            List<EventDto> eventsList = new ArrayList<>();
+            List<EventOverviewDto> eventsList = new ArrayList<>();
             for (Event event : events)
             {
                 int[] date = new int[]{event.getDate().getYear(), event.getDate().getMonthValue(), event.getDate().getDayOfMonth()};
                 int[] time = new int[]{event.getTime().getHour(), event.getTime().getMinute(), event.getTime().getSecond()};
-                eventsList.add(new EventDto(event.getId(), date, time, event.getDescription(), event.getValidation(), event.getOrganiserId(), event.getUsername(), event.getReport(), event.getApproved()));
+                eventsList.add(new EventOverviewDto(event.getId(), date, time, event.getDescription(), event.getReport().getLocation(), event.getOrganiser().getUserName()));
             }
             return ResponseEntity.ok(eventsList);
         }
@@ -80,7 +82,7 @@ public class EventsController
             Event event = repository.getEventById(id);
             int[] date = new int[]{event.getDate().getYear(), event.getDate().getMonthValue(), event.getDate().getDayOfMonth()};
             int[] time = new int[]{event.getTime().getHour(), event.getTime().getMinute(), event.getTime().getSecond()};
-            return ResponseEntity.ok(new EventDto(event.getId(), date, time, event.getDescription(), event.getValidation(), event.getOrganiserId(), event.getUsername(), event.getReport(), event.getApproved(), event.getAttendees()));
+            return ResponseEntity.ok(new EventDto(event.getId(), date, time, event.getDescription(), event.getValidation(), event.getOrganiser(), event.getReport(), event.getApproved(), event.getAttendees()));
         }
         catch (Exception e)
         {
@@ -89,8 +91,8 @@ public class EventsController
         }
     }
 
-    @PatchMapping("/events/{id}/approve")
-    public ResponseEntity<String> approveEvent(@PathVariable String id, @RequestBody boolean approved)
+    @PatchMapping("/events/approve")
+    public ResponseEntity<String> approveEvent(@RequestParam String id, @RequestBody boolean approved)
     {
         try
         {
@@ -121,9 +123,9 @@ public class EventsController
     }
 
     @PatchMapping("/events/validate")
-    public ResponseEntity<String> validateEvent(@PathVariable String id, @RequestBody byte[] validation) {
+    public ResponseEntity<String> validateEvent(@RequestParam String eventId, @RequestBody ValidateEventDto body) {
         try {
-            repository.submitValidation(id, validation);
+            repository.submitValidation(eventId, body.getValidation());
             return ResponseEntity.ok("ok");
         } catch (Exception e) {
             System.out.println(e.getMessage());

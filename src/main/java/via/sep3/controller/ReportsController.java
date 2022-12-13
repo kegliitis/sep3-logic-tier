@@ -73,8 +73,8 @@ public class ReportsController
         }
     }
 
-    @PatchMapping("/reports/{id}")
-    public ResponseEntity<String> reviewReport(@PathVariable String id, @RequestBody UpdateReportDto updateReportDto)
+    @PatchMapping("/reports/review")
+    public ResponseEntity<String> reviewReport(@RequestParam String id, @RequestBody UpdateReportDto updateReportDto)
     {
         try
         {
