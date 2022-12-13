@@ -104,18 +104,31 @@ public class EventsController
         }
     }
 
-    @PatchMapping("/events/{id}/validate")
-    public ResponseEntity<String> validateEvent(@PathVariable String id, @RequestBody byte[] validation)
-    {
-        try
-        {
+    @RequestMapping(value = "/events/attend", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<String> attendEvent(@RequestHeader Map<String, String> headers,
+                                              @RequestParam String eventId) {
+        Event event = repository.getEventById(eventId);
+        try {
+            String token = headers.get("authorization").split(" ")[1];
+            String creatorEmail = jwtTokenUtil.getEmailFromToken(token);
+            repository.attendEvent(event.getId(), creatorEmail);
+            return ResponseEntity.ok("ok");
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Oh naur!: " + e);
+        }
+    }
+
+    @PatchMapping("/events/validate")
+    public ResponseEntity<String> validateEvent(@PathVariable String id, @RequestBody byte[] validation) {
+        try {
             repository.submitValidation(id, validation);
             return ResponseEntity.ok("ok");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+
 }

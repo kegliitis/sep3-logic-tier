@@ -1,6 +1,5 @@
 package via.sep3.grpcclient.client;
 
-import via.sep3.model.AttendEvent;
 import via.sep3.model.CreateEvent;
 import via.sep3.model.Event;
 
